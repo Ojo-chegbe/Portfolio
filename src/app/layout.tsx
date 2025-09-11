@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: 'Designing seamless digital experiences • Nigerian • Based in Lagos',
   keywords: 'UX Designer, Product Designer, UI/UX, Design, Nigeria, Lagos, Portfolio',
   authors: [{ name: 'Ogwu Ojochegbe' }],
+  icons: {
+    icon: '/images/Favicon.png',
+    shortcut: '/images/Favicon.png',
+    apple: '/images/Favicon.png',
+  },
   openGraph: {
     title: 'Ogwu Ojochegbe — UX & Product Designer',
     description: 'Designing seamless digital experiences • Nigerian • Based in Lagos',
@@ -34,6 +39,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" href="/images/Favicon.png" />
+        <link rel="shortcut icon" href="/images/Favicon.png" />
+        <link rel="apple-touch-icon" href="/images/Favicon.png" />
       </head>
       <body className="antialiased">
         {children}
