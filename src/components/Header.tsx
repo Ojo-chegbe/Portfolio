@@ -17,6 +17,29 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle hash scrolling when page loads
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          // Small delay to ensure page is fully loaded
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }
+    };
+
+    // Run on mount
+    handleHashScroll();
+    
+    // Also listen for hash changes
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, []);
+
   const navLinks = [
     { href: '#highlights', label: 'Highlights' },
     { href: '#work', label: 'Work' },
@@ -25,9 +48,15 @@ const Header = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.replace('#', ''));
+    const sectionId = href.replace('#', '');
+    const element = document.getElementById(sectionId);
+    
     if (element) {
+      // If we're on the home page and the element exists, scroll to it
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // If we're on another page, navigate to home page with hash
+      window.location.href = `/#${sectionId}`;
     }
   };
 
