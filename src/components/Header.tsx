@@ -41,7 +41,7 @@ const Header = () => {
               alt="Ogwu Ojochegbe" 
               width={128} 
               height={128}
-              className="h-12 w-auto transition-all duration-300 hover:scale-105"
+              className="h-8 w-auto transition-all duration-300 hover:scale-105"
               priority
             />
           </Link>
