@@ -317,7 +317,7 @@ const VaenineCaseStudy = () => {
               transition={{ duration: 0.4, ease: 'easeOut' }}
             >
               <Image
-                src="/images/Vaenine/Cover.jpg"
+                src="/images/Vaenine/cover.jpg"
                 alt="Vaenine Event Platform"
                 width={600}
                 height={320}

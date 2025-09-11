@@ -37,7 +37,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link href="/" className="logo flex items-center transition-all duration-300 hover:scale-105" style={{ display: 'flex', alignItems: 'center' }}>
             <Image 
-              src="/images/Logo.svg" 
+              src="/images/logo.svg" 
               alt="Ogwu Ojochegbe" 
               width={128} 
               height={128}

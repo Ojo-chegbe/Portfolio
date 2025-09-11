@@ -29,7 +29,7 @@ const Work = () => {
       id: 'vaenine',
       title: 'Vaenine',
       description: 'Event platform for Nigeria with culturally intuitive design for discovery, attendance, and hosting.',
-      link: '/case-study/vaenine',
+      link: '/case-study/Vaenine',
       mockup: 'tablet'
     }
   ];
