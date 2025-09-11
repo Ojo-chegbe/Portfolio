@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
@@ -33,14 +33,14 @@ const Articles = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut'
+        ease: "easeOut"
       }
     }
   };
@@ -75,7 +75,7 @@ const Articles = () => {
                 whileHover={{
                   y: -8,
                   scale: 1.02,
-                  transition: { duration: 0.05, ease: 'easeOut' }
+                  transition: { duration: 0.05, ease: "easeOut" }
                 }}
               >
                 <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex-shrink-0"></div>

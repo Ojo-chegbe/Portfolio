@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
+import Image from "next/image";
 
 export interface ImageCarouselProps {
   /** Array of image URLs to display in the carousel */
@@ -150,10 +151,11 @@ export function ImageCarousel({
             transition={{ duration: animationDuration, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src={images[currentIndex]}
               alt={`Carousel image ${currentIndex + 1}`}
-              className={cn("w-full h-full object-cover", imageClassName)}
+              fill
+              className={cn("object-cover", imageClassName)}
             />
           </motion.div>
         </AnimatePresence>

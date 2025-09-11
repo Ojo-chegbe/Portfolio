@@ -100,7 +100,7 @@ const ArexpalCaseStudy = () => {
 
               <div className="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  This case study documents the end-to-end design process for Arexpal, a mobile application designed to make cancer prevention accessible, engaging, and life-changing. We'll explore how we moved from a broad societal challenge to a refined, user-centric solution, all guided by the principles of the Double Diamond design framework.
+                  This case study documents the end-to-end design process for Arexpal, a mobile application designed to make cancer prevention accessible, engaging, and life-changing. We&apos;ll explore how we moved from a broad societal challenge to a refined, user-centric solution, all guided by the principles of the Double Diamond design framework.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Our goal was not merely to build an app, but to design a companion—a tool that uses the addictive mechanics of modern technology for a profoundly positive purpose.
@@ -122,7 +122,7 @@ const ArexpalCaseStudy = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold mb-8 text-gray-900">
-              Part 1: Discover & Define – Understanding the Problem Space
+              Part 1: Discover & Define – Understanding the Problem
             </h2>
             
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -133,7 +133,7 @@ const ArexpalCaseStudy = () => {
               <h3 className="text-2xl font-bold mb-6 text-gray-900">The Challenge: Health Education Is A Privilege, Not A Right</h3>
               
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Our project began with a stark and sobering reality: cancer is not a single disease, and prevention is our most powerful weapon against it. Up to 40% of cancers can be prevented through lifestyle modifications in areas like diet, exercise, stress management, and substance use. The knowledge to make these changes exists, but it's locked away, unevenly distributed, and often fails to inspire action.
+                Our project began with a stark and sobering reality: cancer is not a single disease, and prevention is our most powerful weapon against it. Up to 40% of cancers can be prevented through lifestyle modifications in areas like diet, exercise, stress management, and substance use. The knowledge to make these changes exists, but it&apos;s locked away, unevenly distributed, and often fails to inspire action.
               </p>
 
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">

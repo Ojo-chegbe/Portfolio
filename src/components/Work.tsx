@@ -51,8 +51,7 @@ const Work = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: 'easeOut'
+        duration: 0.6
       }
     }
   };
@@ -102,7 +101,7 @@ const Work = () => {
                 whileHover={{
                   y: -12,
                   scale: 1.02,
-                  transition: { duration: 0.05, ease: 'easeOut' }
+                  transition: { duration: 0.05 }
                 }}
               >
                 <div className="w-1/3 h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center flex-shrink-0">
