@@ -1021,40 +1021,19 @@ const ArexpalCaseStudy = () => {
             </h2>
             
             <p className="text-lg text-gray-600 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              To validate our designs, we built a high-fidelity, interactive prototype in Figma. This prototype was not just a collection of screens; it was a simulation of the core user journeys, including:
+              To validate our designs, we built a high-fidelity, interactive prototype in Figma. This prototype demonstrates the core user journeys and showcases the app's functionality in action.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-blue-600 text-xl">🚀</span>
-                </div>
-                <h4 className="font-semibold mb-2 text-gray-900">Onboarding</h4>
-                <p className="text-sm text-gray-600">Personalization setup and first-time user experience</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-green-600 text-xl">📝</span>
-                </div>
-                <h4 className="font-semibold mb-2 text-gray-900">Daily Logging</h4>
-                <p className="text-sm text-gray-600">Smart prompts and diary interaction flow</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-purple-600 text-xl">🏆</span>
-                </div>
-                <h4 className="font-semibold mb-2 text-gray-900">Challenge Flow</h4>
-                <p className="text-sm text-gray-600">Discovering and joining new challenges</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-orange-600 text-xl">💾</span>
-                </div>
-                <h4 className="font-semibold mb-2 text-gray-900">Content Discovery</h4>
-                <p className="text-sm text-gray-600">Browsing and saving tips from the feed</p>
+            <div className="bg-white p-4 rounded-xl shadow-lg mb-12 flex justify-center">
+              <div className="w-full max-w-[280px]">
+                <video 
+                  className="w-full h-auto rounded-lg"
+                  controls
+                  preload="metadata"
+                >
+                  <source src="https://res.cloudinary.com/djqcs2ngt/video/upload/v1757595741/0910_njiitw.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 
