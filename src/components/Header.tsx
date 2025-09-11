@@ -18,11 +18,18 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '/#highlights', label: 'Highlights' },
-    { href: '/#work', label: 'Work' },
-    { href: '/#articles', label: 'Articles' },
-    { href: '/#contact', label: 'Get in touch' },
+    { href: '#highlights', label: 'Highlights' },
+    { href: '#work', label: 'Work' },
+    { href: '#articles', label: 'Articles' },
+    { href: '#contact', label: 'Get in touch' },
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.getElementById(href.replace('#', ''));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <header 
@@ -50,14 +57,14 @@ const Header = () => {
         <ul className="hidden md:flex list-none gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link 
-                href={link.href} 
+              <button 
+                onClick={() => scrollToSection(link.href)}
                 className="text-gray-900 no-underline font-medium transition-all duration-300 relative hover:text-gray-700
                   after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 
-                  after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
+                  after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full bg-transparent border-none cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
@@ -78,13 +85,15 @@ const Header = () => {
           <ul className="flex flex-col py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link 
-                  href={link.href} 
-                  className="block px-6 py-3 text-gray-900 no-underline font-medium transition-colors duration-300 hover:bg-gray-50"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button 
+                  onClick={() => {
+                    scrollToSection(link.href);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-6 py-3 text-gray-900 no-underline font-medium transition-colors duration-300 hover:bg-gray-50 bg-transparent border-none cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
