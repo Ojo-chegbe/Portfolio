@@ -4,6 +4,7 @@ import { motion, Variants } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Articles = () => {
   const ref = useRef(null);
@@ -13,12 +14,16 @@ const Articles = () => {
     {
       title: 'The Power of Notifications: Helpful or Just Annoying?',
       excerpt: 'Exploring the double-edged nature of digital interruptions in our daily lives',
-      link: '/articles/notifications-power'
+      link: '/articles/notifications-power',
+      image: '/images/Articles/apple-push-notifications-best-practices.webp',
+      alt: 'Apple Push Notifications Best Practices'
     },
     {
       title: 'The bridge between Empathy and Code',
       excerpt: 'A reflection on the human-centered nature of User Experience Design',
-      link: '/articles/empathy-and-code'
+      link: '/articles/empathy-and-code',
+      image: '/images/Articles/bridge.png',
+      alt: 'Bridge between Empathy and Code'
     }
   ];
 
@@ -78,7 +83,14 @@ const Articles = () => {
                   transition: { duration: 0.05, ease: "easeOut" }
                 }}
               >
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex-shrink-0"></div>
+                <div className="h-48 flex-shrink-0 relative overflow-hidden">
+                  <Image
+                    src={article.image}
+                    alt={article.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 
                 <div className="p-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-gray-700 transition-colors">

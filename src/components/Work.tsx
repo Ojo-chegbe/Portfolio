@@ -123,7 +123,7 @@ const Work = () => {
                     />
                   ) : project.id === 'vaenine' ? (
                     <Image
-                      src="/images/Vaenine/Cover.jpg"
+                      src="/images/Vaenine/cover.jpg"
                       alt="Vaenine Event Platform"
                       width={300}
                       height={200}
