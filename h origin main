@@ -1,0 +1,5 @@
+[33m694c212[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Update favicon to use PNG format
+[33m35aacdd[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update portfolio with improvements and fixes
+[33m851ee75[m Fix hash links to work from any page by redirecting to home page with hash
+[33md27edc0[m Fix hash links not working on live site by implementing custom scroll behavior
+[33m23436eb[m Merge branch 'main' of https://github.com/Ojo-chegbe/Portfolio

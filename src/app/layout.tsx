@@ -7,14 +7,9 @@ export const metadata: Metadata = {
   keywords: 'UX Designer, Product Designer, UI/UX, Design, Nigeria, Lagos, Portfolio',
   authors: [{ name: 'Ogwu Ojochegbe' }],
   icons: {
-    icon: [
-      { url: '/images/Favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/Favicon.png', sizes: '16x16', type: 'image/png' },
-    ],
-    shortcut: '/images/Favicon.png',
-    apple: [
-      { url: '/images/Favicon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   openGraph: {
     title: 'Ogwu Ojochegbe — UX & Product Designer',
