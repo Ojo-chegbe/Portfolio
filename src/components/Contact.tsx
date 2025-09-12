@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import LoadingSpinner from './LoadingSpinner';
+import ConfirmationModal from './ConfirmationModal';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -14,6 +16,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -39,7 +42,7 @@ const Contact = () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert('Thank you! Your message has been sent successfully.');
+        setShowConfirmation(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
         throw new Error(result.error || 'Failed to send message');
@@ -173,13 +176,25 @@ const Contact = () => {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="btn btn-primary btn-full disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn btn-primary btn-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? (
+                <>
+                  <LoadingSpinner size="sm" />
+                  Sending...
+                </>
+              ) : (
+                'Send Message'
+              )}
             </button>
           </motion.form>
         </motion.div>
       </div>
+      
+      <ConfirmationModal
+        isOpen={showConfirmation}
+        onClose={() => setShowConfirmation(false)}
+      />
     </section>
   );
 };

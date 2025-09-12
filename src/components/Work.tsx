@@ -93,7 +93,7 @@ const Work = () => {
           {projects.map((project, index) => (
             <Link key={project.id} href={project.link} className="block h-full">
               <motion.div
-                className="bg-white rounded-xl overflow-hidden transition-all duration-50 hover:-translate-y-3 hover:shadow-lg group cursor-pointer flex flex-row"
+                className="bg-white rounded-xl overflow-hidden transition-all duration-50 hover:-translate-y-3 hover:shadow-lg group cursor-pointer flex flex-col md:flex-row"
                 style={{
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)'
                 }}
@@ -104,7 +104,7 @@ const Work = () => {
                   transition: { duration: 0.05 }
                 }}
               >
-                <div className="w-1/3 h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center flex-shrink-0">
+                <div className="w-full md:w-1/3 h-48 md:h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center flex-shrink-0">
                   {project.id === 'inventory' ? (
                     <Image
                       src="/images/Assedra/Cover-art.png"
@@ -134,11 +134,11 @@ const Work = () => {
                   )}
                 </div>
                 
-                <div className="w-2/3 p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold mb-4 text-gray-900 group-hover:text-gray-700 transition-colors">
+                <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-gray-900 group-hover:text-gray-700 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                     {project.description}
                   </p>
                   <span className="case-study-link">

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -10,9 +11,18 @@ const EmpathyAndCodeArticle = () => {
     <main className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container">
+       {/* Hero Section */}
+      <section className="pt-32 pb-16 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/Articles/bridge.png"
+            alt="Bridge between Empathy and Code"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-90"></div>
+        </div>
+        <div className="container relative z-10">
           <motion.div 
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -20,13 +30,13 @@ const EmpathyAndCodeArticle = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="text-center mb-12">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
                 The bridge between Empathy and Code
               </h1>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-lg text-gray-200 mb-4">
                 A reflection on the human-centered nature of User Experience Design
               </p>
-              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-300">
                 <span>Published on September 10, 2024</span>
                 <span>•</span>
                 <span>5 min read</span>

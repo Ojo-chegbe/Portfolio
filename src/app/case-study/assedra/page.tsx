@@ -535,7 +535,7 @@ const AssedraCaseStudy = () => {
             >
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-5xl w-full">
                 <Image
-                  src="/images/Assedra/Ia.png"
+                  src="/images/Assedra/IA.png"
                   alt="Information Architecture for Assedra School Inventory Management"
                   width={1000}
                   height={750}

@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Ogwu Ojochegbe — UX & Product Designer',
-  description: 'Designing seamless digital experiences • Nigerian • Based in Lagos',
+  description: 'UX & Product Designer • Bringing clarity in a complex and noisy digital world • ',
   keywords: 'UX Designer, Product Designer, UI/UX, Design, Nigeria, Lagos, Portfolio',
   authors: [{ name: 'Ogwu Ojochegbe' }],
   icons: {
@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Ogwu Ojochegbe — UX & Product Designer',
-    description: 'Designing seamless digital experiences • Nigerian • Based in Lagos',
+    description: 'UX & Product Designer • Bringing clarity in a complex and noisy digital world • ',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ogwu Ojochegbe — UX & Product Designer',
-    description: 'Designing seamless digital experiences • Nigerian • Based in Lagos',
+    description: 'UX & Product Designer • Bringing clarity in a complex and noisy digital world • ',
   },
 };
 

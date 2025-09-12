@@ -1,4 +1,9 @@
+/* stylelint-disable at-rule-no-unknown */
+
+/* CSS language server disable for Tailwind directives */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,17 +14,19 @@
   }
   
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat, sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
-    background-color: #ffffff;
+    background-color: #fff;
     overflow-x: hidden;
+    margin-inline: auto;
   }
 }
 
 @layer components {
+  /* CSS language server: ignore unknown at-rules for Tailwind @apply */
   .container {
-    @apply max-w-6xl mx-auto px-5;
+    @apply max-w-6xl mx-auto px-4 sm:px-5;
   }
   
   .section-title {

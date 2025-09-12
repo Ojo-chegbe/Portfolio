@@ -82,7 +82,7 @@ const Highlights = () => {
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}
-              className="text-left"
+              className="text-center md:text-left bg-white md:bg-transparent rounded-xl md:rounded-none p-6 md:p-0 shadow-sm md:shadow-none border md:border-0 border-gray-100"
               variants={itemVariants}
             >
               <h3 className="text-xl font-bold mb-3 text-black">
