@@ -33,10 +33,10 @@ const EmpathyAndCodeArticle = () => {
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
                 The bridge between Empathy and Code
               </h1>
-              <p className="text-lg text-gray-200 mb-4">
+              <p className="text-lg text-zinc-300 mb-4">
                 A reflection on the human-centered nature of User Experience Design
               </p>
-              <div className="flex items-center justify-center gap-4 text-sm text-gray-300">
+              <div className="flex items-center justify-center gap-4 text-sm text-zinc-400">
                 <span>Published on September 10, 2024</span>
                 <span>•</span>
                 <span>5 min read</span>
@@ -47,7 +47,7 @@ const EmpathyAndCodeArticle = () => {
       </section>
 
       {/* Article Content */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-zinc-900">
         <div className="container">
           <motion.article 
             className="max-w-4xl mx-auto prose prose-lg prose-gray"
@@ -56,7 +56,7 @@ const EmpathyAndCodeArticle = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+            <div className="space-y-8 text-lg leading-relaxed text-zinc-200">
               <p>
                 Every technology begins with a promise. A website promises knowledge. An app promises efficiency. A medical record system promises care. Yet promises are fragile. They can break if the pathway between a human being and the tool meant to serve them is jagged, confusing, or unwelcoming. The delicate bridge that carries us from intent to fulfillment is what we call User Experience Design, or UX design.
               </p>
@@ -90,18 +90,18 @@ const EmpathyAndCodeArticle = () => {
       </section>
 
       {/* Navigation */}
-      <div className="py-8 bg-gray-50 border-t border-gray-200">
+      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/" 
-              className="text-gray-600 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-white"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
             >
               ← Back to Home
             </Link>
             <Link 
               href="/#articles" 
-              className="text-gray-900 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-white shadow-sm hover:-translate-y-1 hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:-translate-y-1 hover:shadow-md"
             >
               More Articles →
             </Link>

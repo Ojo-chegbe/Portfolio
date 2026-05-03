@@ -1,208 +1,158 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const floatingCards = [
-    { text: 'Usability', delay: 2 },
-    { text: 'Simplicity', delay: 3 },
-    { text: 'Accessibility', delay: 5 },
-    { text: 'Innovation', delay: 7 },
-  ];
+  const svgVariants: Variants = {
+    hidden: { opacity: 0.4, y: -60, scale: 0.85, filter: "brightness(0.6)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "brightness(1)",
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  };
 
-  const floatingCardVariants = {
+  const topHeaderVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        delay: 1.2,
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
-  const cardHoverVariants = {
-    hover: {
-      y: -6,
-      scale: 1.03,
+  const subHeaderVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
       transition: {
-        duration: 0.3,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        delay: 1.4,
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  };
+
+  const imageVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.0,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   return (
-    <section className="pt-32 pb-16 min-h-screen flex items-center bg-white" style={{ paddingTop: '7rem' }}>
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Text Content */}
-          <motion.div 
-            className="text-center lg:text-left"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ fontSize: '3.5rem', fontWeight: '700', marginBottom: '1.5rem', lineHeight: '1.1' }}>
-              <span className="block" style={{ color: '#1a1a1a' }}>Ogwu Ojochegbe</span>
-              <span className="block font-normal" style={{ color: '#666' }}>UX & Product Designer</span>
-            </h1>
-            
-            <p className="text-xl mb-8 leading-relaxed" style={{ fontSize: '1.2rem', color: '#666', marginBottom: '2rem', lineHeight: '1.5' }}>
+    <section className="bg-[#0a0a0a] text-white min-h-screen flex flex-col pt-16 lg:pt-24">
+      <div className="flex-1 flex flex-col">
+        {/* Top Header Row */}
+        <motion.div 
+          className="container"
+          variants={topHeaderVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 py-6">
+            <p className="max-w-[360px] text-[16px] leading-relaxed text-gray-400 font-light">
               Your product already has potential. I make sure people feel it instantly. Bringing clarity in a complex and noisy digital world.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#work" className="btn btn-primary" style={{ 
-                display: 'inline-block', 
-                padding: '1rem 2rem', 
-                borderRadius: '8px', 
-                fontWeight: '600', 
-                transition: 'all 0.3s ease', 
-                border: 'none', 
-                cursor: 'pointer', 
-                fontSize: '1rem',
-                background: '#1a1a1a',
-                color: 'white',
-                textDecoration: 'none'
-              }}>
-                View My Work
+            <div className="flex gap-4">
+              <a 
+                href="#contact" 
+                className="px-8 py-2.5 border border-white/20 text-[13px] font-medium hover:bg-white hover:text-black transition-all duration-500"
+              >
+                Get in touch
               </a>
-              <a href="#contact" className="btn btn-secondary" style={{ 
-                display: 'inline-block', 
-                padding: '1rem 2rem', 
-                borderRadius: '8px', 
-                fontWeight: '600', 
-                transition: 'all 0.3s ease', 
-                border: '2px solid #1a1a1a', 
-                cursor: 'pointer', 
-                fontSize: '1rem',
-                background: 'transparent',
-                color: '#1a1a1a',
-                textDecoration: 'none'
-              }}>
-                Get in Touch
+              <a 
+                href="#work" 
+                className="px-8 py-2.5 bg-white text-black text-[13px] font-medium hover:bg-gray-200 transition-all duration-500"
+              >
+                View my work
               </a>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Massive Name Section - Full Width Lines */}
+        <motion.div 
+          className="w-full py-4 my-2 overflow-hidden border-y"
+          initial={{ borderColor: 'transparent' }}
+          animate={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+        >
+          <motion.div 
+            className="container"
+            variants={svgVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <svg 
+              width="1176" 
+              height="222" 
+              viewBox="0 0 1176 222" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-auto"
+            >
+              <path d="M84.5 185.5C67 185.5 51.9167 181.833 39.25 174.5C26.5833 167 16.8333 156.333 10 142.5C3.33333 128.667 0 112.167 0 93C0 73.8333 3.33333 57.3333 10 43.5C16.8333 29.5 26.5833 18.75 39.25 11.25C51.9167 3.75 67 0 84.5 0C102.333 0 117.5 3.75 130 11.25C142.667 18.75 152.333 29.5 159 43.5C165.833 57.3333 169.25 73.8333 169.25 93C169.25 112.167 165.833 128.667 159 142.5C152.333 156.333 142.667 167 130 174.5C117.5 181.833 102.333 185.5 84.5 185.5ZM84.5 157.25C95.3333 157.25 104.5 154.75 112 149.75C119.667 144.583 125.5 137.25 129.5 127.75C133.667 118.083 135.75 106.5 135.75 93C135.75 79.5 133.667 67.9167 129.5 58.25C125.5 48.5833 119.667 41.1667 112 36C104.5 30.8333 95.3333 28.25 84.5 28.25C74 28.25 64.9167 30.8333 57.25 36C49.5833 41.1667 43.6667 48.5833 39.5 58.25C35.5 67.9167 33.5 79.5 33.5 93C33.5 106.5 35.5 118.083 39.5 127.75C43.6667 137.25 49.5833 144.583 57.25 149.75C64.9167 154.75 74 157.25 84.5 157.25Z" fill="white"/>
+              <path d="M161.791 219V194.25H175.041C179.708 194.25 183.291 193.167 185.791 191C188.458 189 189.791 185.167 189.791 179.5V48H221.791V180.5C221.791 194.167 218.708 204 212.541 210C206.374 216 195.791 219 180.791 219H161.791ZM189.291 30.25V1.74999H222.541V30.25H189.291Z" fill="white"/>
+              <path d="M300.004 184.5C286.837 184.5 275.254 181.667 265.254 176C255.421 170.167 247.754 162 242.254 151.5C236.921 141 234.254 128.75 234.254 114.75C234.254 100.583 236.921 88.3333 242.254 78C247.754 67.5 255.421 59.4167 265.254 53.75C275.254 47.9167 286.837 45 300.004 45C313.171 45 324.671 47.9167 334.504 53.75C344.337 59.4167 351.921 67.5 357.254 78C362.754 88.3333 365.504 100.583 365.504 114.75C365.504 128.75 362.754 141 357.254 151.5C351.921 162 344.337 170.167 334.504 176C324.671 181.667 313.171 184.5 300.004 184.5ZM300.004 158.5C310.337 158.5 318.254 154.667 323.754 147C329.421 139.333 332.254 128.583 332.254 114.75C332.254 101.083 329.421 90.4167 323.754 82.75C318.254 74.9167 310.337 71 300.004 71C289.671 71 281.671 74.9167 276.004 82.75C270.337 90.4167 267.504 101.083 267.504 114.75C267.504 128.583 270.337 139.333 276.004 147C281.671 154.667 289.671 158.5 300.004 158.5Z" fill="white"/>
+              <path d="M435.697 184.5C422.364 184.5 410.781 181.667 400.947 176C391.114 170.167 383.447 162 377.947 151.5C372.614 141 369.947 128.75 369.947 114.75C369.947 100.75 372.614 88.5833 377.947 78.25C383.447 67.75 391.114 59.5833 400.947 53.75C410.781 47.9167 422.364 45 435.697 45C447.031 45 457.114 47 465.947 51C474.781 55 481.947 60.75 487.447 68.25C493.114 75.5833 496.614 84.5833 497.947 95.25L464.947 97C463.614 88.5 460.281 82.0833 454.947 77.75C449.781 73.25 443.364 71 435.697 71C425.364 71 417.364 74.9167 411.697 82.75C406.031 90.4167 403.197 101.083 403.197 114.75C403.197 128.583 406.031 139.333 411.697 147C417.364 154.667 425.364 158.5 435.697 158.5C443.531 158.5 450.031 156.25 455.197 151.75C460.531 147.25 463.781 140.25 464.947 130.75L497.947 132.25C496.614 142.917 493.197 152.167 487.697 160C482.197 167.833 475.031 173.917 466.197 178.25C457.364 182.417 447.197 184.5 435.697 184.5Z" fill="white"/>
+              <path d="M507.775 181.5V3.99999H539.775V78.5H535.775C537.109 70.8333 539.775 64.5833 543.775 59.75C547.775 54.75 552.692 51.0833 558.525 48.75C564.359 46.25 570.775 45 577.775 45C587.609 45 595.859 47.1667 602.525 51.5C609.359 55.6667 614.442 61.5833 617.775 69.25C621.275 76.9167 623.025 85.75 623.025 95.75V181.5H591.025V103.5C591.025 92.6667 589.192 84.5833 585.525 79.25C581.859 73.75 576.109 71 568.275 71C559.609 71 552.692 73.8333 547.525 79.5C542.359 85.1667 539.775 93.4167 539.775 104.25V181.5H507.775Z" fill="white"/>
+              <path d="M699.998 184.5C686.665 184.5 675.081 181.667 665.248 176C655.415 170.167 647.831 162 642.498 151.5C637.165 141 634.498 128.75 634.498 114.75C634.498 100.75 637.165 88.5833 642.498 78.25C647.831 67.75 655.331 59.5833 664.998 53.75C674.831 47.9167 686.248 45 699.248 45C711.915 45 722.998 47.8333 732.498 53.5C742.165 59.1667 749.581 67.3333 754.748 78C759.915 88.6667 762.498 101.5 762.498 116.5V123.75H667.748C668.415 135.417 671.581 144.25 677.248 150.25C683.081 156.083 690.748 159 700.248 159C707.415 159 713.331 157.417 717.998 154.25C722.831 150.917 726.165 146.333 727.998 140.5L760.748 142.5C757.081 155.5 749.831 165.75 738.998 173.25C728.331 180.75 715.331 184.5 699.998 184.5ZM667.748 102.25H729.498C728.831 91.4167 725.748 83.4167 720.248 78.25C714.748 72.9167 707.748 70.25 699.248 70.25C690.748 70.25 683.665 73 677.998 78.5C672.498 84 669.081 91.9167 667.748 102.25Z" fill="white"/>
+              <path d="M832.012 222C820.345 222 810.345 220.417 802.012 217.25C793.678 214.083 786.928 209.583 781.762 203.75C776.762 198.083 773.262 191.5 771.262 184L804.262 181.75C805.928 186.75 808.762 190.667 812.762 193.5C816.928 196.333 823.345 197.75 832.012 197.75C841.845 197.75 849.428 195.5 854.762 191C860.095 186.667 862.762 179.833 862.762 170.5V153.5C859.595 160 854.512 165.25 847.512 169.25C840.512 173.083 832.678 175 824.012 175C813.012 175 803.178 172.333 794.512 167C786.012 161.5 779.345 153.917 774.512 144.25C769.678 134.417 767.262 123.083 767.262 110.25C767.262 97.4167 769.595 86.1667 774.262 76.5C779.095 66.6667 785.762 59 794.262 53.5C802.762 47.8333 812.512 45 823.512 45C833.178 45 841.512 47.1667 848.512 51.5C855.512 55.8333 860.595 61.5833 863.762 68.75V48H895.012V169.75C895.012 181.083 892.345 190.667 887.012 198.5C881.845 206.333 874.512 212.167 865.012 216C855.678 220 844.678 222 832.012 222ZM831.512 150C841.012 150 848.595 146.5 854.262 139.5C859.928 132.333 862.845 122.5 863.012 110C863.178 101.667 861.928 94.5833 859.262 88.75C856.762 82.75 853.095 78.1667 848.262 75C843.595 71.6667 838.012 70 831.512 70C821.678 70 814.012 73.6667 808.512 81C803.178 88.1667 800.512 97.8333 800.512 110C800.512 122.167 803.262 131.917 808.762 139.25C814.428 146.417 822.012 150 831.512 150Z" fill="white"/>
+              <path d="M986.85 184.5C977.516 184.5 969.35 182.5 962.35 178.5C955.516 174.5 950.183 168.917 946.35 161.75L945.6 181.5H915.1V3.99999H947.1V67C950.766 60.8333 956.016 55.6667 962.85 51.5C969.683 47.1667 977.683 45 986.85 45C998.35 45 1008.27 47.9167 1016.6 53.75C1025.1 59.4167 1031.6 67.5 1036.1 78C1040.77 88.3333 1043.1 100.583 1043.1 114.75C1043.1 128.917 1040.77 141.25 1036.1 151.75C1031.6 162.083 1025.1 170.167 1016.6 176C1008.27 181.667 998.35 184.5 986.85 184.5ZM979.6 158.5C988.766 158.5 996.1 154.667 1001.6 147C1007.1 139.167 1009.85 128.417 1009.85 114.75C1009.85 100.917 1007.1 90.1667 1001.6 82.5C996.266 74.8333 989.016 71 979.85 71C973.016 71 967.1 72.75 962.1 76.25C957.266 79.5833 953.516 84.5 950.85 91C948.35 97.5 947.1 105.417 947.1 114.75C947.1 123.75 948.35 131.583 950.85 138.25C953.516 144.75 957.266 149.75 962.1 153.25C966.933 156.75 972.766 158.5 979.6 158.5Z" fill="white"/>
+              <path d="M1113.18 184.5C1099.85 184.5 1088.27 181.667 1078.43 176C1068.6 170.167 1061.02 162 1055.68 151.5C1050.35 141 1047.68 128.75 1047.68 114.75C1047.68 100.75 1050.35 88.5833 1055.68 78.25C1061.02 67.75 1068.52 59.5833 1078.18 53.75C1088.02 47.9167 1099.43 45 1112.43 45C1125.1 45 1136.18 47.8333 1145.68 53.5C1155.35 59.1667 1162.77 67.3333 1167.93 78C1173.1 88.6667 1175.68 101.5 1175.68 116.5V123.75H1080.93C1081.6 135.417 1084.77 144.25 1090.43 150.25C1096.27 156.083 1103.93 159 1113.43 159C1120.6 159 1126.52 157.417 1131.18 154.25C1136.02 150.917 1139.35 146.333 1141.18 140.5L1173.93 142.5C1170.27 155.5 1163.02 165.75 1152.18 173.25C1141.52 180.75 1128.52 184.5 1113.18 184.5ZM1080.93 102.25H1142.68C1142.02 91.4167 1138.93 83.4167 1133.43 78.25C1127.93 72.9167 1120.93 70.25 1112.43 70.25C1103.93 70.25 1096.85 73 1091.18 78.5C1085.68 84 1082.27 91.9167 1080.93 102.25Z" fill="white"/>
+            </svg>
+          </motion.div>
+        </motion.div>
+
+        {/* Sub-header & Image Section */}
+        <div className="container">
+          <motion.div 
+            className="py-10 md:py-16"
+            variants={subHeaderVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <h2 className="text-3xl md:text-5xl lg:text-[64px] font-semibold leading-[1.15] tracking-[-0.02em]">
+              Product Designer<br />
+              <span className="text-white/20">and</span> UX Designer
+            </h2>
           </motion.div>
 
-          {/* Visual Content */}
+          {/* Image Section */}
           <motion.div 
-            className="relative h-[500px] flex items-center justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative w-full aspect-[16/10] md:aspect-[16/9] mb-10 md:mb-20 overflow-hidden bg-[#111]"
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="relative w-full h-full flex items-center justify-center">
-              {/* Main Image */}
-              <motion.div 
-                className="relative w-80 h-[420px] rounded-3xl overflow-hidden bg-white"
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.02,
-                  transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
-                }}
-                style={{
-                  boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.06)'
-                }}
-              >
-                <Image
-                  src="/images/Me.png"
-                  alt="Ogwu Ojochegbe"
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-black/2 via-transparent to-black/3 opacity-100 transition-all duration-400 group-hover:opacity-100" />
-              </motion.div>
-
-              {/* Floating Cards */}
-              {floatingCards.map((card, index) => (
-                <motion.div
-                  key={card.text}
-                  className={`absolute rounded-2xl px-6 py-4 shadow-lg border flex items-center justify-center font-semibold text-sm tracking-wide
-                    ${index === 0 ? 'top-20 -right-6' : ''}
-                    ${index === 1 ? 'top-1/2 -left-8' : ''}
-                    ${index === 2 ? 'bottom-24 -left-8' : ''}
-                    ${index === 3 ? 'top-1/2 -right-10' : ''}
-                  `}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.98)',
-                    backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(0, 0, 0, 0.06)',
-                    color: '#1a1a1a',
-                    boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06), 0 16px 48px rgba(0, 0, 0, 0.03)'
-                  }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
-                    opacity: 1, 
-                    y: 0,
-                    transition: {
-                      delay: card.delay * 0.1,
-                      duration: 0.6,
-                      ease: [0.25, 0.46, 0.45, 0.94]
-                    }
-                  }}
-                  whileHover={{
-                    y: -6,
-                    scale: 1.03,
-                    transition: {
-                      duration: 0.3,
-                      ease: [0.25, 0.46, 0.45, 0.94]
-                    }
-                  }}
-                >
-                  <span className="whitespace-nowrap">{card.text}</span>
-                </motion.div>
-              ))}
-
-              {/* Background Shapes */}
-              <div className="absolute inset-0 pointer-events-none -z-10">
-                <motion.div 
-                  className="absolute w-30 h-30 rounded-full bg-gradient-to-br from-gray-100/80 to-gray-200/60 opacity-40 blur-sm top-5 left-5"
-                  animate={{ 
-                    y: [0, -15, 0],
-                    rotate: [0, 2, 0],
-                    scale: [1, 1.02, 1]
-                  }}
-                  transition={{ 
-                    duration: 12, 
-                    repeat: Infinity, 
-                    ease: 'easeInOut' 
-                  }}
-                />
-                <motion.div 
-                  className="absolute w-20 h-20 rounded-full bg-gradient-to-br from-gray-100/80 to-gray-200/60 opacity-40 blur-sm top-3/4 right-10"
-                  animate={{ 
-                    y: [0, -15, 0],
-                    rotate: [0, 2, 0],
-                    scale: [1, 1.02, 1]
-                  }}
-                  transition={{ 
-                    duration: 12, 
-                    repeat: Infinity, 
-                    ease: 'easeInOut',
-                    delay: 4
-                  }}
-                />
-                <motion.div 
-                  className="absolute w-25 h-25 rounded-full bg-gradient-to-br from-gray-100/80 to-gray-200/60 opacity-40 blur-sm bottom-4 left-0"
-                  animate={{ 
-                    y: [0, -15, 0],
-                    rotate: [0, 2, 0],
-                    scale: [1, 1.02, 1]
-                  }}
-                  transition={{ 
-                    duration: 12, 
-                    repeat: Infinity, 
-                    ease: 'easeInOut',
-                    delay: 8
-                  }}
-                />
-              </div>
-            </div>
+            <Image
+              src="/images/Me.png"
+              alt="Ojochegbe"
+              fill
+              className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
+              priority
+            />
+            {/* Overlay to match the dark aesthetic */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-40" />
           </motion.div>
         </div>
       </div>

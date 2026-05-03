@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -56,62 +57,57 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       // If we're on another page, navigate to home page with hash
-      window.location.href = `/#${sectionId}`;
+      router.push(`/#${sectionId}`);
     }
   };
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-zinc-800 ${
         isScrolled 
-          ? 'bg-white/98 backdrop-blur-md shadow-lg' 
-          : 'bg-white/95 backdrop-blur-sm'
+          ? 'bg-[#0b0b0b]/98 backdrop-blur-md' 
+          : 'bg-[#0b0b0b]/95 backdrop-blur-sm'
       }`}
-      style={{ minHeight: '64px' }}
+      style={{ minHeight: '80px' }}
     >
-      <nav className="flex justify-between items-center py-4 container" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
-        <div className="flex items-center">
-          <Link href="/" className="logo flex items-center transition-all duration-300 hover:scale-105" style={{ display: 'flex', alignItems: 'center' }}>
-            <Image 
-              src="/images/logo.svg" 
-              alt="Ogwu Ojochegbe" 
-              width={128} 
-              height={128}
-              className="h-8 w-auto transition-all duration-300 hover:scale-105"
-              priority
-            />
+      <nav className="flex items-center h-20 container">
+        <div className="flex items-center gap-8 w-full">
+          <Link href="/" className="logo flex items-center transition-all duration-300 hover:opacity-80 flex-shrink-0">
+            <svg viewBox="0 0 662 107" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-4 md:h-5 w-auto">
+              <path fillRule="evenodd" clipRule="evenodd" d="M506.913 53.2323C506.909 44.3493 513.719 37.9334 522.691 37.9334C532.913 37.9334 539.51 43.5365 539.51 53.8716C539.51 73.3548 506.924 74.2258 506.915 53.2323H506.913ZM272.528 10.9101C265.451 12.96 268.296 23.8383 276.2 21.4675C282.694 19.5186 280.48 8.60707 272.528 10.9101ZM253.549 93.2313C257.421 96.8557 267.294 96.6751 271.999 94.0619C277.312 91.1124 278.673 85.0019 278.673 77.2312C278.671 61.7647 278.673 46.297 278.676 30.8294H270.15C270.15 43.2037 270.15 55.5769 270.15 67.9513C270.15 78.0904 272.287 88.6478 263.179 88.8331C259.526 88.908 258.589 87.8444 256.043 86.8117L253.549 93.2301V93.2313ZM81.6011 49.1978L89.4229 49.4141L109.29 15.1918C111.245 17.332 128.269 48.7581 129.411 49.3428C131.355 49.6161 135.269 49.7837 136.737 49.0754C137.869 47.8847 135.582 45.0909 134.342 42.8639C133.166 40.7545 131.988 38.77 130.844 36.7569L116.806 12.3991C107.602 -3.1042 111.171 -2.91644 102.009 12.3908C99.5667 16.4693 97.4027 20.4859 94.9666 24.5477L82.6504 45.836C81.7723 47.3547 81.2185 47.4616 81.6011 49.1978ZM81.6724 58.0024C80.8251 59.3072 81.8721 60.3387 82.6077 61.6399L102.712 96.5741C108.107 105.652 108.238 108.63 110.899 103.835C117.511 91.9169 125.983 77.7089 132.977 65.7612L136.654 59.4379C137.471 57.1456 135.469 57.5211 133.576 57.5413C131.904 57.5603 130.306 57.4831 128.682 57.6863L108.932 91.5367C107.884 90.4933 99.1781 74.7844 97.5263 71.9977C96.4829 70.2377 90.0337 57.9881 88.6457 57.5746L83.0176 57.4759C81.9469 57.5853 82.3082 57.4486 81.6736 58.0024H81.6724ZM42.8452 66.1807C40.9224 69.5188 29.0103 90.5895 27.8303 91.8373L7.93123 57.5698C6.33646 57.0529 1.61986 57.1372 0.0405334 57.5995C-0.333799 59.3821 1.98231 62.3981 2.96865 64.1486L25.759 103.762C28.0596 107.797 27.9705 107.367 31.967 100.422L42.5291 82.1855C44.9177 78.0333 47.2552 74.0535 49.5713 70.0274C50.8571 67.7921 56.3129 59.596 55.834 57.6815C54.3342 57.2359 49.6212 57.0873 48.1001 57.6114C47.1304 58.12 43.4358 65.1575 42.8452 66.1818V66.1807ZM6.53135 49.2917C8.87954 49.2917 10.34 45.2156 12.4506 41.5448C16.6502 34.24 24.1286 20.7818 27.9468 14.8971C29.2848 16.1127 43.8803 42.7141 47.2029 48.0736C47.8494 49.117 47.3253 48.5644 48.1512 49.1372C49.5642 49.7005 54.4008 49.5116 55.8435 49.1028C56.3295 47.1847 54.0205 44.3374 53.0033 42.6036L31.0365 4.40504C29.8564 2.32779 28.4981 -1.88257 26.3817 2.04139C22.1642 9.86198 16.1951 19.5186 11.6128 27.5958L0.563411 46.6464C-1.59227 50.3541 3.31803 49.2905 6.53135 49.2917ZM69.3955 49.0671C70.0194 48.3422 71.6522 45.2905 72.3236 44.1307C73.6344 41.868 72.2262 40.7854 71.1269 38.8793C69.14 35.4343 67.247 32.0712 65.1685 28.5168C61.178 21.6933 57.3764 14.7176 53.4133 7.95229L93.3599 7.90594C94.679 5.4603 97.133 2.29808 96.6743 0.521482C94.963 -0.348396 68.1192 0.134077 63.8114 0.128136L42.9783 0.0734712C39.0722 0.0912966 40.9082 2.02476 44.074 7.36761L65.3515 44.3279C67.0319 47.3178 67.4228 48.9602 69.3943 49.0659L69.3955 49.0671ZM53.3657 98.5195C53.8815 96.8249 55.7555 94.1035 56.667 92.4862L66.4199 75.6863C74.2119 62.3732 73.9909 65.3464 70.2238 58.6536C68.4329 55.4712 67.096 59.0481 66.1346 60.675C61.7258 68.1355 57.3812 75.5877 53.115 83.1789C51.0366 86.8759 48.7347 90.6109 46.6515 94.3103C45.5285 96.3043 40.3223 104.075 40.8618 105.942C42.1108 106.468 93.701 106.737 96.5578 106.126C97.0034 104.365 95.7949 103.222 94.9761 101.749C94.111 100.19 93.8365 98.6989 91.9149 98.5456C85.4775 98.031 60.97 98.523 53.3645 98.5206L53.3657 98.5195ZM385.594 68.5918C384.568 67.6471 380.728 65.3048 379.332 64.599C379.266 64.6548 379.179 64.6679 379.152 64.7855C379.037 65.2692 375.285 69.1373 372.031 70.2472C368.46 71.4653 364.359 71.64 360.631 70.334C346.408 65.35 346.639 43.4592 360.735 38.7807C364.224 37.622 368.471 37.6898 371.933 38.8722C376.194 40.3279 376.952 42.0772 379.334 44.5454C380.521 43.9263 384.801 41.3143 385.615 40.4325C382.322 31.9607 368.083 28.3303 357.826 31.7206C335.822 38.9922 336.062 70.5324 357.985 77.4653C365.659 79.8919 374.887 78.9519 381.201 73.981C382.572 72.902 385.096 70.2306 385.596 68.593L385.594 68.5918ZM310.714 37.994C332.694 35.7753 334.358 69.3987 314.057 71.1694C292.102 73.085 290.023 40.0819 310.714 37.994ZM308.371 30.7331C295.474 32.5596 285.661 43.4818 288.056 58.7736C290.025 71.35 301.51 80.4754 316.267 78.4576C329.278 76.6786 338.756 65.5496 336.62 50.4587C334.832 37.8193 323.421 28.6012 308.371 30.7331ZM455.394 51.2501C455.341 46.909 458.045 43.489 460.105 41.5151C469.132 32.865 485.65 39.4283 485.603 51.2501H455.394ZM490.695 71.1516C490.004 69.9513 487.073 66.347 485.793 65.6102C480.094 74.1046 457.377 74.1795 455.315 57.3927C460.15 57.3927 491.726 57.7184 493.715 57.2133C495.393 43.8288 487.209 33.6862 476.904 31.1906C463.158 27.862 452.097 35.3309 448.476 44.9328C446.39 50.4622 446.137 57.9489 448.33 63.5948C450.615 69.4819 453.77 72.4362 458.377 75.3084C465.272 79.6079 476.62 79.8931 484.59 75.9347C487.459 74.5099 488.875 73.0054 490.697 71.1504L490.695 71.1516ZM623.394 51.2513C623.349 46.8912 626.052 43.4806 628.106 41.5139C637.133 32.8674 653.64 39.4188 653.61 51.2489L623.394 51.2501V51.2513ZM658.695 71.1516C658.005 69.9513 655.072 66.3435 653.792 65.6102C650.828 70.0369 642.421 72.4742 635.223 70.6299C628.925 69.0161 624.164 64.2924 623.315 57.3927C628.153 57.3916 659.729 57.7195 661.716 57.2133C663.385 43.9132 655.181 33.5733 644.909 31.1894C622.51 25.9892 609.916 47.0647 616.329 63.5948C618.612 69.4772 621.773 72.4397 626.377 75.3084C630.991 78.1843 637.994 79.2764 644.273 78.4576C650.824 77.6032 654.599 75.3072 658.696 71.1516H658.695ZM393.272 78.1926H401.796L401.795 52.5918C401.795 43.565 407.771 38.0938 417.094 38.0938C425.523 38.0938 429.573 43.5187 429.573 51.9513V78.1926L438.118 78.1177C438.116 71.6614 438.503 50.2887 437.659 45.4854C434.996 30.3243 418.729 27.9001 408.451 32.4265C407.296 32.9351 405.656 33.9132 404.817 34.5573C403.546 35.5329 403.024 36.625 401.796 37.2881V11.9499H393.269L393.273 78.1926H393.272ZM583.237 38.0938C593.175 36.6951 600.455 43.2501 601.438 51.9477C602.575 62.0036 596.981 69.8824 588.208 71.0648C565.884 74.0737 562.996 40.9411 583.236 38.0938H583.237ZM561.272 78.1926H569.415L569.477 70.9115C571.391 72.4492 573.158 76.1486 580.207 77.9537C594.839 81.7018 610.196 71.9905 610.196 55.4712V53.5508C610.196 34.3933 589.719 25.9702 576.401 32.688C572.816 34.4966 572.107 35.7813 569.816 37.7896L569.795 11.9499H561.271L561.272 78.1926ZM217.756 23.0337C232.06 21.6719 243.057 31.5305 244.214 44.3339C245.534 58.9507 235.614 69.7612 222.546 70.8675C189.649 73.6542 185.912 26.0652 217.756 23.0337ZM215.152 15.3296C198.077 17.5447 184.141 32.1009 187.211 52.1141C189.779 68.8604 205.323 81.1433 225.168 78.574C242.441 76.3376 255.517 61.8158 252.911 42.0724C250.669 25.0908 234.961 12.7604 215.154 15.3308L215.152 15.3296ZM539.752 37.969C539.509 37.5246 536.261 34.606 535.246 33.9559C522.038 25.5008 498.526 32.1104 498.306 52.9091C498.079 74.2912 521.529 80.9127 534.48 73.028C537.647 71.1005 537.79 70.0702 539.333 69.0921C539.334 79.6174 537.928 86.3281 528.161 88.1368C519.449 89.7494 509.699 86.7476 504.891 82.4671C504.087 83.5342 501.266 87.9799 500.973 89.0708C505.088 93.5925 516.123 96.0845 523.981 96.0168C533.383 95.9371 540.928 92.662 544.411 86.7868C548.739 79.4855 547.877 69.9371 547.877 60.5906C547.877 50.7035 547.877 40.8151 547.877 30.8496L539.84 30.8294L539.752 37.969Z" fill="#FEFEFE"/>
+            </svg>
           </Link>
-        </div>
-        
-        <ul className="hidden md:flex list-none gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <button 
-                onClick={() => scrollToSection(link.href)}
-                className="text-gray-900 no-underline font-medium transition-all duration-300 relative hover:text-gray-700
-                  after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 
-                  after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full bg-transparent border-none cursor-pointer"
-              >
-                {link.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-        
-        <div 
-          className="md:hidden flex flex-col cursor-pointer"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span className={`w-6 h-0.5 bg-gray-900 mb-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`w-6 h-0.5 bg-gray-900 mb-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`w-6 h-0.5 bg-gray-900 transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          
+          <div className="hidden md:block flex-grow h-px bg-zinc-800" />
+          
+          <ul className="hidden md:flex list-none gap-8 items-center mb-0">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <button 
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-zinc-400 no-underline text-[10px] font-semibold tracking-widest uppercase transition-all duration-300 relative hover:text-white bg-transparent border-none cursor-pointer"
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <div 
+            className="md:hidden flex flex-col cursor-pointer ml-auto"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className={`w-6 h-0.5 bg-zinc-100 mb-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-zinc-100 mb-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-zinc-100 transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </div>
         </div>
       </nav>
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-          <ul className="flex flex-col py-4">
+        <div className="md:hidden bg-[#0b0b0b] border-t border-zinc-800 shadow-2xl absolute top-full left-0 right-0">
+          <ul className="flex flex-col py-6 list-none m-0">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button 
@@ -119,7 +115,7 @@ const Header = () => {
                     scrollToSection(link.href);
                     setIsMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-6 py-3 text-gray-900 no-underline font-medium transition-colors duration-300 hover:bg-gray-50 bg-transparent border-none cursor-pointer"
+                  className="block w-full text-left px-8 py-4 text-zinc-400 no-underline text-xs font-semibold uppercase tracking-widest transition-colors duration-300 hover:bg-zinc-900 hover:text-white bg-transparent border-none cursor-pointer"
                 >
                   {link.label}
                 </button>

@@ -1,99 +1,159 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const Highlights = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const scrollPosition = scrollRef.current.scrollLeft;
+    const element = scrollRef.current.children[0] as HTMLElement;
+    const cardWidth = element?.offsetWidth || 320;
+    const index = Math.round(scrollPosition / (cardWidth + 24));
+    if (index >= 0 && index < highlights.length) {
+      setActiveIndex(index);
+    }
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!scrollRef.current) return;
+    const element = scrollRef.current.children[0] as HTMLElement;
+    const cardWidth = element?.offsetWidth || 320;
+    scrollRef.current.scrollTo({
+      left: index * (cardWidth + 24),
+      behavior: 'smooth'
+    });
+    setActiveIndex(index);
+  };
 
   const highlights = [
     {
       title: 'Multidisciplinary Foundation',
-      description: 'Combining design, vibe development, and business strategy for holistic product solutions'
+      description: 'Combining design, vibe development, and business strategy for holistic product solutions',
+      tags: ['Strategy', 'Design']
     },
     {
-      title: 'Effective Cross-Team Communication',
-      description: 'Bridging gaps between design, engineering, and stakeholders for seamless collaboration'
+      title: 'Cross-Team Communication',
+      description: 'Bridging gaps between design, engineering, and stakeholders for seamless collaboration',
+      tags: ['Leadership', 'Collab']
     },
     {
-      title: 'Deep Understanding of Technical Feasibility',
-      description: 'Making informed design decisions grounded in technical constraints and possibilities'
+      title: 'Technical Feasibility',
+      description: 'Making informed design decisions grounded in technical constraints and possibilities',
+      tags: ['Eng', 'Analysis']
     },
     {
-      title: 'Leverage AI to Accelerate Product Building',
-      description: 'Utilizing artificial intelligence tools and methodologies to enhance design efficiency'
+      title: 'AI Acceleration',
+      description: 'Utilizing artificial intelligence tools and methodologies to enhance design efficiency',
+      tags: ['AI', 'Efficiency']
     },
     {
-      title: 'Hands-on Development Experience',
-      description: 'Ensuring scalable UX decisions through practical coding and implementation knowledge'
+      title: 'Hands-on Development',
+      description: 'Ensuring scalable UX decisions through practical coding and implementation knowledge',
+      tags: ['Dev', 'UX']
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94] as const
-      }
-    }
-  };
-
   return (
-    <section id="highlights" className="py-20 bg-gray-50">
-      <div className="container">
+    <section id="highlights" className="py-12 md:py-24 bg-[#0b0b0b]">
+      <div className="container mx-auto px-6 md:px-4">
         <motion.div 
-          className="text-center mb-12"
+          className="section-header mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Professional Highlights
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Key strengths and expertise areas that drive exceptional product design outcomes
-          </p>
+          <h2 className="text-3xl font-semibold tracking-tight">Professional Highlights</h2>
         </motion.div>
         
-        <motion.div 
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+        <div 
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onScroll={handleScroll}
+          className={`flex overflow-x-auto gap-6 pb-10 scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 ${isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'}`}
         >
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}
-              className="text-center md:text-left bg-white md:bg-transparent rounded-xl md:rounded-none p-6 md:p-0 shadow-sm md:shadow-none border md:border-0 border-gray-100"
-              variants={itemVariants}
+              className="flex-shrink-0 w-[320px] md:w-[400px] aspect-square bg-[#161616] p-10 flex flex-col justify-between border border-zinc-900 relative group"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-3 text-black">
-                {highlight.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {highlight.description}
-              </p>
+              <div className="flex justify-between items-start">
+                <div className="flex gap-2">
+                  {highlight.tags.map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-zinc-800/50 text-[9px] uppercase tracking-widest text-zinc-500 font-bold">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-7xl font-bold text-zinc-800/20 leading-none tracking-tighter">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-white leading-tight">
+                  {highlight.title}
+                </h3>
+                <p className="text-zinc-500 text-sm leading-relaxed max-w-[280px]">
+                  {highlight.description}
+                </p>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+        
+        {/* Pagination Dots */}
+        <div className="flex justify-center mt-4 gap-2">
+          {highlights.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => scrollToCard(idx)}
+              className={`transition-all duration-300 ${
+                activeIndex === idx
+                  ? "bg-zinc-100 w-6 h-2"
+                  : "bg-zinc-600 w-2 h-2 hover:bg-zinc-400"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

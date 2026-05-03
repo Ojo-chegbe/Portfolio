@@ -33,10 +33,10 @@ const NotificationsPowerArticle = () => {
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
                 The Power of Notifications: Helpful or Just Annoying?
               </h1>
-              <p className="text-lg text-gray-200 mb-4">
+              <p className="text-lg text-zinc-300 mb-4">
                 Exploring the double-edged nature of digital interruptions in our daily lives
               </p>
-              <div className="flex items-center justify-center gap-4 text-sm text-gray-300">
+              <div className="flex items-center justify-center gap-4 text-sm text-zinc-400">
                 <span>Published on September 10, 2024</span>
                 <span>•</span>
                 <span>6 min read</span>
@@ -47,7 +47,7 @@ const NotificationsPowerArticle = () => {
       </section>
 
       {/* Article Content */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-zinc-900">
         <div className="container">
           <motion.article 
             className="max-w-4xl mx-auto prose prose-lg prose-gray"
@@ -56,7 +56,7 @@ const NotificationsPowerArticle = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+            <div className="space-y-8 text-lg leading-relaxed text-zinc-200">
               <p>
                 There was a time when attention was whole. The day unfolded in long, uninterrupted stretches, punctuated only by the ring of a doorbell or the knock of a visitor. Today, that same attention is fractured by a thousand small interruptions, each carrying a familiar chime, buzz, or glow. These are notifications—the signals through which our devices call for us. They promise to keep us connected, informed, and safe. Yet their power has also raised a pressing question: are they truly helpful, or are they slowly exhausting us?
               </p>
@@ -90,18 +90,18 @@ const NotificationsPowerArticle = () => {
       </section>
 
       {/* Navigation */}
-      <div className="py-8 bg-gray-50 border-t border-gray-200">
+      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/" 
-              className="text-gray-600 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-white"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
             >
               ← Back to Home
             </Link>
             <Link 
               href="/#articles" 
-              className="text-gray-900 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-white shadow-lg hover:-translate-y-1 hover:shadow-xl"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-lg hover:-translate-y-1 hover:shadow-xl"
             >
               More Articles →
             </Link>

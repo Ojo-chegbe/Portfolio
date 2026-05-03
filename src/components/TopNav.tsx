@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 interface NavItem {
   id: string;
@@ -19,15 +18,18 @@ const TopNav = ({ navItems }: TopNavProps) => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 220;
+      let nextActive = navItems[0]?.id ?? '';
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navItems[i].id);
+          nextActive = navItems[i].id;
           break;
         }
       }
+
+      setActiveSection(nextActive);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,16 +47,17 @@ const TopNav = ({ navItems }: TopNavProps) => {
 
   return (
     <div className="hidden md:flex fixed top-28 left-2 right-2 z-40 justify-center">
-      <div className="flex justify-center gap-1 max-w-7xl overflow-x-auto scrollbar-hide bg-white rounded-full px-3 py-2 shadow-lg">
+      <div className="flex justify-center gap-1 max-w-7xl overflow-x-auto scrollbar-hide bg-zinc-950/95 backdrop-blur-md px-3 py-2 shadow-lg border border-zinc-800">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+            className={`px-3 py-2 text-xs font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
               activeSection === item.id
-                ? 'bg-gray-200 text-gray-900 font-semibold'
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-zinc-100 text-zinc-950 font-semibold shadow-sm'
+                : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/80'
             }`}
+            aria-current={activeSection === item.id ? 'page' : undefined}
           >
             {item.label}
           </button>

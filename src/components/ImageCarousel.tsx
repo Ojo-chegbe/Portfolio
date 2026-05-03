@@ -122,17 +122,17 @@ export function ImageCarousel({
   if (images.length === 0) {
     return (
       <div 
-        className={cn("flex items-center justify-center bg-gray-100 rounded-lg", containerClassName)}
+        className={cn("flex items-center justify-center bg-gray-100", containerClassName)}
         style={{ width, height }}
       >
-        <p className="text-gray-500">No images to display</p>
+        <p className="text-zinc-400">No images to display</p>
       </div>
     );
   }
 
   return (
     <div 
-      className={cn("relative overflow-hidden rounded-lg shadow-lg", containerClassName)}
+      className={cn("relative overflow-hidden shadow-lg", containerClassName)}
       style={{ width, height }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -168,7 +168,7 @@ export function ImageCarousel({
             onClick={prevImage}
             className={cn(
               "absolute left-4 top-1/2 transform -translate-y-1/2 z-10",
-              "w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full",
+              "w-10 h-10 bg-black/50 hover:bg-black/70 text-white",
               "flex items-center justify-center transition-all duration-200",
               "hover:scale-110 active:scale-95",
               arrowClassName
@@ -184,7 +184,7 @@ export function ImageCarousel({
             onClick={nextImage}
             className={cn(
               "absolute right-4 top-1/2 transform -translate-y-1/2 z-10",
-              "w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full",
+              "w-10 h-10 bg-black/50 hover:bg-black/70 text-white",
               "flex items-center justify-center transition-all duration-200",
               "hover:scale-110 active:scale-95",
               arrowClassName
@@ -206,10 +206,10 @@ export function ImageCarousel({
               key={index}
               onClick={() => goToImage(index)}
               className={cn(
-                "w-3 h-3 rounded-full transition-all duration-200",
+                "w-3 h-3 transition-all duration-200",
                 index === currentIndex 
-                  ? "bg-white scale-125" 
-                  : "bg-white/50 hover:bg-white/75",
+                  ? "bg-zinc-900 scale-125" 
+                  : "bg-zinc-900/50 hover:bg-zinc-900/75",
                 dotClassName
               )}
               aria-label={`Go to image ${index + 1}`}
@@ -220,7 +220,7 @@ export function ImageCarousel({
 
       {/* Image Counter */}
       {images.length > 1 && (
-        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-10">
+        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 text-sm z-10">
           {currentIndex + 1} / {images.length}
         </div>
       )}

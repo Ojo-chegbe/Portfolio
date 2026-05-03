@@ -51,20 +51,20 @@ const Articles = () => {
   };
 
   return (
-    <section id="articles" className="py-24 bg-gray-50">
+    <section id="articles" className="py-12 md:py-24 bg-[#080808]">
       <div className="container">
-        <motion.h2 
-          className="section-title"
+        <motion.div 
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          Articles
-        </motion.h2>
+          <h2>Articles</h2>
+        </motion.div>
         
         <motion.div 
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -72,15 +72,15 @@ const Articles = () => {
           {articles.map((article, index) => (
             <Link key={index} href={article.link} className="block h-full">
               <motion.article
-                className="bg-white rounded-xl overflow-hidden transition-all duration-50 hover:-translate-y-2 hover:shadow-lg group cursor-pointer h-full flex flex-col"
+                className="bg-zinc-900 overflow-hidden transition-all duration-100 hover:-translate-y-1 group cursor-pointer h-full flex flex-col border border-zinc-800"
                 style={{
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)'
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
                 }}
                 variants={itemVariants}
                 whileHover={{
                   y: -8,
                   scale: 1.02,
-                  transition: { duration: 0.05, ease: "easeOut" }
+                    transition: { duration: 0.1, ease: "easeOut" }
                 }}
               >
                 <div className="h-48 flex-shrink-0 relative overflow-hidden">
@@ -93,13 +93,13 @@ const Articles = () => {
                 </div>
                 
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-gray-700 transition-colors">
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-100 group-hover:text-zinc-200 transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
+                  <p className="text-zinc-300 mb-6 leading-relaxed flex-grow">
                     {article.excerpt}
                   </p>
-                  <span className="text-gray-900 no-underline font-semibold transition-all duration-300 hover:text-gray-700 hover:translate-x-1 inline-flex items-center gap-2 mt-auto">
+                  <span className="text-zinc-100 no-underline font-semibold transition-all duration-300 hover:text-zinc-200 hover:translate-x-1 inline-flex items-center gap-2 mt-auto">
                     Read more →
                   </span>
                 </div>

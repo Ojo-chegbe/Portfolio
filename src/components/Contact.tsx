@@ -79,7 +79,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50">
+    <section id="contact" className="py-12 md:py-24 bg-zinc-950">
       <div className="container">
         <motion.div 
           ref={ref}
@@ -89,14 +89,14 @@ const Contact = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
-            className="text-4xl font-bold mb-4 text-gray-900"
+            className="text-4xl font-bold mb-4 text-zinc-100"
             variants={itemVariants}
           >
             Let's work together
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 mb-12 leading-relaxed"
+            className="text-xl text-zinc-300 mb-12 leading-relaxed"
             variants={itemVariants}
           >
             Looking for a designer to turn ideas into intuitive products? I'd love to chat.
@@ -114,15 +114,15 @@ const Contact = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg text-base font-montserrat bg-white transition-all duration-300 focus:outline-none focus:border-gray-900 peer"
+                className="w-full px-4 py-4 border-2 border-zinc-800 text-base font-montserrat bg-zinc-900 transition-all duration-300 focus:outline-none focus:border-gray-900 peer"
                 required
               />
               <label 
                 htmlFor="name" 
-                className={`absolute left-4 transition-all duration-300 pointer-events-none bg-white px-2 ${
-                  formData.name || 'peer-focus:top-[-0.5rem] peer-focus:left-2 peer-focus:text-sm peer-focus:text-gray-900'
+                className={`absolute left-4 transition-all duration-300 pointer-events-none bg-zinc-900 px-2 ${
+                  formData.name || 'peer-focus:top-[-0.5rem] peer-focus:left-2 peer-focus:text-sm peer-focus:text-zinc-100'
                 } ${
-                  formData.name ? 'top-[-0.5rem] left-2 text-sm text-gray-900' : 'top-4 text-gray-500'
+                  formData.name ? 'top-[-0.5rem] left-2 text-sm text-zinc-100' : 'top-4 text-zinc-400'
                 }`}
               >
                 Name
@@ -136,15 +136,15 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg text-base font-montserrat bg-white transition-all duration-300 focus:outline-none focus:border-gray-900 peer"
+                className="w-full px-4 py-4 border-2 border-zinc-800 text-base font-montserrat bg-zinc-900 transition-all duration-300 focus:outline-none focus:border-gray-900 peer"
                 required
               />
               <label 
                 htmlFor="email" 
-                className={`absolute left-4 transition-all duration-300 pointer-events-none bg-white px-2 ${
-                  formData.email || 'peer-focus:top-[-0.5rem] peer-focus:left-2 peer-focus:text-sm peer-focus:text-gray-900'
+                className={`absolute left-4 transition-all duration-300 pointer-events-none bg-zinc-900 px-2 ${
+                  formData.email || 'peer-focus:top-[-0.5rem] peer-focus:left-2 peer-focus:text-sm peer-focus:text-zinc-100'
                 } ${
-                  formData.email ? 'top-[-0.5rem] left-2 text-sm text-gray-900' : 'top-4 text-gray-500'
+                  formData.email ? 'top-[-0.5rem] left-2 text-sm text-zinc-100' : 'top-4 text-zinc-400'
                 }`}
               >
                 Email Address
@@ -158,15 +158,15 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={5}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg text-base font-montserrat bg-white transition-all duration-300 focus:outline-none focus:border-gray-900 peer resize-y min-h-[120px]"
+                className="w-full px-4 py-4 border-2 border-zinc-800 text-base font-montserrat bg-zinc-900 transition-all duration-300 focus:outline-none focus:border-gray-900 peer resize-y min-h-[120px]"
                 required
               />
               <label 
                 htmlFor="message" 
-                className={`absolute left-4 transition-all duration-300 pointer-events-none bg-white px-2 ${
-                  formData.message || 'peer-focus:top-[-0.5rem] peer-focus:left-2 peer-focus:text-sm peer-focus:text-gray-900'
+                className={`absolute left-4 transition-all duration-300 pointer-events-none bg-zinc-900 px-2 ${
+                  formData.message || 'peer-focus:top-[-0.5rem] peer-focus:left-2 peer-focus:text-sm peer-focus:text-zinc-100'
                 } ${
-                  formData.message ? 'top-[-0.5rem] left-2 text-sm text-gray-900' : 'top-4 text-gray-500'
+                  formData.message ? 'top-[-0.5rem] left-2 text-sm text-zinc-100' : 'top-4 text-zinc-400'
                 }`}
               >
                 Message

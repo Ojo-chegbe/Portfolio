@@ -228,7 +228,7 @@ const AssedraCaseStudy = () => {
       <TopNav navItems={navItems} />
       
       {/* Hero Section */}
-      <section className="pt-48 pb-16 min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white" style={{ paddingTop: '12rem' }}>
+      <section className="pt-48 pb-16 min-h-screen flex items-center bg-zinc-900" style={{ paddingTop: '12rem' }}>
         <div className="container">
           <motion.div 
             className="flex flex-col items-center text-center gap-12"
@@ -252,25 +252,25 @@ const AssedraCaseStudy = () => {
             </motion.div>
             
             <div className="max-w-4xl">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-zinc-100">
                 Assedra: School Inventory Management
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
                 Transforming how schools handle their assets with a seamless, intelligent, and accessible inventory management system
               </p>
               
               <div className="flex flex-wrap justify-center gap-8">
                 <div className="flex flex-col gap-2">
-                  <span className="text-sm text-gray-500 font-medium uppercase tracking-wide">Role</span>
-                  <span className="text-lg font-semibold text-gray-900">Lead UX Designer</span>
+                  <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Role</span>
+                  <span className="text-lg font-semibold text-zinc-100">Lead UX Designer</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <span className="text-sm text-gray-500 font-medium uppercase tracking-wide">Timeline</span>
-                  <span className="text-lg font-semibold text-gray-900">1 month</span>
+                  <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Timeline</span>
+                  <span className="text-lg font-semibold text-zinc-100">1 month</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <span className="text-sm text-gray-500 font-medium uppercase tracking-wide">Tools</span>
-                  <span className="text-lg font-semibold text-gray-900">Figma, Google Forms, Miro</span>
+                  <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Tools</span>
+                  <span className="text-lg font-semibold text-zinc-100">Figma, Google Forms, Miro</span>
                 </div>
               </div>
             </div>
@@ -288,8 +288,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">The Challenge</h2>
-            <div className="text-lg leading-relaxed text-gray-700 space-y-6">
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">The Challenge</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 space-y-6">
               <p>
                 When I was assigned to lead the design of Assedra, a school inventory management system, the goal was clear: transform the way schools handle their assets. From books and laboratory equipment to laptops and classroom furniture, schools rely on a vast number of resources to function smoothly.
               </p>
@@ -297,7 +297,7 @@ const AssedraCaseStudy = () => {
                 Yet, in many institutions, these assets are tracked with spreadsheets, paper logs, or outdated software. Methods that are error-prone, frustrating, and unsuited to the unique workflows of education.
               </p>
               
-              <div className="my-12 p-8 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl text-white text-center">
+              <div className="my-12 p-8 bg-zinc-900 rounded-2xl text-white text-center">
                 <blockquote className="text-xl font-semibold italic leading-relaxed">
                   "How might we design a seamless, intelligent, and accessible inventory management system specifically tailored for schools and educational staff?"
                 </blockquote>
@@ -312,7 +312,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section id="pain-points" className="py-24 bg-gray-50">
+      <section id="pain-points" className="py-24 bg-zinc-950">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -321,8 +321,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Understanding the Challenge</h2>
-            <div className="text-lg leading-relaxed text-gray-700 mb-12">
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Understanding the Challenge</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 mb-12">
               <p className="mb-6">
                 The first step was diving deep into user research. I spoke with school administrators, librarians, and even students to understand how they or their school currently manage assets and what frustrates them the most.
               </p>
@@ -335,7 +335,7 @@ const AssedraCaseStudy = () => {
               {painPoints.map((point, index) => (
                 <motion.div
                   key={index}
-                  className="flex gap-4 p-8 bg-white rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex gap-4 p-8 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -343,18 +343,18 @@ const AssedraCaseStudy = () => {
                 >
                   <div className="text-3xl flex-shrink-0">{point.icon}</div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2 text-gray-900">{point.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{point.description}</p>
+                    <h3 className="text-xl font-semibold mb-2 text-zinc-100">{point.title}</h3>
+                    <p className="text-zinc-300 leading-relaxed">{point.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
             
-            <div className="mt-12 text-center p-8 bg-gray-100 rounded-2xl border-l-4 border-gray-900">
-              <blockquote className="text-2xl font-semibold italic mb-4 text-gray-900">
+            <div className="mt-12 text-center p-8 bg-zinc-800 rounded-2xl border-l-4 border-zinc-700">
+              <blockquote className="text-2xl font-semibold italic mb-4 text-zinc-100">
                 "I spend more time looking for the school's properties than actually managing the school."
               </blockquote>
-              <cite className="text-lg text-gray-600">— School Administrator</cite>
+              <cite className="text-lg text-zinc-300">— School Administrator</cite>
             </div>
           </motion.div>
         </div>
@@ -370,9 +370,9 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Design Process</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Design Process</h2>
             <div className="relative pl-8">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-gray-300"></div>
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-zinc-900"></div>
               
               {processSteps.map((step, index) => (
                 <motion.div
@@ -383,12 +383,12 @@ const AssedraCaseStudy = () => {
                   transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
                   viewport={{ once: true }}
                 >
-                  <div className="absolute -left-6 top-0 w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-sm">
+                  <div className="absolute -left-6 top-0 w-12 h-12 bg-zinc-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-sm">
                     {step.number}
                   </div>
-                  <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-blue-600">
-                    <h3 className="text-2xl font-semibold mb-4 text-gray-900">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  <div className="bg-zinc-900 p-8 rounded-xl shadow-sm border-l-4 border-blue-600">
+                    <h3 className="text-2xl font-semibold mb-4 text-zinc-100">{step.title}</h3>
+                    <p className="text-zinc-300 leading-relaxed">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -407,8 +407,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Empathy & Personas</h2>
-            <div className="text-lg leading-relaxed text-gray-700 mb-12">
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Empathy & Personas</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 mb-12">
               <p className="mb-6">
                 To capture the reality of the users, I created an empathy map for key roles such as inventory managers and administrators. This allowed me to step into their shoes and fully understand their needs, emotions, and frustrations.
               </p>
@@ -421,7 +421,7 @@ const AssedraCaseStudy = () => {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-4xl w-full">
+                <div className="bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-4xl w-full">
                   <Image
                     src="/images/Assedra/Empathy-map.png"
                     alt="Empathy Map for School Inventory Management Users"
@@ -449,7 +449,7 @@ const AssedraCaseStudy = () => {
                 return (
                 <motion.div
                   key={index}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="bg-zinc-900 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
@@ -464,20 +464,20 @@ const AssedraCaseStudy = () => {
                     />
                   </div>
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">{persona.name}</h3>
+                    <h3 className="text-2xl font-bold mb-2 text-zinc-100">{persona.name}</h3>
                     <p className="text-lg font-semibold text-blue-600 mb-1">{persona.title}</p>
-                    <p className="text-sm text-gray-600 mb-1">{persona.location}</p>
-                    <p className="text-sm text-gray-600 mb-6">{persona.experience}</p>
+                    <p className="text-sm text-zinc-300 mb-1">{persona.location}</p>
+                    <p className="text-sm text-zinc-300 mb-6">{persona.experience}</p>
                     
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg italic text-gray-700">
+                    <div className="mb-6 p-4 bg-zinc-950 rounded-lg italic text-zinc-200">
                       "{persona.bio}"
                     </div>
                     
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold mb-3 text-gray-900">Goals:</h4>
+                      <h4 className="text-lg font-semibold mb-3 text-zinc-100">Goals:</h4>
                       <ul className="space-y-2">
                         {persona.goals.map((goal, goalIndex) => (
-                          <li key={goalIndex} className="flex items-start gap-2 text-sm text-gray-600">
+                          <li key={goalIndex} className="flex items-start gap-2 text-sm text-zinc-300">
                             <span className="text-blue-600 font-bold mt-1">✓</span>
                             {goal}
                           </li>
@@ -486,10 +486,10 @@ const AssedraCaseStudy = () => {
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-semibold mb-3 text-gray-900">Frustrations:</h4>
+                      <h4 className="text-lg font-semibold mb-3 text-zinc-100">Frustrations:</h4>
                       <ul className="space-y-2">
                         {persona.frustrations.map((frustration, frustIndex) => (
-                          <li key={frustIndex} className="flex items-start gap-2 text-sm text-gray-600">
+                          <li key={frustIndex} className="flex items-start gap-2 text-sm text-zinc-300">
                             <span className="text-red-500 font-bold mt-1">✗</span>
                             {frustration}
                           </li>
@@ -506,7 +506,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Information Architecture Section */}
-      <section id="information-architecture" className="py-24 bg-gray-50">
+      <section id="information-architecture" className="py-24 bg-zinc-950">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -515,8 +515,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Information Architecture</h2>
-            <div className="text-lg leading-relaxed text-gray-700 mb-12">
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Information Architecture</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 mb-12">
               <p className="mb-6">
                 The application's information architecture is designed around a clear, hierarchical navigation system and interconnected core workflows, ensuring intuitive access to all functionalities for inventory, assignment, and staff management.
               </p>
@@ -533,7 +533,7 @@ const AssedraCaseStudy = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-5xl w-full">
+              <div className="bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-5xl w-full">
                 <Image
                   src="/images/Assedra/IA.png"
                   alt="Information Architecture for Assedra School Inventory Management"
@@ -557,8 +557,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">User Flows</h2>
-            <div className="text-lg leading-relaxed text-gray-700 mb-12 text-center">
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">User Flows</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 mb-12 text-center">
               <p className="mb-6">
                 To ensure a seamless and intuitive experience, I meticulously mapped out key user journeys within the Assedra system. These user flows illustrate how different roles interact with the platform to achieve their goals, from adding new inventory to generating reports and managing maintenance.
               </p>
@@ -567,21 +567,21 @@ const AssedraCaseStudy = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* User Flow Card 1: Add a New Inventory Item */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-blue-100 text-blue-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                   </span>
                   Add a New Inventory Item
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Inventory Manager/Admin</p>
-                <p className="text-gray-700 mb-4">Goal: Register a new item into the system</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Inventory Manager/Admin</p>
+                <p className="text-zinc-200 mb-4">Goal: Register a new item into the system</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Log in to dashboard</li>
                   <li>Click "Add Item" button</li>
                   <li>Fill in item details (Name, Category, Serial No, Quantity, etc.)</li>
@@ -595,21 +595,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 2: Assign an Item to a Staff Member */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-green-100 text-green-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                   </span>
                   Assign an Item to a Staff Member
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Inventory Manager/Admin</p>
-                <p className="text-gray-700 mb-4">Goal: Record and manage item handover</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Inventory Manager/Admin</p>
+                <p className="text-zinc-200 mb-4">Goal: Record and manage item handover</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Log in to dashboard</li>
                   <li>Search or filter for item</li>
                   <li>Click "Assign" button</li>
@@ -623,21 +623,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 3: Return an Assigned Item */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-purple-100 text-purple-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
                   </span>
                   Return an Assigned Item
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Staff/Inventory Manager</p>
-                <p className="text-gray-700 mb-4">Goal: Mark an item as returned and update status</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Staff/Inventory Manager</p>
+                <p className="text-zinc-200 mb-4">Goal: Mark an item as returned and update status</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Staff or manager logs in</li>
                   <li>Navigate to "My Assigned Items" or "Assignments" tab</li>
                   <li>Locate item marked as "Assigned"</li>
@@ -650,21 +650,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 4: Track Item Status or Location */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-yellow-100 text-yellow-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                   </span>
                   Track Item Status or Location
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Admin/Inventory Manager/Librarian</p>
-                <p className="text-gray-700 mb-4">Goal: Know where items are and who has them</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Admin/Inventory Manager/Librarian</p>
+                <p className="text-zinc-200 mb-4">Goal: Know where items are and who has them</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Log in</li>
                   <li>Use global search or apply filters (location, category, status)</li>
                   <li>View item status: Available, Assigned, Under Maintenance</li>
@@ -675,21 +675,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 5: Send Return Reminder */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-red-100 text-red-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                   </span>
                   Send Return Reminder
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Admin/Inventory Manager</p>
-                <p className="text-gray-700 mb-4">Goal: Notify a staff member about a due or overdue item</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Admin/Inventory Manager</p>
+                <p className="text-zinc-200 mb-4">Goal: Notify a staff member about a due or overdue item</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Go to "Reminders" tab</li>
                   <li>View list of due and overdue items</li>
                   <li>Select item(s)</li>
@@ -702,21 +702,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 6: Generate a Report */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-blue-100 text-blue-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                   </span>
                   Generate a Report
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Admin</p>
-                <p className="text-gray-700 mb-4">Goal: View analytics or export reports for school management</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Admin</p>
+                <p className="text-zinc-200 mb-4">Goal: View analytics or export reports for school management</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Open "Reports" tab</li>
                   <li>Choose report type: Asset Usage, Assignment History, Lost Items, Maintenance Logs</li>
                   <li>Apply date range or filters</li>
@@ -728,21 +728,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 7: Set Maintenance Schedule */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-orange-100 text-orange-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0-.33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 .33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                   </span>
                   Set Maintenance Schedule
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Admin/Inventory Manager</p>
-                <p className="text-gray-700 mb-4">Goal: Schedule routine checks or servicing</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Admin/Inventory Manager</p>
+                <p className="text-zinc-200 mb-4">Goal: Schedule routine checks or servicing</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Open item's Quick View</li>
                   <li>Click "Maintenance" tab</li>
                   <li>Add next check date and type of maintenance</li>
@@ -753,21 +753,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 8: Receive Maintenance Notification */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-teal-100 text-teal-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                   </span>
                   Receive Maintenance Notification
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">Inventory Manager</p>
-                <p className="text-gray-700 mb-4">Goal: Stay aware of scheduled maintenance</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">Inventory Manager</p>
+                <p className="text-zinc-200 mb-4">Goal: Stay aware of scheduled maintenance</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Log in</li>
                   <li>Navigate to "Reminders" tab</li>
                   <li>View "Upcoming Maintenance" list</li>
@@ -777,21 +777,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 9: Search for Any Item, Person, or Tag */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                   </span>
                   Search for Any Item, Person, or Tag
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">All users</p>
-                <p className="text-gray-700 mb-4">Goal: Find anything quickly from the main interface</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">All users</p>
+                <p className="text-zinc-200 mb-4">Goal: Find anything quickly from the main interface</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Click on global search bar</li>
                   <li>Type keyword (e.g., "projector", "Mrs. Rita")</li>
                   <li>Filter by type (Item, Staff, Tag, Category)</li>
@@ -802,21 +802,21 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 10: Switch View Modes (Table, Card, Timeline) */}
               <motion.div
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
                   <span className="bg-pink-100 text-pink-600 rounded-full p-2 mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                   </span>
                   Switch View Modes (Table, Card, Timeline)
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">All users</p>
-                <p className="text-gray-700 mb-4">Goal: Choose how inventory is visually displayed</p>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+                <p className="text-sm text-zinc-300 mb-2">All users</p>
+                <p className="text-zinc-200 mb-4">Goal: Choose how inventory is visually displayed</p>
+                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
                   <li>Go to Inventory tab</li>
                   <li>Click view switcher (icon group at top right)</li>
                   <li>Choose between Table, Card, or Timeline</li>
@@ -839,20 +839,20 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">The Solution</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">The Solution</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-8 rounded-xl text-center shadow-sm border border-blue-100 transition-all duration-300 hover:shadow-md hover:border-blue-600"
+                  className="bg-zinc-900 p-8 rounded-xl text-center shadow-sm border border-blue-100 transition-all duration-300 hover:shadow-md hover:border-blue-600"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
                   viewport={{ once: true }}
                 >
                   <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-100">{feature.title}</h3>
+                  <p className="text-zinc-300 leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -861,7 +861,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="designs" className="py-24 bg-gray-50">
+      <section id="designs" className="py-24 bg-zinc-950">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -870,10 +870,10 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Final Designs</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Final Designs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
-                <div className="bg-gray-100 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/1920w-light.png"
                     alt="Assedra Dashboard"
@@ -882,11 +882,11 @@ const AssedraCaseStudy = () => {
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <p className="text-sm text-gray-600 italic">Main dashboard with real-time asset overview and quick actions</p>
+                <p className="text-sm text-zinc-300 italic">Main dashboard with real-time asset overview and quick actions</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-gray-100 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/Inventory.png"
                     alt="Inventory Management"
@@ -895,11 +895,11 @@ const AssedraCaseStudy = () => {
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <p className="text-sm text-gray-600 italic">Inventory management with global search and filtering</p>
+                <p className="text-sm text-zinc-300 italic">Inventory management with global search and filtering</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-gray-100 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/Assignments.png"
                     alt="Assignment Flow"
@@ -908,11 +908,11 @@ const AssedraCaseStudy = () => {
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <p className="text-sm text-gray-600 italic">Quick assign wizard for streamlined asset assignment</p>
+                <p className="text-sm text-zinc-300 italic">Quick assign wizard for streamlined asset assignment</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-gray-100 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/Reports.png"
                     alt="Reports Dashboard"
@@ -921,7 +921,7 @@ const AssedraCaseStudy = () => {
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <p className="text-sm text-gray-600 italic">Visual reports dashboard with actionable insights</p>
+                <p className="text-sm text-zinc-300 italic">Visual reports dashboard with actionable insights</p>
               </div>
             </div>
           </motion.div>
@@ -941,8 +941,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 text-gray-900">The Outcome</h2>
-            <p className="text-lg leading-relaxed text-gray-700 mb-12">
+            <h2 className="text-4xl font-bold mb-12 text-zinc-100">The Outcome</h2>
+            <p className="text-lg leading-relaxed text-zinc-200 mb-12">
               The result of this design process was Assedra, a responsive web application that reimagines school asset management. With its clean architecture, intuitive flows, and user-centered features, Assedra empowers schools to:
             </p>
             
@@ -950,14 +950,14 @@ const AssedraCaseStudy = () => {
               {outcomes.map((outcome, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-4 p-6 bg-white rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex items-center gap-4 p-6 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
                   viewport={{ once: true }}
                 >
                   <div className="text-2xl text-blue-600">✅</div>
-                  <span className="font-medium text-gray-900">{outcome}</span>
+                  <span className="font-medium text-zinc-100">{outcome}</span>
                 </motion.div>
               ))}
             </div>
@@ -966,7 +966,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Prototype Video Section */}
-      <section id="prototype" className="py-24 bg-gray-50">
+      <section id="prototype" className="py-24 bg-zinc-950">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto"
@@ -975,15 +975,15 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Prototype in Action</h2>
-            <div className="text-lg leading-relaxed text-gray-700 mb-12 text-center">
+            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Prototype in Action</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 mb-12 text-center">
               <p className="mb-6">
                 Here's a walkthrough of the Assedra prototype, showcasing the key features and user flows we designed. This demonstrates how the system works in practice, from inventory management to assignment tracking and reporting.
               </p>
             </div>
 
             <motion.div 
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+              className="bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-800"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -1006,7 +1006,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Reflection Section */}
-      <section id="reflection" className="py-24 bg-gray-50">
+      <section id="reflection" className="py-24 bg-zinc-950">
         <div className="container">
           <motion.div 
             className="max-w-3xl mx-auto text-center"
@@ -1015,8 +1015,8 @@ const AssedraCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 text-gray-900">Reflection</h2>
-            <div className="text-lg leading-relaxed text-gray-700 space-y-6">
+            <h2 className="text-4xl font-bold mb-12 text-zinc-100">Reflection</h2>
+            <div className="text-lg leading-relaxed text-zinc-200 space-y-6">
               <p>
                 This project challenged me to balance simplicity and power. Schools don't have the time for steep learning curves or overly technical tools. By focusing on the real needs of administrators, librarians, and staff, I designed a system that is as easy to use as it is powerful.
               </p>
@@ -1029,18 +1029,18 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Navigation */}
-      <div className="py-8 bg-gray-50 border-t border-gray-200">
+      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/#work" 
-              className="text-gray-600 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-gray-900 hover:bg-white"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
             >
               ← Back to Work
             </Link>
             <Link 
               href="/#contact" 
-              className="text-gray-900 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-white shadow-sm hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:shadow-md"
             >
               Get in Touch →
             </Link>
