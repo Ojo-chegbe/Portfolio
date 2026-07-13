@@ -48,7 +48,7 @@ const ArexpalCaseStudy = () => {
       <Header />
       <TopNav navItems={navItems} />
       
-      <section className="pt-48 pb-16 min-h-screen flex items-center bg-zinc-900" style={{ paddingTop: '12rem' }}>
+      <section className="pt-48 pb-16 min-h-screen flex items-center" style={{ paddingTop: '12rem' }}>
         <div className="container">
           <motion.div 
             className="flex flex-col items-center text-center gap-12"
@@ -57,7 +57,7 @@ const ArexpalCaseStudy = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <motion.div 
-              className="relative max-w-lg w-full rounded-3xl overflow-hidden shadow-sm border-2 border-blue-500"
+              className="relative max-w-lg w-full rounded-3xl overflow-hidden shadow-sm"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
             >
@@ -98,7 +98,7 @@ const ArexpalCaseStudy = () => {
               </div>
             </div>
 
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-md max-w-4xl mx-auto">
+              <div className="fill-secondary p-8 rounded-xl shadow-md max-w-4xl mx-auto">
                 <p className="text-lg text-zinc-200 leading-relaxed mb-6">
                   This case study documents the end-to-end design process for Arexpal, a mobile application designed to make cancer prevention accessible, engaging, and life-changing. We&apos;ll explore how we moved from a broad societal challenge to a refined, user-centric solution, all guided by the principles of the Double Diamond design framework.
                 </p>
@@ -112,7 +112,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Part 1: Discover & Define */}
-      <section id="discover-define" className="py-20 bg-zinc-900">
+      <section id="discover-define" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto"
@@ -129,7 +129,7 @@ const ArexpalCaseStudy = () => {
               The first half of the Double Diamond process is about divergence and convergence. We start by exploring the problem as widely as possible (Discover) and then synthesize those findings into a clear, actionable problem statement (Define). This phase is about falling in love with the problem, not the solution.
             </p>
 
-            <div className="bg-zinc-900 p-8 rounded-xl mb-12">
+            <div className="fill-secondary p-8 rounded-xl mb-12">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100">The Challenge: Health Education Is A Privilege, Not A Right</h3>
               
               <p className="text-lg text-zinc-200 mb-6 leading-relaxed">
@@ -141,14 +141,14 @@ const ArexpalCaseStudy = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-zinc-900 p-6 rounded-lg shadow-sm">
+                <div className="fill-secondary p-6 rounded-lg shadow-sm">
                   <h4 className="text-xl font-semibold mb-4 text-red-600">The Access Gap</h4>
                   <p className="text-zinc-200 leading-relaxed">
                     How can we deliver life-saving preventive health knowledge to everyone, regardless of their proximity to clinics, the quality of their formal education, or their socioeconomic status? Building more hospitals is a slow, expensive solution. Traditional health campaigns have limited reach and sustainability.
                   </p>
                 </div>
                 
-                <div className="bg-zinc-900 p-6 rounded-lg shadow-sm">
+                <div className="fill-secondary p-6 rounded-lg shadow-sm">
                   <h4 className="text-xl font-semibold mb-4 text-orange-600">The Action Gap</h4>
                   <p className="text-zinc-200 leading-relaxed">
                     Even when people have access to information, why does it so rarely translate into lasting behavior change? We all know that smoking is harmful and a balanced diet is good, yet the gap between knowledge and action persists.
@@ -156,7 +156,7 @@ const ArexpalCaseStudy = () => {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-zinc-900 rounded-lg">
+              <div className="mt-8 p-6 fill-secondary rounded-lg">
                 <p className="text-lg text-zinc-200 leading-relaxed">
                   We saw a single, ubiquitous tool that could bridge both gaps: <strong>the smartphone</strong>. Our challenge, therefore, crystallized into a focused question: <em>How might we leverage the smartphone to transform preventive health education from a passive, forgettable chore into an active, addictive, and deeply personal daily habit?</em>
                 </p>
@@ -171,9 +171,9 @@ const ArexpalCaseStudy = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-zinc-950 p-6 rounded-xl">
+                <div className="fill-secondary p-6 rounded-xl">
                   <h4 className="text-xl font-semibold mb-4 text-zinc-100">1. Barrier to Access & Trust</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-red-500">
+                  <blockquote className="fill-secondary p-4 rounded-lg mb-4 italic text-zinc-200">
                     "I want to be healthier, but my local clinic is two hours away, and I can't afford to take the day off work. I look online, but one site says coffee is a superfood, and the next says it causes cancer. Who do I even trust?"
                   </blockquote>
                   <p className="text-zinc-200 leading-relaxed">
@@ -181,9 +181,9 @@ const ArexpalCaseStudy = () => {
                   </p>
                 </div>
 
-                <div className="bg-zinc-950 p-6 rounded-xl">
+                <div className="fill-secondary p-6 rounded-xl">
                   <h4 className="text-xl font-semibold mb-4 text-zinc-100">2. Information Overwhelm & Cognitive Load</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-orange-500">
+                  <blockquote className="fill-secondary p-4 rounded-lg mb-4 italic text-zinc-200">
                     "I downloaded a health app once. It gave me a 20-page article on antioxidants. I have two kids and a full-time job. I read the first paragraph and never opened it again."
                   </blockquote>
                   <p className="text-zinc-200 leading-relaxed">
@@ -191,9 +191,9 @@ const ArexpalCaseStudy = () => {
                   </p>
                 </div>
 
-                <div className="bg-zinc-950 p-6 rounded-xl">
+                <div className="fill-secondary p-6 rounded-xl">
                   <h4 className="text-xl font-semibold mb-4 text-zinc-100">3. The Behavioral Gap & Lack of Motivation</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-yellow-500">
+                  <blockquote className="fill-secondary p-4 rounded-lg mb-4 italic text-zinc-200">
                     "I know I should stop smoking. I've tried. But after a stressful day, it's just... easy. The 'reward' of quitting feels so far away, but the reward of a cigarette is instant."
                   </blockquote>
                   <p className="text-zinc-200 leading-relaxed">
@@ -201,9 +201,9 @@ const ArexpalCaseStudy = () => {
                   </p>
                 </div>
 
-                <div className="bg-zinc-950 p-6 rounded-xl">
+                <div className="fill-secondary p-6 rounded-xl">
                   <h4 className="text-xl font-semibold mb-4 text-zinc-100">4. The Retention Challenge & "Chore" Factor</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-green-500">
+                  <blockquote className="fill-secondary p-4 rounded-lg mb-4 italic text-zinc-200">
                     "Most health apps feel like a doctor nagging me. They're sterile, boring, and make me feel guilty when I miss a day. It feels like work, not something I want to do."
                   </blockquote>
                   <p className="text-zinc-200 leading-relaxed">
@@ -212,26 +212,26 @@ const ArexpalCaseStudy = () => {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-zinc-800 rounded-xl border border-zinc-700">
+              <div className="mt-8 p-6 fill-secondary rounded-xl">
                 <p className="text-lg text-zinc-200 leading-relaxed">
                   These four pain points became the foundation of our design strategy. We weren't just building an information delivery system; we were designing a solution to overcome deep-seated psychological and accessibility barriers.
                 </p>
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl">
+            <div className="fill-secondary p-8 rounded-xl">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100">Design Process: The Double Diamond in Action</h3>
               
               <p className="text-lg text-zinc-300 mb-6 leading-relaxed">
                 To tackle this multifaceted challenge, we committed to the Double Diamond framework. This approach ensured we didn't jump to solutions prematurely and that our final product was rigorously validated against real user needs.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 items-stretch">
                 {[
                   {
                     step: '01',
                     title: 'Discover',
-                    description: 'Broad research—user interviews, competitor analysis, and literature reviews on behavioral psychology'
+                    description: 'Broad research: user interviews, competitor analysis, and literature reviews on behavioral psychology'
                   },
                   {
                     step: '02',
@@ -249,9 +249,9 @@ const ArexpalCaseStudy = () => {
                     description: 'Refined ideas into high-fidelity mockups, interactive prototype, and usability testing'
                   }
                 ].map((item) => (
-                  <div key={item.step} className="bg-[#161616] p-8 aspect-square h-full flex flex-col justify-between border border-zinc-800 relative group">
-                    <div className="flex justify-end">
-                      <span className="text-5xl font-bold text-zinc-800/30 leading-none tracking-tighter">
+                  <div key={item.step} className="fill-tertiary p-6 rounded-xl aspect-square flex flex-col justify-between">
+                    <div className="flex">
+                      <span className="text-5xl font-bold text-zinc-700/40 leading-none tracking-tighter">
                         {item.step}
                       </span>
                     </div>
@@ -268,7 +268,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Part 2: Develop & Deliver */}
-      <section id="develop-deliver" className="py-20 bg-zinc-950">
+      <section id="develop-deliver" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto"
@@ -289,7 +289,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Personas Section */}
-      <section id="personas" className="py-20 bg-zinc-900">
+      <section id="personas" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -308,12 +308,8 @@ const ArexpalCaseStudy = () => {
 
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Zainab */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">👩‍🎓</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Zainab, The Youth</h3>
+              <div className="fill-secondary p-8 rounded-xl">
+                <div className="text-center mb-6"><h3 className="text-2xl font-bold text-zinc-100 mb-2">Zainab, The Youth</h3>
                   <p className="text-zinc-300">18 years old, University Student</p>
                 </div>
                 
@@ -343,7 +339,7 @@ const ArexpalCaseStudy = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-pink-600 mb-2">UX Goal for Zainab</h4>
                     <p className="text-zinc-200 text-sm">
                       Make health education feel like a fun, social game. It needs to be shareable, competitive, and use language that resonates with her generation.
@@ -353,12 +349,8 @@ const ArexpalCaseStudy = () => {
               </div>
 
               {/* David */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">👨‍💻</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">David, The Health-Conscious Adult</h3>
+              <div className="fill-secondary p-8 rounded-xl">
+                <div className="text-center mb-6"><h3 className="text-2xl font-bold text-zinc-100 mb-2">David, The Health-Conscious Adult</h3>
                   <p className="text-zinc-300">35 years old, Software Developer</p>
                 </div>
                 
@@ -388,7 +380,7 @@ const ArexpalCaseStudy = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-blue-600 mb-2">UX Goal for David</h4>
                     <p className="text-zinc-200 text-sm">
                       Provide actionable, personalized, and data-driven insights that fit seamlessly into his busy life. The experience must feel efficient, credible, and empowering.
@@ -398,12 +390,8 @@ const ArexpalCaseStudy = () => {
               </div>
 
               {/* Aisha */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-green-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">👩‍🏫</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Aisha, The Survivor</h3>
+              <div className="fill-secondary p-8 rounded-xl">
+                <div className="text-center mb-6"><h3 className="text-2xl font-bold text-zinc-100 mb-2">Aisha, The Survivor</h3>
                   <p className="text-zinc-300">52 years old, Retired Teacher, Post-Treatment</p>
                 </div>
                 
@@ -433,7 +421,7 @@ const ArexpalCaseStudy = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-green-600 mb-2">UX Goal for Aisha</h4>
                     <p className="text-zinc-200 text-sm">
                       Create a gentle, empathetic, and structured experience. The focus is on reassurance, emotional well-being, and celebrating consistent progress over time.
@@ -447,7 +435,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Information Architecture Section */}
-      <section id="information-architecture" className="py-20 bg-zinc-950">
+      <section id="information-architecture" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -464,16 +452,16 @@ const ArexpalCaseStudy = () => {
               During the Develop phase, a key step was designing the app's structure. Our IA was guided by the principle of Cognitive Ease. We wanted users to navigate the app intuitively, without ever feeling lost or having to think too hard about where to find something. The structure is flat and centered around four key user activities.
             </p>
 
-            <div className="bg-zinc-900 p-8 rounded-xl shadow-lg mb-12">
+            <div className="fill-secondary p-8 rounded-xl shadow-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100">Sitemap</h3>
               
               <div className="space-y-6">
-                <div className="border-l-4 border-blue-500 pl-6">
+                <div className="pl-6">
                   <h4 className="text-xl font-semibold text-zinc-100 mb-2">1.0 Home (The Dashboard)</h4>
                   <p className="text-zinc-300">The user's daily starting point. Provides a quick, personalized overview of their day.</p>
                 </div>
                 
-                <div className="border-l-4 border-green-500 pl-6">
+                <div className="pl-6">
                   <h4 className="text-xl font-semibold text-zinc-100 mb-2">2.0 Feed (The Library)</h4>
                   <p className="text-zinc-300 mb-3">The knowledge hub. Where users discover and consume educational content.</p>
                   <div className="ml-4 space-y-2">
@@ -483,7 +471,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
+                <div className="pl-6">
                   <h4 className="text-xl font-semibold text-zinc-100 mb-2">3.0 Diary (The Log)</h4>
                   <p className="text-zinc-300 mb-3">The central interaction point. The tool for self-reflection and data input.</p>
                   <div className="ml-4 space-y-2">
@@ -492,7 +480,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="border-l-4 border-orange-500 pl-6">
+                <div className="pl-6">
                   <h4 className="text-xl font-semibold text-zinc-100 mb-2">4.0 Challenges (The Gym)</h4>
                   <p className="text-zinc-300 mb-3">The action and engagement hub. Where knowledge turns into practice through gamified tasks.</p>
                   <div className="ml-4 space-y-2">
@@ -501,7 +489,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="border-l-4 border-red-500 pl-6">
+                <div className="pl-6">
                   <h4 className="text-xl font-semibold text-zinc-100 mb-2">5.0 Profile (The Trophy Room)</h4>
                   <p className="text-zinc-300 mb-3">The user's identity and progress center.</p>
                   <div className="ml-4 space-y-2">
@@ -512,7 +500,7 @@ const ArexpalCaseStudy = () => {
                 </div>
               </div>
               
-              <div className="mt-8 p-6 bg-zinc-800 rounded-lg border border-zinc-700">
+              <div className="mt-8 p-6 fill-secondary rounded-lg">
                 <p className="text-zinc-200 leading-relaxed">
                   The bottom navigation bar prominently features Home, Feed, Challenges, and Profile, with the most important action, Diary, placed in the center as a visually distinct Floating Action Button (FAB). This hierarchy constantly reinforces the core loop: <strong>learn (Feed), act (Challenges), and reflect (Diary)</strong>.
                 </p>
@@ -523,7 +511,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* User Flows Section */}
-      <section id="user-flows" className="py-20 bg-zinc-900">
+      <section id="user-flows" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -543,15 +531,15 @@ const ArexpalCaseStudy = () => {
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Daily Diary Logging Flow */}
               <motion.div
-                className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl"
+                className="fill-secondary p-8 rounded-xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
                 viewport={{ once: true }}
               >
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📝</span>
+                  <div className="w-16 h-16 fill-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl"></span>
                   </div>
                   <h3 className="text-2xl font-bold text-zinc-100 mb-2">Daily Diary Logging Flow</h3>
                   <p className="text-zinc-300 font-medium">Goal: Make habit logging effortless and rewarding</p>
@@ -559,42 +547,42 @@ const ArexpalCaseStudy = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">1</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User opens app → Diary icon at center bottom nav</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">2</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Sees today's date and input box</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">3</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Smart prompts carousel suggests logs (e.g., "Did you eat fruits today?" "Sleep hours?")</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">4</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User types or taps quick options</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">5</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Entry saved → earns Vital Points + micro-reward animation</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">6</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User sees log appear in today's summary</p>
@@ -604,15 +592,15 @@ const ArexpalCaseStudy = () => {
 
               {/* Tips & Feed Flow */}
               <motion.div
-                className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl"
+                className="fill-secondary p-8 rounded-xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
               >
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📚</span>
+                  <div className="w-16 h-16 fill-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl"></span>
                   </div>
                   <h3 className="text-2xl font-bold text-zinc-100 mb-2">Tips & Feed Flow</h3>
                   <p className="text-zinc-300 font-medium">Goal: Educate through snackable content while keeping it fun</p>
@@ -620,42 +608,42 @@ const ArexpalCaseStudy = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">1</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User taps Feed tab</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">2</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Default view = "For You" (personalized AI tips)</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">3</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User scrolls → each card shows a health tip or fun fact</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">4</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User can like, share, save, or bookmark</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">5</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User switches to General Tips or Bookmarked Tips via toggle</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">6</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User exits → receives gentle nudge notification later ("Want your next cancer-fighting tip?")</p>
@@ -665,15 +653,15 @@ const ArexpalCaseStudy = () => {
 
               {/* Challenge Participation Flow */}
               <motion.div
-                className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl"
+                className="fill-secondary p-8 rounded-xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
                 viewport={{ once: true }}
               >
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🏆</span>
+                  <div className="w-16 h-16 fill-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl"></span>
                   </div>
                   <h3 className="text-2xl font-bold text-zinc-100 mb-2">Challenge Participation Flow</h3>
                   <p className="text-zinc-300 font-medium">Goal: Motivate users with community-driven challenges</p>
@@ -681,49 +669,49 @@ const ArexpalCaseStudy = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">1</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User taps Challenges tab</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">2</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Browses "Suggested Challenges" or uses search</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">3</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Selects a challenge card (e.g., "7-Day No Sugar Challenge")</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">4</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Reads details: focus, duration, reward, participants</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">5</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Taps Join Challenge → confirmation screen</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">6</span>
                     </div>
                     <p className="text-zinc-200 text-sm">Challenge now appears in Active Challenges with progress bar</p>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 fill-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-zinc-100 font-bold text-xs">7</span>
                     </div>
                     <p className="text-zinc-200 text-sm">User earns Vital Points and badges as milestones are reached</p>
@@ -736,7 +724,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Design Principles & Solution Section */}
-      <section id="design-principles" className="py-20 bg-zinc-950">
+      <section id="design-principles" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -754,9 +742,9 @@ const ArexpalCaseStudy = () => {
             </p>
 
             <div className="grid lg:grid-cols-3 gap-8 mb-12">
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
+              <div className="fill-secondary p-8 rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl">🧠</span>
+                  <span className="text-2xl"></span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-zinc-100 text-center">Cognitive Ease</h3>
                 <p className="text-zinc-200 leading-relaxed">
@@ -764,9 +752,9 @@ const ArexpalCaseStudy = () => {
                 </p>
               </div>
               
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
+              <div className="fill-secondary p-8 rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl">❤️</span>
+                  <span className="text-2xl"></span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-zinc-100 text-center">Emotional Design</h3>
                 <p className="text-zinc-200 leading-relaxed">
@@ -774,9 +762,9 @@ const ArexpalCaseStudy = () => {
                 </p>
               </div>
               
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
+              <div className="fill-secondary p-8 rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl">🎮</span>
+                  <span className="text-2xl"></span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-zinc-100 text-center">Behavioral Stickiness</h3>
                 <p className="text-zinc-200 leading-relaxed">
@@ -785,7 +773,7 @@ const ArexpalCaseStudy = () => {
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl">
+            <div className="fill-secondary p-8 rounded-xl">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100 text-center">The AI Engine: Personalization at Scale</h3>
               <p className="text-lg text-zinc-200 leading-relaxed text-center max-w-3xl mx-auto">
                 At its heart, the solution is powered by a sophisticated but invisible AI engine that personalizes the entire experience, from the tips in the feed to the prompts in the diary, ensuring the content is always relevant, timely, and culturally resonant.
@@ -796,7 +784,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Final Designs Section */}
-      <section id="final-designs" className="py-20 bg-zinc-900">
+      <section id="final-designs" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -815,7 +803,7 @@ const ArexpalCaseStudy = () => {
 
             <div className="space-y-16">
               {/* Home Page */}
-              <div className="bg-zinc-950 border border-zinc-800 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">1. The Home Page: Your Daily Dose of Encouragement</h3>
                 
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -825,29 +813,29 @@ const ArexpalCaseStudy = () => {
                     </p>
                     
                     <div className="space-y-4">
-                      <div className="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Personalized Welcome</h4>
                         <p className="text-zinc-300 text-sm">A simple "Good morning, David!" immediately establishes an emotional connection.</p>
                       </div>
                       
-                      <div className="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Quick Daily Log</h4>
                         <p className="text-zinc-300 text-sm">A prominent, one-tap entry point to the Diary, reducing the friction of logging.</p>
                       </div>
                       
-                      <div className="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Today's Tip (AI-Powered)</h4>
                         <p className="text-zinc-300 text-sm">The hero component. This isn't a random fact; it's a micro-learning card generated by our AI, tailored to the user's persona and recent logs.</p>
                       </div>
                       
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Gamification At-a-Glance</h4>
                         <p className="text-zinc-300 text-sm">Progress bars for active challenges, current streak counts, and recently earned badges are visible, providing instant positive reinforcement.</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="relative h-[600px] overflow-hidden bg-zinc-900 rounded-xl border border-zinc-800 p-4">
+                  <div className="relative h-[600px] overflow-hidden fill-secondary rounded-xl p-4">
                     <Image
                       src={homeImage}
                       alt="Arexpal Home Screen"
@@ -858,7 +846,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="mt-6 p-6 bg-zinc-800 rounded-lg border border-zinc-700">
+                <div className="mt-6 p-6 fill-secondary rounded-lg">
                   <h4 className="font-semibold text-blue-600 mb-2">UX Rationale</h4>
                   <p className="text-zinc-200">
                     The Home page fights information overwhelm and the "chore" factor. It's not a list of tasks but a calm, encouraging space that respects the user's time and motivates them for the day ahead.
@@ -867,7 +855,7 @@ const ArexpalCaseStudy = () => {
               </div>
 
               {/* Diary Page */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">2. The Diary Page: A Conversation, Not a Clinical Record</h3>
                 
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -877,17 +865,17 @@ const ArexpalCaseStudy = () => {
                     </p>
                     
                     <div className="space-y-4">
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Conversational Input</h4>
                         <p className="text-zinc-300 text-sm">Instead of empty text fields, the page opens with a friendly prompt like, "What's on your mind today, Aisha?"</p>
                       </div>
                       
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Smart Prompts Carousel</h4>
                         <p className="text-zinc-300 text-sm">The key innovation. The AI suggests relevant things to log based on the user's goals and past entries. This turns logging from a recall exercise into a simple choice-based interaction.</p>
                       </div>
                       
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Locked Badge Teasers</h4>
                         <p className="text-zinc-300 text-sm">To motivate consistent logging, a locked badge might be shown with the text "Log for 7 days in a row to unlock." This creates curiosity and a clear goal.</p>
                       </div>
@@ -905,7 +893,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
+                <div className="mt-6 p-6 fill-secondary rounded-lg">
                   <h4 className="font-semibold text-purple-600 mb-2">UX Rationale</h4>
                   <p className="text-zinc-200">
                     This design systematically dismantles the intimidation of journaling. By making it guided, conversational, and rewarding, we lower the barrier to self-reflection, which is critical for behavior change.
@@ -914,7 +902,7 @@ const ArexpalCaseStudy = () => {
               </div>
 
               {/* Feed Page */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">3. The Feed Page: Your Personalized Health Magazine</h3>
                 
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -924,12 +912,12 @@ const ArexpalCaseStudy = () => {
                     </p>
                     
                     <div className="space-y-4">
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Intuitive Sorting</h4>
                         <p className="text-zinc-300 text-sm">Users can easily toggle between a "For You" feed (personalized by AI), a "General" feed (for broad public health topics), and their "Saved" tips.</p>
                       </div>
                       
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">The Tip Card Component</h4>
                         <p className="text-zinc-300 text-sm">Each piece of content is a compact, visually appealing card. It contains a headline, a short summary, an optional image, and the source (e.g., "Source: W.H.O."). Quick actions for "Like," "Save," and "Share" are always visible.</p>
                       </div>
@@ -947,7 +935,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
+                <div className="mt-6 p-6 fill-secondary rounded-lg">
                   <h4 className="font-semibold text-green-600 mb-2">UX Rationale</h4>
                   <p className="text-zinc-200">
                     This directly tackles the pain point of information overload and distrust. It replaces a chaotic Google search with a curated, credible, and highly personalized stream of knowledge, consumed in a familiar and enjoyable format.
@@ -956,7 +944,7 @@ const ArexpalCaseStudy = () => {
               </div>
 
               {/* Challenges Page */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">4. The Challenges Page: Where Knowledge Becomes Action</h3>
                 
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -966,17 +954,17 @@ const ArexpalCaseStudy = () => {
                     </p>
                     
                     <div className="space-y-4">
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Clear Progress Visualization</h4>
                         <p className="text-zinc-300 text-sm">Active challenges are displayed at the top with prominent progress bars, providing immediate visual feedback.</p>
                       </div>
                       
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Social Proof</h4>
                         <p className="text-zinc-300 text-sm">Challenge cards show how many other users are participating, leveraging social accountability as a powerful motivator.</p>
                       </div>
                       
-                      <div className="bg-zinc-900 p-4 rounded-lg">
+                      <div className="fill-secondary p-4 rounded-lg">
                         <h4 className="font-semibold text-zinc-100 mb-2">Action-Oriented Design</h4>
                         <p className="text-zinc-300 text-sm">Each card is a clear call to action (CTA), containing all the necessary information to make a decision: title, focus area, duration, and reward.</p>
                       </div>
@@ -994,7 +982,7 @@ const ArexpalCaseStudy = () => {
                   </div>
                 </div>
                 
-                <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
+                <div className="mt-6 p-6 fill-secondary rounded-lg">
                   <h4 className="font-semibold text-orange-600 mb-2">UX Rationale</h4>
                   <p className="text-zinc-200">
                     The Challenges page directly addresses the behavioral gap. It translates abstract health goals (e.g., "manage stress") into concrete, short-term, and rewarding missions (e.g., "Complete the 5-Day Meditation Challenge").
@@ -1010,7 +998,7 @@ const ArexpalCaseStudy = () => {
       <DesignCarousel items={designItems} />
 
       {/* Prototype & Outcome Section */}
-      <section id="prototype" className="py-20 bg-zinc-950">
+      <section id="prototype" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -1027,7 +1015,7 @@ const ArexpalCaseStudy = () => {
               To validate our designs, we built a high-fidelity, interactive prototype in Figma. This prototype demonstrates the core user journeys and showcases the app's functionality in action.
             </p>
 
-            <div className="bg-zinc-900 p-4 rounded-xl shadow-lg mb-12 flex justify-center">
+            <div className="fill-secondary p-4 rounded-xl shadow-lg mb-12 flex justify-center">
               <div className="w-full max-w-[280px]">
                 <video 
                   className="w-full h-auto rounded-lg"
@@ -1040,7 +1028,7 @@ const ArexpalCaseStudy = () => {
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl shadow-lg mb-12">
+            <div className="fill-secondary p-8 rounded-xl shadow-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100">Usability Testing Results</h3>
               
               <p className="text-zinc-200 leading-relaxed mb-6">
@@ -1048,15 +1036,15 @@ const ArexpalCaseStudy = () => {
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-6 bg-zinc-800 rounded-lg border border-zinc-700">
+                <div className="text-center p-6 fill-secondary rounded-lg">
                   <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
                   <p className="text-zinc-200">Task Completion Rate</p>
                 </div>
-                <div className="text-center p-6 bg-zinc-800 rounded-lg border border-zinc-700">
+                <div className="text-center p-6 fill-secondary rounded-lg">
                   <div className="text-3xl font-bold text-blue-600 mb-2">4.2/5</div>
                   <p className="text-zinc-200">Average Usability Score</p>
                 </div>
-                <div className="text-center p-6 bg-zinc-800 rounded-lg border border-zinc-700">
+                <div className="text-center p-6 fill-secondary rounded-lg">
                   <div className="text-3xl font-bold text-purple-600 mb-2">87%</div>
                   <p className="text-zinc-200">User Satisfaction</p>
                 </div>
@@ -1067,7 +1055,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Outcome Section */}
-      <section id="outcome" className="py-20 bg-zinc-900">
+      <section id="outcome" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -1085,53 +1073,53 @@ const ArexpalCaseStudy = () => {
             </p>
 
             <div className="grid lg:grid-cols-3 gap-8 mb-12">
-              <div className="bg-zinc-900 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">Engagement & Retention Metrics</h3>
                 
                 <div className="space-y-4">
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">Daily Active Users (DAU)</h4>
                     <p className="text-zinc-300 text-sm">Are people building a daily habit?</p>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">Streak Retention</h4>
                     <p className="text-zinc-300 text-sm">What percentage of users maintain a streak for more than 7, 14, and 30 days? This is a direct measure of behavioral stickiness.</p>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">Core Action Rate</h4>
                     <p className="text-zinc-300 text-sm">The percentage of DAU who perform a core action (log, complete a challenge, or save a tip).</p>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-zinc-900 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">Education & Behavior Change</h3>
                 
                 <div className="space-y-4">
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">In-App Knowledge Quizzes</h4>
                     <p className="text-zinc-300 text-sm">Optional quizzes to measure self-reported improvements in health literacy.</p>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">Qualitative Logging Data</h4>
                     <p className="text-zinc-300 text-sm">Analysis of anonymized log data to identify trends, such as users reporting increased sleep hours or decreased instances of smoking.</p>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-zinc-900 p-8 rounded-xl">
+              <div className="fill-secondary p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-zinc-100">Emotional Feedback</h3>
                 
                 <div className="space-y-4">
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">In-App Surveys</h4>
                     <p className="text-zinc-300 text-sm">Periodically asking users to rate their motivation levels and the app's ease of use on a 1-5 scale.</p>
                   </div>
                   
-                  <div className="bg-zinc-900 p-4 rounded-lg">
+                  <div className="fill-secondary p-4 rounded-lg">
                     <h4 className="font-semibold text-zinc-100 mb-2">User Reviews & Feedback</h4>
                     <p className="text-zinc-300 text-sm">Monitoring qualitative feedback for words like "easy," "fun," "motivating," or "reassuring."</p>
                   </div>
@@ -1139,7 +1127,7 @@ const ArexpalCaseStudy = () => {
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl">
+            <div className="fill-secondary p-8 rounded-xl">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100 text-center">Target Results</h3>
               <p className="text-lg text-zinc-200 leading-relaxed text-center max-w-3xl mx-auto">
                 Hypothetical results after a 6-month launch would aim for a 30-day streak retention rate of over 15% (well above industry average for health apps) and a statistically significant self-reported reduction in at least one negative health behavior among active users.
@@ -1150,7 +1138,7 @@ const ArexpalCaseStudy = () => {
       </section>
 
       {/* Reflection Section */}
-      <section id="reflection" className="py-20 bg-zinc-950">
+      <section id="reflection" className="py-20">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -1168,7 +1156,7 @@ const ArexpalCaseStudy = () => {
             </p>
 
             <div className="grid lg:grid-cols-2 gap-12 mb-12">
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
+              <div className="fill-secondary p-8 rounded-xl shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-green-600">What Went Well</h3>
                 
                 <div className="space-y-6">
@@ -1195,7 +1183,7 @@ const ArexpalCaseStudy = () => {
                 </div>
               </div>
               
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
+              <div className="fill-secondary p-8 rounded-xl shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-orange-600">Challenges & Future Improvements</h3>
                 
                 <div className="space-y-6">
@@ -1223,7 +1211,7 @@ const ArexpalCaseStudy = () => {
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl text-center">
+            <div className="fill-secondary p-8 rounded-xl text-center">
               <h3 className="text-2xl font-bold mb-6 text-zinc-100">Final Thoughts</h3>
               <p className="text-lg text-zinc-200 leading-relaxed max-w-4xl mx-auto">
                 Cancer prevention starts with behavior change. Behavior change starts with a compelling experience. And a compelling experience is the ultimate goal of UX design. Arexpal is more than an app; it is a hypothesis that thoughtful, empathetic, and behaviorally-aware design can be a lifeline, empowering millions to take control of their health one tap at a time. It is a testament to the idea that the most impactful UX is not just designed for use, but designed for life.
@@ -1233,18 +1221,18 @@ const ArexpalCaseStudy = () => {
         </div>
       </section>
 
-      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
+      <div className="py-8">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/#work" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100"
             >
               ← Back to Work
             </Link>
             <Link 
               href="/#contact" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:-translate-y-1 hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 fill-secondary shadow-sm hover:-translate-y-1 hover:shadow-md"
             >
               Get in Touch →
             </Link>
@@ -1258,3 +1246,9 @@ const ArexpalCaseStudy = () => {
 };
 
 export default ArexpalCaseStudy;
+
+
+
+
+
+

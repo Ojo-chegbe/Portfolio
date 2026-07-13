@@ -12,6 +12,12 @@ const Work = () => {
 
   const projects = [
     {
+      id: 'pansgpt',
+      title: 'PansGPT',
+      description: 'AI-powered academic platform for pharmacy students. Closed-loop RAG system with Reader, Chat, Quiz, and Notes.',
+      link: '/case-study/pansgpt',
+    },
+    {
       id: 'arexpal',
       title: 'Arexpal',
       description: 'Cancer-prevention lifestyle app. Personalized daily habit tracking for Nigerians.',
@@ -65,7 +71,19 @@ const Work = () => {
                 </div>
 
                 <div className="order-1 md:order-2 w-full md:w-[66%] h-[320px] md:h-[480px] overflow-hidden bg-zinc-900 flex items-center justify-center flex-shrink-0">
-                  {project.id === 'inventory' ? (
+                  {project.id === 'pansgpt' ? (
+                    <div className="w-full h-full bg-[#0a0a0a] flex items-center justify-center p-12">
+                      <div className="text-center">
+                        <span className="text-6xl md:text-8xl font-bold text-white tracking-tight">Pans</span>
+                        <span className="text-6xl md:text-8xl font-bold text-zinc-500 tracking-tight">GPT</span>
+                        <div className="flex justify-center gap-2 mt-4">
+                          <span className="text-xs text-zinc-600 border border-zinc-800 px-2 py-1">AI</span>
+                          <span className="text-xs text-zinc-600 border border-zinc-800 px-2 py-1">EdTech</span>
+                          <span className="text-xs text-zinc-600 border border-zinc-800 px-2 py-1">RAG</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : project.id === 'inventory' ? (
                     <Image
                       src="/images/Assedra/Cover-art.png"
                       alt="Assedra School Inventory Management"

@@ -228,7 +228,7 @@ const AssedraCaseStudy = () => {
       <TopNav navItems={navItems} />
       
       {/* Hero Section */}
-      <section className="pt-48 pb-16 min-h-screen flex items-center bg-zinc-900" style={{ paddingTop: '12rem' }}>
+      <section className="pt-48 pb-16 min-h-screen flex items-center" style={{ paddingTop: '12rem' }}>
         <div className="container">
           <motion.div 
             className="flex flex-col items-center text-center gap-12"
@@ -297,7 +297,7 @@ const AssedraCaseStudy = () => {
                 Yet, in many institutions, these assets are tracked with spreadsheets, paper logs, or outdated software. Methods that are error-prone, frustrating, and unsuited to the unique workflows of education.
               </p>
               
-              <div className="my-12 p-8 bg-zinc-900 rounded-2xl text-white text-center">
+              <div className="my-12 p-8 fill-secondary rounded-2xl text-white text-center">
                 <blockquote className="text-xl font-semibold italic leading-relaxed">
                   "How might we design a seamless, intelligent, and accessible inventory management system specifically tailored for schools and educational staff?"
                 </blockquote>
@@ -312,7 +312,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section id="pain-points" className="py-24 bg-zinc-950">
+      <section id="pain-points" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -335,7 +335,7 @@ const AssedraCaseStudy = () => {
               {painPoints.map((point, index) => (
                 <motion.div
                   key={index}
-                  className="flex gap-4 p-8 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex gap-4 p-8 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -350,7 +350,7 @@ const AssedraCaseStudy = () => {
               ))}
             </div>
             
-            <div className="mt-12 text-center p-8 bg-zinc-800 rounded-2xl border-l-4 border-zinc-700">
+            <div className="mt-12 text-center p-8 fill-secondary rounded-2xl border-l-4 border-zinc-700">
               <blockquote className="text-2xl font-semibold italic mb-4 text-zinc-100">
                 "I spend more time looking for the school's properties than actually managing the school."
               </blockquote>
@@ -372,7 +372,7 @@ const AssedraCaseStudy = () => {
           >
             <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Design Process</h2>
             <div className="relative pl-8">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-zinc-900"></div>
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 fill-secondary"></div>
               
               {processSteps.map((step, index) => (
                 <motion.div
@@ -383,10 +383,10 @@ const AssedraCaseStudy = () => {
                   transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
                   viewport={{ once: true }}
                 >
-                  <div className="absolute -left-6 top-0 w-12 h-12 bg-zinc-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-sm">
+                  <div className="absolute -left-6 top-0 w-12 h-12 fill-secondary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-sm">
                     {step.number}
                   </div>
-                  <div className="bg-zinc-900 p-8 rounded-xl shadow-sm border-l-4 border-blue-600">
+                  <div className="fill-secondary p-8 rounded-xl shadow-sm border-l-4 border-blue-600">
                     <h3 className="text-2xl font-semibold mb-4 text-zinc-100">{step.title}</h3>
                     <p className="text-zinc-300 leading-relaxed">{step.description}</p>
                   </div>
@@ -421,7 +421,7 @@ const AssedraCaseStudy = () => {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 viewport={{ once: true }}
               >
-                <div className="bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-4xl w-full">
+                <div className="fill-secondary rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-4xl w-full">
                   <Image
                     src="/images/Assedra/Empathy-map.png"
                     alt="Empathy Map for School Inventory Management Users"
@@ -449,7 +449,7 @@ const AssedraCaseStudy = () => {
                 return (
                 <motion.div
                   key={index}
-                  className="bg-zinc-900 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="fill-secondary rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
@@ -469,7 +469,7 @@ const AssedraCaseStudy = () => {
                     <p className="text-sm text-zinc-300 mb-1">{persona.location}</p>
                     <p className="text-sm text-zinc-300 mb-6">{persona.experience}</p>
                     
-                    <div className="mb-6 p-4 bg-zinc-950 rounded-lg italic text-zinc-200">
+                    <div className="mb-6 p-4 fill-secondary rounded-lg italic text-zinc-200">
                       "{persona.bio}"
                     </div>
                     
@@ -506,7 +506,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Information Architecture Section */}
-      <section id="information-architecture" className="py-24 bg-zinc-950">
+      <section id="information-architecture" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -533,7 +533,7 @@ const AssedraCaseStudy = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <div className="bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-5xl w-full">
+              <div className="fill-secondary rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-5xl w-full">
                 <Image
                   src="/images/Assedra/IA.png"
                   alt="Information Architecture for Assedra School Inventory Management"
@@ -567,7 +567,7 @@ const AssedraCaseStudy = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* User Flow Card 1: Add a New Inventory Item */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
@@ -595,7 +595,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 2: Assign an Item to a Staff Member */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -623,7 +623,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 3: Return an Assigned Item */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
@@ -650,7 +650,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 4: Track Item Status or Location */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -675,7 +675,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 5: Send Return Reminder */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
@@ -702,7 +702,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 6: Generate a Report */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -728,7 +728,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 7: Set Maintenance Schedule */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
@@ -753,7 +753,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 8: Receive Maintenance Notification */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -777,7 +777,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 9: Search for Any Item, Person, or Tag */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
@@ -802,7 +802,7 @@ const AssedraCaseStudy = () => {
 
               {/* User Flow Card 10: Switch View Modes (Table, Card, Timeline) */}
               <motion.div
-                className="bg-zinc-900 rounded-xl p-6 border border-zinc-800 shadow-sm"
+                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -844,7 +844,7 @@ const AssedraCaseStudy = () => {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="bg-zinc-900 p-8 rounded-xl text-center shadow-sm border border-blue-100 transition-all duration-300 hover:shadow-md hover:border-blue-600"
+                  className="fill-secondary p-8 rounded-xl text-center shadow-sm border border-blue-100 transition-all duration-300 hover:shadow-md hover:border-blue-600"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -861,7 +861,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="designs" className="py-24 bg-zinc-950">
+      <section id="designs" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -873,7 +873,7 @@ const AssedraCaseStudy = () => {
             <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Final Designs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
-                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/1920w-light.png"
                     alt="Assedra Dashboard"
@@ -886,7 +886,7 @@ const AssedraCaseStudy = () => {
               </div>
               
               <div className="text-center">
-                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/Inventory.png"
                     alt="Inventory Management"
@@ -899,7 +899,7 @@ const AssedraCaseStudy = () => {
               </div>
               
               <div className="text-center">
-                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/Assignments.png"
                     alt="Assignment Flow"
@@ -912,7 +912,7 @@ const AssedraCaseStudy = () => {
               </div>
               
               <div className="text-center">
-                <div className="bg-zinc-800 rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
                   <Image
                     src="/images/Assedra/Reports.png"
                     alt="Reports Dashboard"
@@ -950,7 +950,7 @@ const AssedraCaseStudy = () => {
               {outcomes.map((outcome, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-4 p-6 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex items-center gap-4 p-6 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -966,7 +966,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Prototype Video Section */}
-      <section id="prototype" className="py-24 bg-zinc-950">
+      <section id="prototype" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto"
@@ -983,7 +983,7 @@ const AssedraCaseStudy = () => {
             </div>
 
             <motion.div 
-              className="bg-zinc-900 rounded-2xl p-6 shadow-sm border border-zinc-800"
+              className="fill-secondary rounded-2xl p-6 shadow-sm border border-zinc-800"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -1006,7 +1006,7 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Reflection Section */}
-      <section id="reflection" className="py-24 bg-zinc-950">
+      <section id="reflection" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-3xl mx-auto text-center"
@@ -1029,18 +1029,18 @@ const AssedraCaseStudy = () => {
       </section>
 
       {/* Navigation */}
-      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
+      <div className="py-8 border-t border-zinc-800">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/#work" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100"
             >
               ← Back to Work
             </Link>
             <Link 
               href="/#contact" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 fill-secondary shadow-sm hover:shadow-md"
             >
               Get in Touch →
             </Link>
@@ -1054,5 +1054,4 @@ const AssedraCaseStudy = () => {
 };
 
 export default AssedraCaseStudy;
-
 
