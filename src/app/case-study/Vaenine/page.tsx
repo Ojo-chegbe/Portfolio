@@ -303,7 +303,7 @@ const VaenineCaseStudy = () => {
       <TopNav navItems={navItems} />
       
       {/* Hero Section */}
-      <section className="pt-48 pb-16 min-h-screen flex items-center bg-zinc-900" style={{ paddingTop: '12rem' }}>
+      <section className="pt-48 pb-16 min-h-screen flex items-center" style={{ paddingTop: '12rem' }}>
         <div className="container">
           <motion.div 
             className="flex flex-col items-center text-center gap-12"
@@ -372,7 +372,7 @@ const VaenineCaseStudy = () => {
                 Yet, the digital infrastructure supporting these experiences is fragmented, unintuitive, and often disconnected from the realities of Nigerian users.
               </p>
               
-              <div className="my-12 p-8 bg-zinc-900 rounded-2xl text-white text-center">
+              <div className="my-12 p-8 fill-secondary rounded-2xl text-white text-center">
                 <blockquote className="text-xl font-semibold italic leading-relaxed">
                   "How might we create a clean, culturally intuitive, and reliable event platform designed from the ground up for Nigerians?"
                 </blockquote>
@@ -387,7 +387,7 @@ const VaenineCaseStudy = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section id="pain-points" className="py-24 bg-zinc-950">
+      <section id="pain-points" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -407,7 +407,7 @@ const VaenineCaseStudy = () => {
               {painPoints.map((point, index) => (
                 <motion.div
                   key={index}
-                  className="flex gap-4 p-8 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex gap-4 p-8 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -422,7 +422,7 @@ const VaenineCaseStudy = () => {
               ))}
             </div>
             
-            <div className="mt-12 text-center p-8 bg-zinc-800 rounded-2xl border-l-4 border-purple-600">
+            <div className="mt-12 text-center p-8 fill-secondary rounded-2xl border-l-4 border-purple-600">
               <blockquote className="text-2xl font-semibold italic mb-4 text-zinc-100">
                 "Sometimes I buy a ticket but I'm scared if it's real or not. I prefer when my friend just sends me details on WhatsApp."
               </blockquote>
@@ -456,7 +456,7 @@ const VaenineCaseStudy = () => {
               {researchInsights.map((insight, index) => (
                 <motion.div
                   key={index}
-                  className="flex gap-4 p-8 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex gap-4 p-8 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -475,7 +475,7 @@ const VaenineCaseStudy = () => {
       </section>
 
       {/* Personas Section */}
-      <section id="personas" className="py-24 bg-zinc-950">
+      <section id="personas" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -495,13 +495,13 @@ const VaenineCaseStudy = () => {
               {personas.map((persona, index) => (
                 <motion.div
                   key={index}
-                  className="bg-zinc-900 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="fill-secondary rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
                   viewport={{ once: true }}
                 >
-                  <div className="h-48 bg-zinc-900 flex items-center justify-center">
+                  <div className="h-48 fill-secondary flex items-center justify-center">
                     <div className="text-white text-center">
                       <div className="text-4xl mb-2">👤</div>
                       <h3 className="text-xl font-bold">{persona.name}</h3>
@@ -512,7 +512,7 @@ const VaenineCaseStudy = () => {
                     <p className="text-sm text-zinc-300 mb-1">{persona.location}</p>
                     <p className="text-sm text-zinc-300 mb-6">{persona.experience}</p>
                     
-                    <div className="mb-6 p-4 bg-zinc-950 rounded-lg italic text-zinc-200">
+                    <div className="mb-6 p-4 fill-secondary rounded-lg italic text-zinc-200">
                       "{persona.bio}"
                     </div>
                     
@@ -571,7 +571,7 @@ const VaenineCaseStudy = () => {
               {competitorAnalysis.map((competitor, index) => (
                 <motion.div
                   key={index}
-                  className="bg-zinc-900 rounded-2xl p-8 shadow-sm border border-zinc-800"
+                  className="fill-secondary rounded-2xl p-8 shadow-sm border border-zinc-800"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
@@ -605,7 +605,7 @@ const VaenineCaseStudy = () => {
                     </div>
                   </div>
                   
-                  <div className="mt-6 p-4 bg-zinc-800 rounded-lg border-l-4 border-purple-600 border border-zinc-700">
+                  <div className="mt-6 p-4 fill-secondary rounded-lg border-l-4 border-purple-600 border border-zinc-700">
                     <h4 className="text-lg font-semibold mb-2 text-purple-600">Key Learning</h4>
                     <p className="text-zinc-200">{competitor.learnings}</p>
                   </div>
@@ -617,7 +617,7 @@ const VaenineCaseStudy = () => {
       </section>
 
       {/* Solution Section */}
-      <section id="solution" className="py-24 bg-zinc-950">
+      <section id="solution" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -637,7 +637,7 @@ const VaenineCaseStudy = () => {
               {keyFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="bg-zinc-900 p-8 rounded-xl text-center shadow-sm border border-purple-100 transition-all duration-300 hover:shadow-md hover:border-purple-600"
+                  className="fill-secondary p-8 rounded-xl text-center shadow-sm border border-purple-100 transition-all duration-300 hover:shadow-md hover:border-purple-600"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -675,7 +675,7 @@ const VaenineCaseStudy = () => {
                 </p>
                     </div>
               
-              <div className="bg-zinc-900 rounded-2xl shadow-sm overflow-hidden">
+              <div className="fill-secondary rounded-2xl shadow-sm overflow-hidden">
                 <div className="p-8 border-b border-zinc-800">
                   <h4 className="text-xl font-bold text-zinc-100 mb-2">User Interface & Public Pages</h4>
                   <p className="text-zinc-300">
@@ -683,7 +683,7 @@ const VaenineCaseStudy = () => {
                   </p>
                   </div>
                 
-                <div className="relative overflow-hidden h-[800px] sm:h-[700px] md:h-[600px] lg:h-[700px] bg-zinc-800">
+                <div className="relative overflow-hidden h-[800px] sm:h-[700px] md:h-[600px] lg:h-[700px] fill-secondary">
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                     {generalPages.map((item, index) => {
                       const isActive = index === activeGeneralStep;
@@ -704,7 +704,7 @@ const VaenineCaseStudy = () => {
                         key={item.id}
                         className={`absolute top-0 w-full max-w-4xl sm:max-w-5xl transform transition-all duration-500 ease-in-out ${transformClass}`}
                       >
-                        <div className="bg-zinc-900 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div className="fill-secondary rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                           <div className="relative h-[500px] sm:h-[600px] md:h-[500px] lg:h-[600px] overflow-hidden">
                             <Image
                               src={item.imageUrl}
@@ -713,7 +713,7 @@ const VaenineCaseStudy = () => {
                               className="object-contain"
                             />
                 </div>
-                          <div className="p-4 bg-zinc-950 border-t border-zinc-800">
+                          <div className="p-4 fill-secondary border-t border-zinc-800">
                             <h4 className="font-semibold text-zinc-100">{item.title}</h4>
                             <p className="text-sm text-zinc-300">Page {index + 1} of {generalPages.length}</p>
                           </div>
@@ -724,14 +724,14 @@ const VaenineCaseStudy = () => {
               </div>
               
                   <button
-                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveGeneralStep((prev) => (prev - 1 + generalPages.length) % generalPages.length)}
                     aria-label="Previous page"
                   >
                     <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                   <button
-                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveGeneralStep((prev) => (prev + 1) % generalPages.length)}
                     aria-label="Next page"
                   >
@@ -745,7 +745,7 @@ const VaenineCaseStudy = () => {
                         className={`rounded-full transition-all duration-300 ${
                           idx === activeGeneralStep
                             ? "bg-green-600 w-6 h-2 sm:w-8 sm:h-2"
-                            : "bg-zinc-600 w-1.5 h-1.5 sm:w-2 sm:h-2 hover:bg-green-600"
+                            : "fill-secondary w-1.5 h-1.5 sm:w-2 sm:h-2 hover:bg-green-600"
                         }`}
                         onClick={() => setActiveGeneralStep(idx)}
                         aria-label={`Go to page ${idx + 1}`}
@@ -765,7 +765,7 @@ const VaenineCaseStudy = () => {
                 </p>
                     </div>
               
-              <div className="bg-zinc-900 rounded-2xl shadow-sm overflow-hidden">
+              <div className="fill-secondary rounded-2xl shadow-sm overflow-hidden">
                 <div className="p-8 border-b border-zinc-800">
                   <h4 className="text-xl font-bold text-zinc-100 mb-2">Event Creation Process</h4>
                   <p className="text-zinc-300">
@@ -773,7 +773,7 @@ const VaenineCaseStudy = () => {
                   </p>
                   </div>
                 
-                <div className="relative overflow-hidden h-[600px] bg-zinc-800">
+                <div className="relative overflow-hidden h-[600px] fill-secondary">
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                     {userFlowItems.map((item, index) => {
                       const isActive = index === activeFlowStep;
@@ -794,7 +794,7 @@ const VaenineCaseStudy = () => {
                         key={item.id}
                         className={`absolute top-0 w-full max-w-4xl transform transition-all duration-500 ease-in-out ${transformClass}`}
                       >
-                        <div className="bg-zinc-900 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div className="fill-secondary rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                           <div className="relative h-[500px] overflow-hidden">
                             <Image
                               src={item.imageUrl}
@@ -803,7 +803,7 @@ const VaenineCaseStudy = () => {
                               className="object-contain"
                             />
                 </div>
-                          <div className="p-4 bg-zinc-950 border-t border-zinc-800">
+                          <div className="p-4 fill-secondary border-t border-zinc-800">
                             <h4 className="font-semibold text-zinc-100">{item.title}</h4>
                             <p className="text-sm text-zinc-300">Step {index + 1} of {userFlowItems.length}</p>
                           </div>
@@ -814,14 +814,14 @@ const VaenineCaseStudy = () => {
               </div>
               
                   <button
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveFlowStep((prev) => (prev - 1 + userFlowItems.length) % userFlowItems.length)}
                     aria-label="Previous step"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveFlowStep((prev) => (prev + 1) % userFlowItems.length)}
                     aria-label="Next step"
                   >
@@ -835,7 +835,7 @@ const VaenineCaseStudy = () => {
                         className={`rounded-full transition-all duration-300 ${
                           idx === activeFlowStep
                             ? "bg-purple-600 w-8 h-2"
-                            : "bg-zinc-600 w-2 h-2 hover:bg-purple-600"
+                            : "fill-secondary w-2 h-2 hover:bg-purple-600"
                         }`}
                         onClick={() => setActiveFlowStep(idx)}
                         aria-label={`Go to step ${idx + 1}`}
@@ -856,7 +856,7 @@ const VaenineCaseStudy = () => {
                 </p>
                     </div>
               
-              <div className="bg-zinc-900 rounded-2xl shadow-sm overflow-hidden">
+              <div className="fill-secondary rounded-2xl shadow-sm overflow-hidden">
                 <div className="p-8 border-b border-zinc-800">
                   <h4 className="text-xl font-bold text-zinc-100 mb-2">Admin Management Interface</h4>
                   <p className="text-zinc-300">
@@ -864,7 +864,7 @@ const VaenineCaseStudy = () => {
                   </p>
                   </div>
                 
-                <div className="relative overflow-hidden h-[700px] bg-zinc-800">
+                <div className="relative overflow-hidden h-[700px] fill-secondary">
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                     {adminPages.map((item, index) => {
                       const isActive = index === activeAdminStep;
@@ -885,7 +885,7 @@ const VaenineCaseStudy = () => {
                         key={item.id}
                         className={`absolute top-0 w-full max-w-5xl transform transition-all duration-500 ease-in-out ${transformClass}`}
                       >
-                        <div className="bg-zinc-900 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div className="fill-secondary rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                           <div className="relative h-[600px] overflow-hidden">
                             <Image
                               src={item.imageUrl}
@@ -894,7 +894,7 @@ const VaenineCaseStudy = () => {
                               className="object-contain"
                             />
                 </div>
-                          <div className="p-4 bg-zinc-950 border-t border-zinc-800">
+                          <div className="p-4 fill-secondary border-t border-zinc-800">
                             <h4 className="font-semibold text-zinc-100">{item.title}</h4>
                             <p className="text-sm text-zinc-300">Admin Page {index + 1} of {adminPages.length}</p>
               </div>
@@ -905,14 +905,14 @@ const VaenineCaseStudy = () => {
               </div>
               
                   <button
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveAdminStep((prev) => (prev - 1 + adminPages.length) % adminPages.length)}
                     aria-label="Previous admin page"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveAdminStep((prev) => (prev + 1) % adminPages.length)}
                     aria-label="Next admin page"
                   >
@@ -926,7 +926,7 @@ const VaenineCaseStudy = () => {
                         className={`rounded-full transition-all duration-300 ${
                           idx === activeAdminStep
                             ? "bg-blue-600 w-8 h-2"
-                            : "bg-zinc-600 w-2 h-2 hover:bg-blue-600"
+                            : "fill-secondary w-2 h-2 hover:bg-blue-600"
                         }`}
                         onClick={() => setActiveAdminStep(idx)}
                         aria-label={`Go to admin page ${idx + 1}`}
@@ -946,7 +946,7 @@ const VaenineCaseStudy = () => {
                 </p>
                     </div>
               
-              <div className="bg-zinc-900 rounded-2xl shadow-sm overflow-hidden">
+              <div className="fill-secondary rounded-2xl shadow-sm overflow-hidden">
                 <div className="p-8 border-b border-zinc-800">
                   <h4 className="text-xl font-bold text-zinc-100 mb-2">Organizer Management Interface</h4>
                   <p className="text-zinc-300">
@@ -954,7 +954,7 @@ const VaenineCaseStudy = () => {
                   </p>
                   </div>
                 
-                <div className="relative overflow-hidden h-[700px] bg-zinc-800">
+                <div className="relative overflow-hidden h-[700px] fill-secondary">
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                     {organizerPages.map((item, index) => {
                       const isActive = index === activeOrganizerStep;
@@ -975,7 +975,7 @@ const VaenineCaseStudy = () => {
                         key={item.id}
                         className={`absolute top-0 w-full max-w-5xl transform transition-all duration-500 ease-in-out ${transformClass}`}
                       >
-                        <div className="bg-zinc-900 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div className="fill-secondary rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                           <div className="relative h-[600px] overflow-hidden">
                             <Image
                               src={item.imageUrl}
@@ -984,7 +984,7 @@ const VaenineCaseStudy = () => {
                               className="object-contain"
                             />
                 </div>
-                          <div className="p-4 bg-zinc-950 border-t border-zinc-800">
+                          <div className="p-4 fill-secondary border-t border-zinc-800">
                             <h4 className="font-semibold text-zinc-100">{item.title}</h4>
                             <p className="text-sm text-zinc-300">Organizer Page {index + 1} of {organizerPages.length}</p>
               </div>
@@ -995,14 +995,14 @@ const VaenineCaseStudy = () => {
                   </div>
 
                   <button
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveOrganizerStep((prev) => (prev - 1 + organizerPages.length) % organizerPages.length)}
                     aria-label="Previous organizer page"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-zinc-900/90 rounded-full flex items-center justify-center text-zinc-400 hover:bg-zinc-900 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveOrganizerStep((prev) => (prev + 1) % organizerPages.length)}
                     aria-label="Next organizer page"
                   >
@@ -1016,7 +1016,7 @@ const VaenineCaseStudy = () => {
                         className={`rounded-full transition-all duration-300 ${
                           idx === activeOrganizerStep
                             ? "bg-purple-600 w-8 h-2"
-                            : "bg-zinc-600 w-2 h-2 hover:bg-purple-600"
+                            : "fill-secondary w-2 h-2 hover:bg-purple-600"
                         }`}
                         onClick={() => setActiveOrganizerStep(idx)}
                         aria-label={`Go to organizer page ${idx + 1}`}
@@ -1033,7 +1033,7 @@ const VaenineCaseStudy = () => {
 
 
       {/* Impact Section */}
-      <section id="impact" className="py-24 bg-zinc-950">
+      <section id="impact" className="py-24">
         <div className="container">
           <motion.div 
             className="max-w-4xl mx-auto text-center"
@@ -1056,7 +1056,7 @@ const VaenineCaseStudy = () => {
               {outcomes.map((outcome, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-4 p-6 bg-zinc-900 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex items-center gap-4 p-6 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
@@ -1068,7 +1068,7 @@ const VaenineCaseStudy = () => {
               ))}
             </div>
             
-            <div className="mt-12 p-8 bg-zinc-900 rounded-2xl shadow-sm border-l-4 border-purple-600">
+            <div className="mt-12 p-8 fill-secondary rounded-2xl shadow-sm border-l-4 border-purple-600">
               <blockquote className="text-xl font-semibold italic leading-relaxed text-zinc-100">
                 "The battle for event market share in Nigeria won't be won by copying features — it will be won by designing trust and flow that match local life."
               </blockquote>
@@ -1078,18 +1078,18 @@ const VaenineCaseStudy = () => {
       </section>
 
       {/* Navigation */}
-      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
+      <div className="py-8 border-t border-zinc-800">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/#work" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-none transition-all duration-300 hover:text-zinc-100"
             >
               ← Back to Work
             </Link>
             <Link 
               href="/#contact" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-none transition-all duration-300 fill-secondary shadow-sm hover:shadow-md"
             >
               Get in Touch →
             </Link>
@@ -1103,3 +1103,4 @@ const VaenineCaseStudy = () => {
 };
 
 export default VaenineCaseStudy;
+

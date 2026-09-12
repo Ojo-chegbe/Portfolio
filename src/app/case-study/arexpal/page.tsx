@@ -10,25 +10,22 @@ import DesignCarousel from '@/components/DesignCarousel';
 
 const ArexpalCaseStudy = () => {
   const navItems = [
-    { id: 'discover-define', label: 'Discover & Define', href: 'discover-define' },
-    { id: 'develop-deliver', label: 'Develop & Deliver', href: 'develop-deliver' },
+    { id: 'overview', label: 'Overview', href: 'overview' },
+    { id: 'problem', label: 'The Problem', href: 'problem' },
+    { id: 'research', label: 'Research', href: 'research' },
     { id: 'personas', label: 'Personas', href: 'personas' },
-    { id: 'information-architecture', label: 'Information Architecture', href: 'information-architecture' },
-    { id: 'user-flows', label: 'User Flows', href: 'user-flows' },
-    { id: 'design-principles', label: 'Design Principles', href: 'design-principles' },
-    { id: 'final-designs', label: 'Final Designs', href: 'final-designs' },
+    { id: 'architecture', label: 'Architecture', href: 'architecture' },
+    { id: 'solution', label: 'The Solution', href: 'solution' },
+    { id: 'screens', label: 'Core Screens', href: 'screens' },
     { id: 'prototype', label: 'Prototype', href: 'prototype' },
-    { id: 'outcome', label: 'The Outcome', href: 'outcome' },
-    { id: 'reflection', label: 'Reflection', href: 'reflection' }
+    { id: 'reflection', label: 'Reflection', href: 'reflection' },
   ];
 
-  // Images for specific sections
   const homeImage = '/images/Arexpal/Home.png';
   const tipsImage = '/images/Arexpal/Tips.png';
   const challengesImage = '/images/Arexpal/Challenges.png';
   const diaryImage = '/images/Arexpal/Diary.png';
 
-  // Images for carousel (excluding the main section images)
   const designItems = [
     { id: 0, imageUrl: '/images/Arexpal/Onboarding-1.png' },
     { id: 1, imageUrl: '/images/Arexpal/Onboarding-2.png' },
@@ -40,481 +37,184 @@ const ArexpalCaseStudy = () => {
     { id: 7, imageUrl: '/images/Arexpal/Settings.png' },
     { id: 8, imageUrl: '/images/Arexpal/All-categories.png' },
     { id: 9, imageUrl: '/images/Arexpal/Badges.png' },
-    { id: 10, imageUrl: '/images/Arexpal/Badges-2.png' }
+    { id: 10, imageUrl: '/images/Arexpal/Badges-2.png' },
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0a0a0c] text-zinc-100">
       <Header />
       <TopNav navItems={navItems} />
-      
-      <section className="pt-48 pb-16 min-h-screen flex items-center bg-zinc-900" style={{ paddingTop: '12rem' }}>
-        <div className="container">
-          <motion.div 
-            className="flex flex-col items-center text-center gap-12"
-            initial={{ opacity: 0, y: 30 }}
+
+      {/* Hero Section */}
+      <section id="overview" className="pt-36 pb-20 md:pt-44 md:pb-28">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <motion.div 
-              className="relative max-w-lg w-full rounded-3xl overflow-hidden shadow-sm border-2 border-blue-500"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
-            >
+            <p className="text-sm font-medium text-zinc-400 mb-4 tracking-wide">
+              Case Study &bull; Preventive Healthcare &bull; 2024
+            </p>
+
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.08]">
+              Arexpal: Designing a Lifeline for Preventive Health
+            </h1>
+
+            <p className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl mb-12">
+              Transforming clinical cancer-prevention guidelines into intuitive, sustainable daily habits through empathetic UX and ethical behavioral design.
+            </p>
+
+            {/* Metadata Line */}
+            <div className="flex flex-wrap gap-x-12 gap-y-4 py-6 border-y border-white/10 text-sm mb-16">
+              <div>
+                <span className="text-zinc-500 block">Role</span>
+                <span className="text-zinc-200 font-medium">Lead Product Designer</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block">Duration</span>
+                <span className="text-zinc-200 font-medium">8 Weeks (End-to-End)</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block">Focus</span>
+                <span className="text-zinc-200 font-medium">Behavioral UX &bull; Mobile App</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block">Methods</span>
+                <span className="text-zinc-200 font-medium">Interviews, IA, Rapid Prototyping</span>
+              </div>
+            </div>
+
+            {/* Hero Cover Mockup */}
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-900/40 mb-16">
               <Image
                 src="/images/Arexpal/cover-art.png"
-                alt="Arexpal Cancer Prevention App"
-                width={500}
-                height={375}
-                className="w-full h-auto"
+                alt="Arexpal Mobile App Overview"
+                fill
                 priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 1000px"
               />
-            </motion.div>
-            
-            <div className="max-w-4xl">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-zinc-100">
-                Arexpal UX Case Study
-              </h1>
-              <p className="text-2xl text-zinc-300 mb-4 leading-relaxed font-medium">
-                Designing a Lifeline for Preventive Health. A UX journey into behavior change.  
-              </p>
-             
-            <div className="flex flex-wrap justify-center gap-8 mb-12">
-              <div className="flex flex-col gap-2">
-                <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Role</span>
-                <span className="text-lg font-semibold text-zinc-100">UX Designer</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Timeline</span>
-                <span className="text-lg font-semibold text-zinc-100">2 months</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Tools</span>
-                <span className="text-lg font-semibold text-zinc-100">Figma, Notion, Miro</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Framework</span>
-                <span className="text-lg font-semibold text-zinc-100">Double Diamond</span>
-              </div>
             </div>
 
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-md max-w-4xl mx-auto">
-                <p className="text-lg text-zinc-200 leading-relaxed mb-6">
-                  This case study documents the end-to-end design process for Arexpal, a mobile application designed to make cancer prevention accessible, engaging, and life-changing. We&apos;ll explore how we moved from a broad societal challenge to a refined, user-centric solution, all guided by the principles of the Double Diamond design framework.
-                </p>
-                <p className="text-lg text-zinc-200 leading-relaxed">
-                  Our goal was not merely to build an app, but to design a companion—a tool that uses the addictive mechanics of modern technology for a profoundly positive purpose.
-                </p>
-              </div>
+            {/* Editorial Lead */}
+            <div className="max-w-3xl">
+              <p className="text-lg md:text-xl text-zinc-200 leading-relaxed font-light mb-6">
+                Up to 40% of cancers are preventable through manageable lifestyle modifications across diet, physical movement, sun exposure, and substance moderation. Yet public health advice remains largely locked behind clinical jargon, sporadic clinic campaigns, and guilt-driven warnings.
+              </p>
+              <p className="text-base text-zinc-400 leading-relaxed">
+                The objective with Arexpal was not to build another sterile medical tracker, but an everyday companion that respects human psychology—using micro-learning, conversational reflection, and positive reinforcement to make self-care feel effortless and dignifying.
+              </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Part 1: Discover & Define */}
-      <section id="discover-define" className="py-20 bg-zinc-900">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* The Problem: Access vs Action */}
+      <section id="problem" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100">
-              Part 1: Discover & Define – Understanding the Problem
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              The Fundamental Challenge: Access vs. Action
             </h2>
-            
-            <p className="text-lg text-zinc-300 mb-8 leading-relaxed">
-              The first half of the Double Diamond process is about divergence and convergence. We start by exploring the problem as widely as possible (Discover) and then synthesize those findings into a clear, actionable problem statement (Define). This phase is about falling in love with the problem, not the solution.
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Early research revealed that the barrier to preventive health is twofold: people either cannot access trustworthy guidance, or when they can, that knowledge fails to translate into lasting habit change.
             </p>
 
-            <div className="bg-zinc-900 p-8 rounded-xl mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100">The Challenge: Health Education Is A Privilege, Not A Right</h3>
-              
-              <p className="text-lg text-zinc-200 mb-6 leading-relaxed">
-                Our project began with a stark and sobering reality: cancer is not a single disease, and prevention is our most powerful weapon against it. Up to 40% of cancers can be prevented through lifestyle modifications in areas like diet, exercise, stress management, and substance use. The knowledge to make these changes exists, but it&apos;s locked away, unevenly distributed, and often fails to inspire action.
-              </p>
-
-              <p className="text-lg text-zinc-200 mb-6 leading-relaxed">
-                The core challenge was twofold:
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-zinc-900 p-6 rounded-lg shadow-sm">
-                  <h4 className="text-xl font-semibold mb-4 text-red-600">The Access Gap</h4>
-                  <p className="text-zinc-200 leading-relaxed">
-                    How can we deliver life-saving preventive health knowledge to everyone, regardless of their proximity to clinics, the quality of their formal education, or their socioeconomic status? Building more hospitals is a slow, expensive solution. Traditional health campaigns have limited reach and sustainability.
-                  </p>
-                </div>
-                
-                <div className="bg-zinc-900 p-6 rounded-lg shadow-sm">
-                  <h4 className="text-xl font-semibold mb-4 text-orange-600">The Action Gap</h4>
-                  <p className="text-zinc-200 leading-relaxed">
-                    Even when people have access to information, why does it so rarely translate into lasting behavior change? We all know that smoking is harmful and a balanced diet is good, yet the gap between knowledge and action persists.
-                  </p>
-                </div>
+            <div className="grid md:grid-cols-2 gap-12 mb-14">
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  01. The Access Gap
+                </h3>
+                <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+                  Geographic distance to healthcare facilities and the cost of private consultations make preventive advice a privilege. The digital alternative—searching the open web—often yields contradictory, frightening, or unverified claims that induce anxiety rather than clarity.
+                </p>
               </div>
 
-              <div className="mt-8 p-6 bg-zinc-900 rounded-lg">
-                <p className="text-lg text-zinc-200 leading-relaxed">
-                  We saw a single, ubiquitous tool that could bridge both gaps: <strong>the smartphone</strong>. Our challenge, therefore, crystallized into a focused question: <em>How might we leverage the smartphone to transform preventive health education from a passive, forgettable chore into an active, addictive, and deeply personal daily habit?</em>
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  02. The Action Gap
+                </h3>
+                <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+                  Human cognition heavily discounts long-term rewards. Knowing that tobacco is harmful or that sleep is vital rarely offsets the immediate stress relief of an unhealthy habit. Without immediate, encouraging feedback loops, good intentions consistently deteriorate.
                 </p>
               </div>
             </div>
 
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100">Pain Points: The Four Barriers to a Healthier Life</h3>
-              
-              <p className="text-lg text-zinc-300 mb-8 leading-relaxed">
-                To truly understand the "why" behind the access and action gaps, our team initiated the Discover phase. We conducted a mixed-methods research campaign, including 20 in-depth user interviews across our target demographics, a market analysis of over 30 existing health and wellness apps, and a survey of 250 individuals. This divergent exploration allowed us to immerse ourselves in the user's world, and from this, we synthesized our findings into four critical pain points during the Define phase.
+            <div className="border-l-2 border-zinc-600 pl-6 max-w-3xl">
+              <p className="text-lg md:text-xl text-zinc-200 italic font-light leading-relaxed">
+                &ldquo;How might we turn preventive health from a scary, forgettable chore into an active, positive daily routine on the one device people carry everywhere?&rdquo;
               </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-              <div className="space-y-8">
-                <div className="bg-zinc-950 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-4 text-zinc-100">1. Barrier to Access & Trust</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-red-500">
-                    "I want to be healthier, but my local clinic is two hours away, and I can't afford to take the day off work. I look online, but one site says coffee is a superfood, and the next says it causes cancer. Who do I even trust?"
-                  </blockquote>
-                  <p className="text-zinc-200 leading-relaxed">
-                    <strong>The Pain:</strong> Reliable health information is physically and financially inaccessible for many. The digital alternative is a chaotic wasteland of contradictory, jargon-filled, and often untrustworthy content. Users feel overwhelmed and paralyzed by the noise.
-                  </p>
-                </div>
+      {/* Research & Psychological Friction */}
+      <section id="research" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Research &amp; Four Behavioral Friction Points
+            </h2>
 
-                <div className="bg-zinc-950 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-4 text-zinc-100">2. Information Overwhelm & Cognitive Load</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-orange-500">
-                    "I downloaded a health app once. It gave me a 20-page article on antioxidants. I have two kids and a full-time job. I read the first paragraph and never opened it again."
-                  </blockquote>
-                  <p className="text-zinc-200 leading-relaxed">
-                    <strong>The Pain:</strong> The human brain is not wired to process dense, clinical information, especially when already stressed. Health education is often presented in a way that is academically sound but behaviorally ineffective. It demands too much cognitive effort for too little immediate reward.
-                  </p>
-                </div>
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-16 font-light">
+              We interviewed 20 individuals across Nigeria and audited 30 existing health apps to pinpoint why wellness tools suffer steep 30-day drop-offs. Four recurring psychological blockers emerged:
+            </p>
 
-                <div className="bg-zinc-950 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-4 text-zinc-100">3. The Behavioral Gap & Lack of Motivation</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-yellow-500">
-                    "I know I should stop smoking. I've tried. But after a stressful day, it's just... easy. The 'reward' of quitting feels so far away, but the reward of a cigarette is instant."
-                  </blockquote>
-                  <p className="text-zinc-200 leading-relaxed">
-                    <strong>The Pain:</strong> Humans are driven by short-term feedback loops. The long-term benefits of preventive health are abstract and delayed, while unhealthy habits often provide immediate gratification. Without compelling, immediate reinforcement, good intentions fizzle out.
-                  </p>
-                </div>
-
-                <div className="bg-zinc-950 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-4 text-zinc-100">4. The Retention Challenge & "Chore" Factor</h4>
-                  <blockquote className="bg-zinc-900 p-4 rounded-lg mb-4 italic text-zinc-200 border-l-4 border-green-500">
-                    "Most health apps feel like a doctor nagging me. They're sterile, boring, and make me feel guilty when I miss a day. It feels like work, not something I want to do."
-                  </blockquote>
-                  <p className="text-zinc-200 leading-relaxed">
-                    <strong>The Pain:</strong> Existing health apps frequently fail because they are designed like medical tools, not human experiences. They lack emotional connection, rewarding feedback, and a sense of play, leading to high churn rates as users quickly lose interest.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 p-6 bg-zinc-800 rounded-xl border border-zinc-700">
-                <p className="text-lg text-zinc-200 leading-relaxed">
-                  These four pain points became the foundation of our design strategy. We weren't just building an information delivery system; we were designing a solution to overcome deep-seated psychological and accessibility barriers.
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Barrier 01</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Distrust &amp; Information Chaos</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                  Without a trusted source, users cycle through contradictory claims online, ultimately discarding all recommendations out of frustration.
+                </p>
+                <p className="text-xs text-zinc-300 italic border-l border-zinc-700 pl-3">
+                  &ldquo;One site says coffee prevents cancer, another says it causes it. Who do I even trust?&rdquo;
                 </p>
               </div>
-            </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100">Design Process: The Double Diamond in Action</h3>
-              
-              <p className="text-lg text-zinc-300 mb-6 leading-relaxed">
-                To tackle this multifaceted challenge, we committed to the Double Diamond framework. This approach ensured we didn't jump to solutions prematurely and that our final product was rigorously validated against real user needs.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {[
-                  {
-                    step: '01',
-                    title: 'Discover',
-                    description: 'Broad research—user interviews, competitor analysis, and literature reviews on behavioral psychology'
-                  },
-                  {
-                    step: '02',
-                    title: 'Define',
-                    description: 'Synthesized research into four core pain points and developed three detailed user personas'
-                  },
-                  {
-                    step: '03',
-                    title: 'Develop',
-                    description: 'Creative exploration with brainstorming sessions, wireframes, user flows, and information architecture'
-                  },
-                  {
-                    step: '04',
-                    title: 'Deliver',
-                    description: 'Refined ideas into high-fidelity mockups, interactive prototype, and usability testing'
-                  }
-                ].map((item) => (
-                  <div key={item.step} className="bg-[#161616] p-8 aspect-square h-full flex flex-col justify-between border border-zinc-800 relative group">
-                    <div className="flex justify-end">
-                      <span className="text-5xl font-bold text-zinc-800/30 leading-none tracking-tighter">
-                        {item.step}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold mb-2 text-white">{item.title}</h4>
-                      <p className="text-[11px] leading-relaxed text-zinc-500">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Part 2: Develop & Deliver */}
-      <section id="develop-deliver" className="py-20 bg-zinc-950">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100">
-              Part 2: Develop & Deliver – Crafting the Solution
-            </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed">
-              With a clearly defined problem and a deep understanding of our users, we entered the second half of the Double Diamond. This is where we explored potential solutions (Develop) and refined them into a final, polished product (Deliver).
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Personas Section */}
-      <section id="personas" className="py-20 bg-zinc-900">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              Personas: Giving Our Users a Face and a Voice
-            </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              From our research in the Define phase, we developed three core personas. These weren't just demographic checklists; they were narrative tools that guided every design decision, from the tone of voice to the feature prioritization. They kept us grounded in human-centered design.
-            </p>
-
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Zainab */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">👩‍🎓</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Zainab, The Youth</h3>
-                  <p className="text-zinc-300">18 years old, University Student</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Bio</h4>
-                    <p className="text-zinc-200 text-sm leading-relaxed">
-                      Zainab is a bright, social university student living in a bustling city. Her life revolves around her studies, friends, and social media. She's experimenting with her independence, which includes late-night fast food, social drinking, and occasional smoking. The concept of long-term health feels abstract and distant.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Goals</h4>
-                    <ul className="text-zinc-200 text-sm space-y-1">
-                      <li>• Fit in with her social circle</li>
-                      <li>• Manage the stress of her studies</li>
-                      <li>• Discover fun, new experiences</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Frustrations</h4>
-                    <ul className="text-zinc-200 text-sm space-y-1">
-                      <li>• Health advice feels preachy and irrelevant</li>
-                      <li>• Traditional health apps are boring</li>
-                      <li>• Limited disposable income for health</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-pink-600 mb-2">UX Goal for Zainab</h4>
-                    <p className="text-zinc-200 text-sm">
-                      Make health education feel like a fun, social game. It needs to be shareable, competitive, and use language that resonates with her generation.
-                    </p>
-                  </div>
-                </div>
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Barrier 02</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Cognitive Overload</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                  Clinical whitepapers and dense medical articles demand too much mental energy from users who are already fatigued by daily work and life.
+                </p>
+                <p className="text-xs text-zinc-300 italic border-l border-zinc-700 pl-3">
+                  &ldquo;A health app gave me a 20-page article on antioxidants. I read one paragraph and deleted it.&rdquo;
+                </p>
               </div>
 
-              {/* David */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">👨‍💻</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">David, The Health-Conscious Adult</h3>
-                  <p className="text-zinc-300">35 years old, Software Developer</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Bio</h4>
-                    <p className="text-zinc-200 text-sm leading-relaxed">
-                      David works a demanding, sedentary job. He's married with one child and is starting to notice the effects of a high-stress lifestyle. He tries to eat well and exercises sporadically but struggles with consistency. He is a proactive information-seeker but feels overwhelmed by conflicting advice online.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Goals</h4>
-                    <ul className="text-zinc-200 text-sm space-y-1">
-                      <li>• Have more energy for his family</li>
-                      <li>• Manage work-related stress effectively</li>
-                      <li>• Find a sustainable, practical routine</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Frustrations</h4>
-                    <ul className="text-zinc-200 text-sm space-y-1">
-                      <li>• Lack of time for complex health articles</li>
-                      <li>• "All-or-nothing" fitness plans</li>
-                      <li>• Difficulty tracking daily habits</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-blue-600 mb-2">UX Goal for David</h4>
-                    <p className="text-zinc-200 text-sm">
-                      Provide actionable, personalized, and data-driven insights that fit seamlessly into his busy life. The experience must feel efficient, credible, and empowering.
-                    </p>
-                  </div>
-                </div>
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Barrier 03</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Delayed Reward Discounting</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                  Preventive benefits materialize over decades, whereas poor habits provide instant gratification. Abstract future benefits fail to sustain motivation today.
+                </p>
+                <p className="text-xs text-zinc-300 italic border-l border-zinc-700 pl-3">
+                  &ldquo;The reward of quitting smoking feels years away, but a cigarette is instant relief right now.&rdquo;
+                </p>
               </div>
 
-              {/* Aisha */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-green-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl">👩‍🏫</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Aisha, The Survivor</h3>
-                  <p className="text-zinc-300">52 years old, Retired Teacher, Post-Treatment</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Bio</h4>
-                    <p className="text-zinc-200 text-sm leading-relaxed">
-                      Aisha is a breast cancer survivor. Her treatment was successful, but she lives with the constant fear of recurrence. Her doctor has advised her to manage her diet, stress, and sleep, but she feels anxious and unsupported in her daily journey.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Goals</h4>
-                    <ul className="text-zinc-200 text-sm space-y-1">
-                      <li>• Feel in control of her health</li>
-                      <li>• Find supportive community</li>
-                      <li>• Build healthy habits to minimize risk</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-2">Frustrations</h4>
-                    <ul className="text-zinc-200 text-sm space-y-1">
-                      <li>• Clinical, impersonal tracking tools</li>
-                      <li>• The emotional toll of health management</li>
-                      <li>• Feeling alone in her journey</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-green-600 mb-2">UX Goal for Aisha</h4>
-                    <p className="text-zinc-200 text-sm">
-                      Create a gentle, empathetic, and structured experience. The focus is on reassurance, emotional well-being, and celebrating consistent progress over time.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Information Architecture Section */}
-      <section id="information-architecture" className="py-20 bg-zinc-950">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              Information Architecture (IA): Building a Clear and Scalable Foundation
-            </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              During the Develop phase, a key step was designing the app's structure. Our IA was guided by the principle of Cognitive Ease. We wanted users to navigate the app intuitively, without ever feeling lost or having to think too hard about where to find something. The structure is flat and centered around four key user activities.
-            </p>
-
-            <div className="bg-zinc-900 p-8 rounded-xl shadow-lg mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100">Sitemap</h3>
-              
-              <div className="space-y-6">
-                <div className="border-l-4 border-blue-500 pl-6">
-                  <h4 className="text-xl font-semibold text-zinc-100 mb-2">1.0 Home (The Dashboard)</h4>
-                  <p className="text-zinc-300">The user's daily starting point. Provides a quick, personalized overview of their day.</p>
-                </div>
-                
-                <div className="border-l-4 border-green-500 pl-6">
-                  <h4 className="text-xl font-semibold text-zinc-100 mb-2">2.0 Feed (The Library)</h4>
-                  <p className="text-zinc-300 mb-3">The knowledge hub. Where users discover and consume educational content.</p>
-                  <div className="ml-4 space-y-2">
-                    <p className="text-zinc-300">• 2.1 For You (AI-Personalized)</p>
-                    <p className="text-zinc-300">• 2.2 General (Public Health Awareness)</p>
-                    <p className="text-zinc-300">• 2.3 Saved (Personal Collection)</p>
-                  </div>
-                </div>
-                
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h4 className="text-xl font-semibold text-zinc-100 mb-2">3.0 Diary (The Log)</h4>
-                  <p className="text-zinc-300 mb-3">The central interaction point. The tool for self-reflection and data input.</p>
-                  <div className="ml-4 space-y-2">
-                    <p className="text-zinc-300">• 3.1 New Daily Entry</p>
-                    <p className="text-zinc-300">• 3.2 View Past Entries & Patterns</p>
-                  </div>
-                </div>
-                
-                <div className="border-l-4 border-orange-500 pl-6">
-                  <h4 className="text-xl font-semibold text-zinc-100 mb-2">4.0 Challenges (The Gym)</h4>
-                  <p className="text-zinc-300 mb-3">The action and engagement hub. Where knowledge turns into practice through gamified tasks.</p>
-                  <div className="ml-4 space-y-2">
-                    <p className="text-zinc-300">• 4.1 My Active Challenges</p>
-                    <p className="text-zinc-300">• 4.2 Explore New Challenges</p>
-                  </div>
-                </div>
-                
-                <div className="border-l-4 border-red-500 pl-6">
-                  <h4 className="text-xl font-semibold text-zinc-100 mb-2">5.0 Profile (The Trophy Room)</h4>
-                  <p className="text-zinc-300 mb-3">The user's identity and progress center.</p>
-                  <div className="ml-4 space-y-2">
-                    <p className="text-zinc-300">• 5.1 My Badges & Streaks</p>
-                    <p className="text-zinc-300">• 5.2 Data & Progress Visualization</p>
-                    <p className="text-zinc-300">• 5.3 Settings & Notifications</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8 p-6 bg-zinc-800 rounded-lg border border-zinc-700">
-                <p className="text-zinc-200 leading-relaxed">
-                  The bottom navigation bar prominently features Home, Feed, Challenges, and Profile, with the most important action, Diary, placed in the center as a visually distinct Floating Action Button (FAB). This hierarchy constantly reinforces the core loop: <strong>learn (Feed), act (Challenges), and reflect (Diary)</strong>.
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Barrier 04</span>
+                <h3 className="text-lg font-semibold text-white mb-2">The Guilt-Driven Experience</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                  Traditional trackers function like stern doctor appointments—shaming users when they miss a day, which accelerates uninstalls.
+                </p>
+                <p className="text-xs text-zinc-300 italic border-l border-zinc-700 pl-3">
+                  &ldquo;It felt like a doctor nagging me. When I missed a day, I just felt guilty and stopped opening it.&rdquo;
                 </p>
               </div>
             </div>
@@ -522,543 +222,403 @@ const ArexpalCaseStudy = () => {
         </div>
       </section>
 
-      {/* User Flows Section */}
-      <section id="user-flows" className="py-20 bg-zinc-900">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Personas: Human Models */}
+      <section id="personas" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              User Flows: Charting the Path to Engagement
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Three Behavioral Archetypes
             </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              To ensure a frictionless experience, we mapped out critical user flows. These flows demonstrate how users navigate through the core features of Arexpal, from daily logging to challenge participation.
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Rather than generic demographic descriptions, each persona represents a distinct emotional stance toward health guidance:
             </p>
 
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Daily Diary Logging Flow */}
-              <motion.div
-                className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📝</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Daily Diary Logging Flow</h3>
-                  <p className="text-zinc-300 font-medium">Goal: Make habit logging effortless and rewarding</p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">Zainab, 18</h3>
+                  <p className="text-xs text-zinc-400">Student &bull; Lagos</p>
                 </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">1</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User opens app → Diary icon at center bottom nav</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">2</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Sees today's date and input box</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">3</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Smart prompts carousel suggests logs (e.g., "Did you eat fruits today?" "Sleep hours?")</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">4</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User types or taps quick options</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">5</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Entry saved → earns Vital Points + micro-reward animation</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">6</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User sees log appear in today's summary</p>
-                  </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Navigating new independence with late-night food and social drinking. Thinks cancer is an issue solely for older adults.
+                </p>
+                <div className="text-xs text-zinc-400 pt-3 border-t border-white/10 space-y-1">
+                  <p><strong className="text-zinc-200">UX Priority:</strong> Snackable micro-tips, peer challenges, and lighthearted gamification.</p>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Tips & Feed Flow */}
-              <motion.div
-                className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📚</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Tips & Feed Flow</h3>
-                  <p className="text-zinc-300 font-medium">Goal: Educate through snackable content while keeping it fun</p>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">David, 35</h3>
+                  <p className="text-xs text-zinc-400">Software Developer &bull; Abuja</p>
                 </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">1</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User taps Feed tab</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">2</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Default view = "For You" (personalized AI tips)</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">3</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User scrolls → each card shows a health tip or fun fact</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">4</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User can like, share, save, or bookmark</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">5</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User switches to General Tips or Bookmarked Tips via toggle</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">6</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User exits → receives gentle nudge notification later ("Want your next cancer-fighting tip?")</p>
-                  </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Sedentary desk worker managing work stress and family time. Wants actionable routines without complex lifestyle overhauls.
+                </p>
+                <div className="text-xs text-zinc-400 pt-3 border-t border-white/10 space-y-1">
+                  <p><strong className="text-zinc-200">UX Priority:</strong> One-tap rapid logging, verified medical sources, and zero cognitive drag.</p>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Challenge Participation Flow */}
-              <motion.div
-                className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🏆</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">Challenge Participation Flow</h3>
-                  <p className="text-zinc-300 font-medium">Goal: Motivate users with community-driven challenges</p>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">Aisha, 52</h3>
+                  <p className="text-xs text-zinc-400">Retired Teacher &bull; Ibadan</p>
                 </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">1</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User taps Challenges tab</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">2</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Browses "Suggested Challenges" or uses search</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">3</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Selects a challenge card (e.g., "7-Day No Sugar Challenge")</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">4</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Reads details: focus, duration, reward, participants</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">5</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Taps Join Challenge → confirmation screen</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">6</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">Challenge now appears in Active Challenges with progress bar</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-zinc-100 font-bold text-xs">7</span>
-                    </div>
-                    <p className="text-zinc-200 text-sm">User earns Vital Points and badges as milestones are reached</p>
-                  </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  In remission from breast cancer. Experiencing recurrence anxiety and seeking gentle, emotionally supportive habit guidance.
+                </p>
+                <div className="text-xs text-zinc-400 pt-3 border-t border-white/10 space-y-1">
+                  <p><strong className="text-zinc-200">UX Priority:</strong> Warm, destigmatized language, conversational reflection, and reassurance.</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Design Principles & Solution Section */}
-      <section id="design-principles" className="py-20 bg-zinc-950">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Information Architecture & System Loop */}
+      <section id="architecture" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Information Architecture: The Core Habit Loop
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              We organized the entire product around a continuous psychological loop: <strong>Learn &bull; Reflect &bull; Act</strong>. A flat structure ensures any core feature is accessible in a single tap.
+            </p>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-14">
+              <div>
+                <span className="text-xs text-zinc-500 block mb-1">01 &bull; Orientation</span>
+                <h3 className="text-base font-semibold text-white mb-2">Home Dashboard</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Personalized daily greeting, streak status, quick reflection shortcut, and AI hero tip of the day.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs text-zinc-500 block mb-1">02 &bull; Learn</span>
+                <h3 className="text-base font-semibold text-white mb-2">Feed (The Library)</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Modular Tip Cards personalized by AI, category filters (Nutrition, Sleep, Sun Safety), and source citations.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs text-zinc-500 block mb-1">03 &bull; Reflect</span>
+                <h3 className="text-base font-semibold text-white mb-2">Diary (The Core)</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Anchored as the central Floating Action Button. Guided conversational prompts replace blank text boxes.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs text-zinc-500 block mb-1">04 &bull; Act</span>
+                <h3 className="text-base font-semibold text-white mb-2">Challenges</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Bite-sized 5-day to 14-day community missions that convert knowledge into tangible social habits.
+                </p>
+              </div>
+            </div>
+
+            <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-zinc-400">
+              <span>Navigation Hierarchy: 4-tab bar with central prominent Diary action.</span>
+              <span className="text-zinc-200">Zero submenus deeper than 2 levels.</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Solution & Three Design Principles */}
+      <section id="solution" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               The Solution: Health Education That Feels Human
             </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              Our solution, Arexpal, is a mobile app grounded in three core design principles that directly address the user pain points:
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Arexpal solves the behavioral gap through three foundational design pillars, powered by an ambient intelligence layer that works quietly in the background.
             </p>
 
-            <div className="grid lg:grid-cols-3 gap-8 mb-12">
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl">🧠</span>
+            {/* Three Pillars in fill-secondary */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="fill-secondary p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-3">
+                    Pillar 01
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-3">Cognitive Ease</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+                    Information is delivered in snackable, jargon-free &ldquo;Tip Cards&rdquo;. Navigation is flat and predictable, dramatically reducing cognitive fatigue.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-zinc-100 text-center">Cognitive Ease</h3>
-                <p className="text-zinc-200 leading-relaxed">
-                  Information is delivered in bite-sized, jargon-free snippets ("Tip Cards"). Navigation is simple and predictable. The UI is clean and uncluttered, reducing cognitive load and making engagement effortless.
+                <p className="text-xs text-zinc-400 pt-4 border-t border-white/5">
+                  Sub-5-second scanning &bull; 1 concept per card
                 </p>
               </div>
-              
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
-                <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl">❤️</span>
+
+              <div className="fill-secondary p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-3">
+                    Pillar 02
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-3">Emotional Design</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+                    Warm visual language, supportive conversational prompts, and celebratory milestones replace the sterile, scolding aesthetic of traditional medical apps.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-zinc-100 text-center">Emotional Design</h3>
-                <p className="text-zinc-200 leading-relaxed">
-                  We moved away from a sterile, clinical aesthetic. Arexpal uses a warm color palette, playful icons, and an encouraging, conversational tone of voice. Micro-interactions like celebratory animations and haptic feedback make users feel seen, supported, and successful.
+                <p className="text-xs text-zinc-400 pt-4 border-t border-white/5">
+                  Empathetic feedback &bull; Reassuring tone
                 </p>
               </div>
-              
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl">🎮</span>
+
+              <div className="fill-secondary p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-3">
+                    Pillar 03
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-3">Behavioral Stickiness</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+                    Ethical gamification—streaks, community challenges, and the Zeigarnik effect—bridges the gap between delayed benefits and immediate motivation.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-zinc-100 text-center">Behavioral Stickiness</h3>
-                <p className="text-zinc-200 leading-relaxed">
-                  We ethically borrowed powerful mechanics from social media and gaming to drive retention and motivation. This includes gamification (points, badges, streaks), social accountability (challenges), and psychological principles like the Zeigarnik Effect.
+                <p className="text-xs text-zinc-400 pt-4 border-t border-white/5">
+                  Positive reinforcement &bull; Habit loops
                 </p>
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100 text-center">The AI Engine: Personalization at Scale</h3>
-              <p className="text-lg text-zinc-200 leading-relaxed text-center max-w-3xl mx-auto">
-                At its heart, the solution is powered by a sophisticated but invisible AI engine that personalizes the entire experience, from the tips in the feed to the prompts in the diary, ensuring the content is always relevant, timely, and culturally resonant.
+            {/* Ambient AI Layer */}
+            <div className="fill-secondary p-8 md:p-10 rounded-xl">
+              <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-2">
+                Under the Hood
+              </span>
+              <h3 className="text-2xl font-bold text-white mb-3">
+                The Ambient Intelligence Engine
+              </h3>
+              <p className="text-sm md:text-base text-zinc-300 leading-relaxed max-w-3xl mb-8">
+                The AI does not show off algorithmic complexity; it acts as an invisible editor. It analyzes persona goals, local Nigerian culinary habits, and past diary logs to dynamically surface relevant tips, prompts, and reminders.
               </p>
+
+              <div className="grid sm:grid-cols-3 gap-6 pt-6 border-t border-white/5 text-xs text-zinc-400">
+                <div>
+                  <strong className="text-zinc-200 block mb-1">Contextual Curation</strong>
+                  Matches prevention tips to active user habits and seasonal routines.
+                </div>
+                <div>
+                  <strong className="text-zinc-200 block mb-1">Cultural Grounding</strong>
+                  Frames questions around local dietary patterns, ingredients, and lifestyle factors.
+                </div>
+                <div>
+                  <strong className="text-zinc-200 block mb-1">Adaptive Cadence</strong>
+                  Calibrates notification timing to prevent alert fatigue.
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Final Designs Section */}
-      <section id="final-designs" className="py-20 bg-zinc-900">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Core Screens Walkthrough */}
+      <section id="screens" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              Final Designs: A Walkthrough of the Core Experience
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Core Screens Walkthrough
             </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              This is the Deliver stage, where our concepts, flows, and principles manifest as tangible screens.
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-16 font-light">
+              How the architectural principles translate into actual production surfaces designed for clarity and emotional safety.
             </p>
 
-            <div className="space-y-16">
-              {/* Home Page */}
-              <div className="bg-zinc-950 border border-zinc-800 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">1. The Home Page: Your Daily Dose of Encouragement</h3>
-                
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-zinc-200 leading-relaxed mb-6">
-                      The Home page is the user's dashboard. It's designed to be scanned in seconds while providing value and a gentle nudge toward engagement.
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Personalized Welcome</h4>
-                        <p className="text-zinc-300 text-sm">A simple "Good morning, David!" immediately establishes an emotional connection.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Quick Daily Log</h4>
-                        <p className="text-zinc-300 text-sm">A prominent, one-tap entry point to the Diary, reducing the friction of logging.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Today's Tip (AI-Powered)</h4>
-                        <p className="text-zinc-300 text-sm">The hero component. This isn't a random fact; it's a micro-learning card generated by our AI, tailored to the user's persona and recent logs.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Gamification At-a-Glance</h4>
-                        <p className="text-zinc-300 text-sm">Progress bars for active challenges, current streak counts, and recently earned badges are visible, providing instant positive reinforcement.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="relative h-[600px] overflow-hidden bg-zinc-900 rounded-xl border border-zinc-800 p-4">
+            <div className="space-y-24">
+              {/* Home */}
+              <div className="grid md:grid-cols-12 gap-10 items-center">
+                <div className="md:col-span-6 space-y-4">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">01 &bull; Dashboard</span>
+                  <h3 className="text-2xl font-bold text-white">Home: Daily Encouragement</h3>
+                  <p className="text-sm md:text-base text-zinc-300 leading-relaxed">
+                    Designed for a sub-5-second glance. Features a personalized morning greeting, active streak counters, and a single hero micro-learning card. It provides a gentle nudge toward daily reflection without feeling like a task manager.
+                  </p>
+                  <p className="text-xs text-zinc-400 italic pt-2">
+                    UX Rationale: Prevents cognitive overload by prioritizing one clear daily takeaway over medical metrics.
+                  </p>
+                </div>
+                <div className="md:col-span-6 flex justify-center">
+                  <div className="relative w-[260px] sm:w-[300px] h-[500px] sm:h-[560px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
                     <Image
                       src={homeImage}
-                      alt="Arexpal Home Screen"
+                      alt="Arexpal Home Dashboard"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 260px, 300px"
                     />
                   </div>
                 </div>
-                
-                <div className="mt-6 p-6 bg-zinc-800 rounded-lg border border-zinc-700">
-                  <h4 className="font-semibold text-blue-600 mb-2">UX Rationale</h4>
-                  <p className="text-zinc-200">
-                    The Home page fights information overwhelm and the "chore" factor. It's not a list of tasks but a calm, encouraging space that respects the user's time and motivates them for the day ahead.
-                  </p>
-                </div>
               </div>
 
-              {/* Diary Page */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">2. The Diary Page: A Conversation, Not a Clinical Record</h3>
-                
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-zinc-200 leading-relaxed mb-6">
-                      We deliberately reframed journaling. The central navigation icon is the Arexpal logo, reinforcing this as the app's core interaction.
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Conversational Input</h4>
-                        <p className="text-zinc-300 text-sm">Instead of empty text fields, the page opens with a friendly prompt like, "What's on your mind today, Aisha?"</p>
-                      </div>
-                      
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Smart Prompts Carousel</h4>
-                        <p className="text-zinc-300 text-sm">The key innovation. The AI suggests relevant things to log based on the user's goals and past entries. This turns logging from a recall exercise into a simple choice-based interaction.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Locked Badge Teasers</h4>
-                        <p className="text-zinc-300 text-sm">To motivate consistent logging, a locked badge might be shown with the text "Log for 7 days in a row to unlock." This creates curiosity and a clear goal.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="relative h-[600px] overflow-hidden">
+              {/* Diary */}
+              <div className="grid md:grid-cols-12 gap-10 items-center">
+                <div className="md:col-span-6 md:order-2 space-y-4">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">02 &bull; Reflection</span>
+                  <h3 className="text-2xl font-bold text-white">Diary: Guided Conversation</h3>
+                  <p className="text-sm md:text-base text-zinc-300 leading-relaxed">
+                    Traditional journaling presents an intimidating blank field. Here, smart prompt carousels (e.g. &ldquo;Did you eat fresh fruit today?&rdquo;) allow quick chip selections, turning recall into easy choice-based interactions.
+                  </p>
+                  <p className="text-xs text-zinc-400 italic pt-2">
+                    UX Rationale: Lowers the cognitive threshold of reflection, keeping daily logging under 15 seconds.
+                  </p>
+                </div>
+                <div className="md:col-span-6 md:order-1 flex justify-center">
+                  <div className="relative w-[260px] sm:w-[300px] h-[500px] sm:h-[560px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
                     <Image
                       src={diaryImage}
-                      alt="Arexpal Diary Screen"
+                      alt="Arexpal Diary"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 260px, 300px"
                     />
                   </div>
                 </div>
-                
-                <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
-                  <h4 className="font-semibold text-purple-600 mb-2">UX Rationale</h4>
-                  <p className="text-zinc-200">
-                    This design systematically dismantles the intimidation of journaling. By making it guided, conversational, and rewarding, we lower the barrier to self-reflection, which is critical for behavior change.
-                  </p>
-                </div>
               </div>
 
-              {/* Feed Page */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">3. The Feed Page: Your Personalized Health Magazine</h3>
-                
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-zinc-200 leading-relaxed mb-6">
-                      The Feed makes learning feel as effortless and engaging as scrolling through social media.
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Intuitive Sorting</h4>
-                        <p className="text-zinc-300 text-sm">Users can easily toggle between a "For You" feed (personalized by AI), a "General" feed (for broad public health topics), and their "Saved" tips.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">The Tip Card Component</h4>
-                        <p className="text-zinc-300 text-sm">Each piece of content is a compact, visually appealing card. It contains a headline, a short summary, an optional image, and the source (e.g., "Source: W.H.O."). Quick actions for "Like," "Save," and "Share" are always visible.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="relative h-[600px] overflow-hidden">
+              {/* Feed */}
+              <div className="grid md:grid-cols-12 gap-10 items-center">
+                <div className="md:col-span-6 space-y-4">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">03 &bull; Knowledge</span>
+                  <h3 className="text-2xl font-bold text-white">Feed: The Snackable Magazine</h3>
+                  <p className="text-sm md:text-base text-zinc-300 leading-relaxed">
+                    Modular Tip Cards replace intimidating articles. Each card features a bold takeaway, an accessible explanation, and verified medical source attribution (e.g., WHO, NCI) with 1-tap save and WhatsApp sharing.
+                  </p>
+                  <p className="text-xs text-zinc-400 italic pt-2">
+                    UX Rationale: Solves misinformation by combining social-media ease with verified scientific authority.
+                  </p>
+                </div>
+                <div className="md:col-span-6 flex justify-center">
+                  <div className="relative w-[260px] sm:w-[300px] h-[500px] sm:h-[560px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
                     <Image
                       src={tipsImage}
-                      alt="Arexpal Tips/Feed Screen"
+                      alt="Arexpal Feed"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 260px, 300px"
                     />
                   </div>
                 </div>
-                
-                <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
-                  <h4 className="font-semibold text-green-600 mb-2">UX Rationale</h4>
-                  <p className="text-zinc-200">
-                    This directly tackles the pain point of information overload and distrust. It replaces a chaotic Google search with a curated, credible, and highly personalized stream of knowledge, consumed in a familiar and enjoyable format.
-                  </p>
-                </div>
               </div>
 
-              {/* Challenges Page */}
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">4. The Challenges Page: Where Knowledge Becomes Action</h3>
-                
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-zinc-200 leading-relaxed mb-6">
-                      This is the gamification engine of the app.
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Clear Progress Visualization</h4>
-                        <p className="text-zinc-300 text-sm">Active challenges are displayed at the top with prominent progress bars, providing immediate visual feedback.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Social Proof</h4>
-                        <p className="text-zinc-300 text-sm">Challenge cards show how many other users are participating, leveraging social accountability as a powerful motivator.</p>
-                      </div>
-                      
-                      <div className="bg-zinc-900 p-4 rounded-lg">
-                        <h4 className="font-semibold text-zinc-100 mb-2">Action-Oriented Design</h4>
-                        <p className="text-zinc-300 text-sm">Each card is a clear call to action (CTA), containing all the necessary information to make a decision: title, focus area, duration, and reward.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="relative h-[600px] overflow-hidden">
+              {/* Challenges */}
+              <div className="grid md:grid-cols-12 gap-10 items-center">
+                <div className="md:col-span-6 md:order-2 space-y-4">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">04 &bull; Action</span>
+                  <h3 className="text-2xl font-bold text-white">Challenges: Habit Gamification</h3>
+                  <p className="text-sm md:text-base text-zinc-300 leading-relaxed">
+                    Translates long-term goals into 5-day and 7-day micro-missions. Clear progress indicators and social participant counters leverage community accountability to maintain momentum.
+                  </p>
+                  <p className="text-xs text-zinc-400 italic pt-2">
+                    UX Rationale: Closes the delayed-reward gap by providing immediate daily completion feedback.
+                  </p>
+                </div>
+                <div className="md:col-span-6 md:order-1 flex justify-center">
+                  <div className="relative w-[260px] sm:w-[300px] h-[500px] sm:h-[560px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
                     <Image
                       src={challengesImage}
-                      alt="Arexpal Challenges Screen"
+                      alt="Arexpal Challenges"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 260px, 300px"
                     />
                   </div>
                 </div>
-                
-                <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
-                  <h4 className="font-semibold text-orange-600 mb-2">UX Rationale</h4>
-                  <p className="text-zinc-200">
-                    The Challenges page directly addresses the behavioral gap. It translates abstract health goals (e.g., "manage stress") into concrete, short-term, and rewarding missions (e.g., "Complete the 5-Day Meditation Challenge").
-                  </p>
-                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Design Carousel Section */}
+      {/* Auxiliary Screens Showcase Carousel */}
       <DesignCarousel items={designItems} />
 
-      {/* Prototype & Outcome Section */}
-      <section id="prototype" className="py-20 bg-zinc-950">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Prototype Validation */}
+      <section id="prototype" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              The Prototype: Bringing the Experience to Life
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Prototype &amp; Usability Validation
             </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              To validate our designs, we built a high-fidelity, interactive prototype in Figma. This prototype demonstrates the core user journeys and showcases the app's functionality in action.
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              We validated interactive flows via moderated testing sessions with 5 representative users, testing for clarity, emotional comfort, and interaction friction.
             </p>
 
-            <div className="bg-zinc-900 p-4 rounded-xl shadow-lg mb-12 flex justify-center">
-              <div className="w-full max-w-[280px]">
-                <video 
-                  className="w-full h-auto rounded-lg"
-                  controls
-                  preload="metadata"
-                >
-                  <source src="https://res.cloudinary.com/djqcs2ngt/video/upload/v1757595741/0910_njiitw.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+            <div className="grid md:grid-cols-12 gap-10 items-center mb-14">
+              <div className="md:col-span-7 space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Key Usability Takeaways</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed mb-4">
+                    Testing validated that the conversational Diary lowered barrier to entry, but revealed that initial Challenge descriptions were too wordy. We trimmed copy by 40% to reduce decision fatigue.
+                  </p>
+                </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl shadow-lg mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100">Usability Testing Results</h3>
-              
-              <p className="text-zinc-200 leading-relaxed mb-6">
-                We used this prototype to conduct five moderated usability testing sessions with users representing each of our personas. The goal was to test for clarity, ease of use, and emotional response. The feedback was invaluable, leading to several key iterations, such as simplifying the language on the challenge cards and adding more celebratory feedback after a user completed a task.
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-6 bg-zinc-800 rounded-lg border border-zinc-700">
-                  <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
-                  <p className="text-zinc-200">Task Completion Rate</p>
+                <div className="grid grid-cols-3 gap-6 pt-4 border-t border-white/10 text-left">
+                  <div>
+                    <span className="text-2xl md:text-3xl font-bold text-white block">95%</span>
+                    <span className="text-xs text-zinc-400">Task Completion</span>
+                  </div>
+                  <div>
+                    <span className="text-2xl md:text-3xl font-bold text-white block">4.2/5</span>
+                    <span className="text-xs text-zinc-400">Usability Rating</span>
+                  </div>
+                  <div>
+                    <span className="text-2xl md:text-3xl font-bold text-white block">87%</span>
+                    <span className="text-xs text-zinc-400">Positive Sentiment</span>
+                  </div>
                 </div>
-                <div className="text-center p-6 bg-zinc-800 rounded-lg border border-zinc-700">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">4.2/5</div>
-                  <p className="text-zinc-200">Average Usability Score</p>
-                </div>
-                <div className="text-center p-6 bg-zinc-800 rounded-lg border border-zinc-700">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">87%</div>
-                  <p className="text-zinc-200">User Satisfaction</p>
+              </div>
+
+              <div className="md:col-span-5 flex justify-center">
+                <div className="w-full max-w-[280px] rounded-2xl overflow-hidden bg-black shadow-2xl aspect-[9/18]">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source
+                      src="https://res.cloudinary.com/djqcs2ngt/video/upload/v1757595741/0910_njiitw.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -1066,187 +626,80 @@ const ArexpalCaseStudy = () => {
         </div>
       </section>
 
-      {/* Outcome Section */}
-      <section id="outcome" className="py-20 bg-zinc-900">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Reflection & Retrospective */}
+      <section id="reflection" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              The Outcome: Measuring What Matters
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              Reflection: Lessons in Preventive Healthcare UX
             </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              The success of Arexpal cannot be measured by downloads alone. Our UX success metrics are directly tied to our initial goals of bridging the access and action gaps. We measure success through a combination of quantitative and qualitative data:
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-12 font-light">
+              Designing Arexpal reinforced that health UX is an exercise in emotional trust. Technology should not lecture users; it must accompany them.
             </p>
 
-            <div className="grid lg:grid-cols-3 gap-8 mb-12">
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">Engagement & Retention Metrics</h3>
-                
-                <div className="space-y-4">
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">Daily Active Users (DAU)</h4>
-                    <p className="text-zinc-300 text-sm">Are people building a daily habit?</p>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">Streak Retention</h4>
-                    <p className="text-zinc-300 text-sm">What percentage of users maintain a streak for more than 7, 14, and 30 days? This is a direct measure of behavioral stickiness.</p>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">Core Action Rate</h4>
-                    <p className="text-zinc-300 text-sm">The percentage of DAU who perform a core action (log, complete a challenge, or save a tip).</p>
-                  </div>
-                </div>
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">What Worked</h3>
+                <ul className="space-y-3 text-sm text-zinc-400 leading-relaxed">
+                  <li>
+                    <strong className="text-zinc-200">Ethical gamification:</strong> Tying streaks to genuine self-reflection rather than arbitrary clicks kept engagement authentic.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Conversational framing:</strong> Guided prompt chips eliminated the intimidation of blank text inputs.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Medical collaboration:</strong> Partnering with public health advisors ensured all guidance was credible and safe.
+                  </li>
+                </ul>
               </div>
-              
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">Education & Behavior Change</h3>
-                
-                <div className="space-y-4">
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">In-App Knowledge Quizzes</h4>
-                    <p className="text-zinc-300 text-sm">Optional quizzes to measure self-reported improvements in health literacy.</p>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">Qualitative Logging Data</h4>
-                    <p className="text-zinc-300 text-sm">Analysis of anonymized log data to identify trends, such as users reporting increased sleep hours or decreased instances of smoking.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-zinc-900 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-6 text-zinc-100">Emotional Feedback</h3>
-                
-                <div className="space-y-4">
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">In-App Surveys</h4>
-                    <p className="text-zinc-300 text-sm">Periodically asking users to rate their motivation levels and the app's ease of use on a 1-5 scale.</p>
-                  </div>
-                  
-                  <div className="bg-zinc-900 p-4 rounded-lg">
-                    <h4 className="font-semibold text-zinc-100 mb-2">User Reviews & Feedback</h4>
-                    <p className="text-zinc-300 text-sm">Monitoring qualitative feedback for words like "easy," "fun," "motivating," or "reassuring."</p>
-                  </div>
-                </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">Future Roadmap</h3>
+                <ul className="space-y-3 text-sm text-zinc-400 leading-relaxed">
+                  <li>
+                    <strong className="text-zinc-200">Passive telemetry:</strong> Connecting with Apple Health and Google Fit to automate sleep and exercise logging.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Regional dietary models:</strong> Broadening AI suggestions to encompass diverse culinary and cultural realities across Africa.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Safe peer circles:</strong> Moderated support spaces for cancer survivors like Aisha to share milestones securely.
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div className="bg-zinc-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100 text-center">Target Results</h3>
-              <p className="text-lg text-zinc-200 leading-relaxed text-center max-w-3xl mx-auto">
-                Hypothetical results after a 6-month launch would aim for a 30-day streak retention rate of over 15% (well above industry average for health apps) and a statistically significant self-reported reduction in at least one negative health behavior among active users.
+            <div className="pt-8 border-t border-white/10">
+              <p className="text-lg md:text-xl text-zinc-200 italic font-light leading-relaxed max-w-3xl">
+                &ldquo;Cancer prevention starts with behavior change. Behavior change starts with a compelling, empathetic experience. Arexpal is proof that thoughtful design can serve as a genuine lifeline.&rdquo;
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Reflection Section */}
-      <section id="reflection" className="py-20 bg-zinc-950">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-8 text-zinc-100 text-center">
-              Reflection: Learning, Iterating, and Looking Ahead
-            </h2>
-            
-            <p className="text-lg text-zinc-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-              Designing Arexpal was a profound lesson in the responsibility of UX. We were not just arranging pixels; we were building a system designed to influence deeply personal human behaviors.
-            </p>
-
-            <div className="grid lg:grid-cols-2 gap-12 mb-12">
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-6 text-green-600">What Went Well</h3>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-3">Persona-Driven Design</h4>
-                    <p className="text-zinc-200 leading-relaxed">
-                      Keeping Zainab, David, and Aisha at the forefront of every conversation ensured we built a human-centric product, not just a feature-rich one.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-3">Ethical Gamification</h4>
-                    <p className="text-zinc-200 leading-relaxed">
-                      We successfully walked the fine line between "engaging" and "addictive." By tying rewards directly to positive health actions and giving users control over notifications, we used behavioral mechanics as a force for good.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-3">Cross-Functional Collaboration</h4>
-                    <p className="text-zinc-200 leading-relaxed">
-                      Close collaboration between designers, developers, and public health consultants was critical. The human-vetting loop for our AI content is a testament to this, ensuring our product is both smart and safe.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-zinc-900 p-8 rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-6 text-orange-600">Challenges & Future Improvements</h3>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-3">Balancing Simplicity and Power</h4>
-                    <p className="text-zinc-200 leading-relaxed">
-                      A constant challenge was keeping the interface simple while housing a powerful AI and data-tracking backend. In the future, we could explore more advanced data visualizations for power users like David without cluttering the experience for Zainab.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-3">Scaling Cultural Nuance</h4>
-                    <p className="text-zinc-200 leading-relaxed">
-                      While we started with Nigerian languages and cultural examples, truly globalizing the app will require a robust localization framework that goes beyond simple translation to adapt content, imagery, and even color symbolism for different cultures.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-zinc-100 mb-3">Next Steps</h4>
-                    <p className="text-zinc-200 leading-relaxed">
-                      Future iterations could include integration with wearable technology (e.g., Apple Health, Google Fit) for automated data logging, and building out more robust community features where users like Aisha can find peer-to-peer support in a safe, moderated environment.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-zinc-900 p-8 rounded-xl text-center">
-              <h3 className="text-2xl font-bold mb-6 text-zinc-100">Final Thoughts</h3>
-              <p className="text-lg text-zinc-200 leading-relaxed max-w-4xl mx-auto">
-                Cancer prevention starts with behavior change. Behavior change starts with a compelling experience. And a compelling experience is the ultimate goal of UX design. Arexpal is more than an app; it is a hypothesis that thoughtful, empathetic, and behaviorally-aware design can be a lifeline, empowering millions to take control of their health one tap at a time. It is a testament to the idea that the most impactful UX is not just designed for use, but designed for life.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="py-8 bg-zinc-950 border-t border-zinc-800">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <Link 
-              href="/#work" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
+      {/* Case Study Bottom Navigation */}
+      <div className="py-12 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <Link
+              href="/#work"
+              className="text-zinc-400 hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-2"
             >
-              ← Back to Work
+              <span>&larr;</span>
+              <span>Back to All Work</span>
             </Link>
-            <Link 
-              href="/#contact" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:-translate-y-1 hover:shadow-md"
+            <Link
+              href="/#contact"
+              className="px-6 py-2.5 bg-white text-black text-sm font-medium rounded-none hover:bg-zinc-200 transition-all duration-200"
             >
-              Get in Touch →
+              Get in Touch &rarr;
             </Link>
           </div>
         </div>

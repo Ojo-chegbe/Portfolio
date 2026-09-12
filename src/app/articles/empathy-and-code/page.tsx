@@ -95,13 +95,13 @@ const EmpathyAndCodeArticle = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-none transition-all duration-300 hover:text-zinc-100 hover:bg-zinc-900"
             >
               ← Back to Home
             </Link>
             <Link 
               href="/#articles" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 bg-zinc-900 shadow-sm hover:-translate-y-1 hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-none transition-all duration-300 bg-zinc-900 shadow-sm hover:-translate-y-1 hover:shadow-md"
             >
               More Articles →
             </Link>

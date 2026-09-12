@@ -88,6 +88,7 @@ const Articles = () => {
                     src={article.image}
                     alt={article.alt}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>

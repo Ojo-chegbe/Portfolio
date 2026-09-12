@@ -5,12 +5,19 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import PansGptHeroArt from '@/components/pansgpt/PansGptHeroArt';
 
 const Work = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const projects = [
+    {
+      id: 'pansgpt',
+      title: 'PansGPT',
+      description: 'AI-powered academic platform for pharmacy students. Closed-loop RAG system with Reader, Chat, Quiz, and Notes.',
+      link: '/case-study/pansgpt',
+    },
     {
       id: 'arexpal',
       title: 'Arexpal',
@@ -23,12 +30,14 @@ const Work = () => {
       description: 'Transforming how schools handle their assets with a seamless, intelligent, and accessible inventory management system.',
       link: '/case-study/assedra',
     },
+    /* Vaenine turned off per user request
     {
       id: 'vaenine',
       title: 'Vaenine',
       description: 'Event platform for Nigeria with culturally intuitive design for discovery, attendance, and hosting.',
       link: '/case-study/Vaenine',
     },
+    */
   ];
 
   return (
@@ -47,12 +56,12 @@ const Work = () => {
           {projects.map((project, index) => (
             <Link key={project.id} href={project.link} className="block group">
               <motion.div
-                className="bg-[#161616] overflow-hidden transition-all duration-500 hover:border-zinc-700 group cursor-pointer flex flex-col md:flex-row border border-zinc-800"
+                className="bg-[#161616] overflow-hidden transition-all duration-500 group cursor-pointer flex flex-col md:flex-row"
                 initial={{ opacity: 0, y: 26 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
               >
-                <div className="order-2 md:order-1 w-full md:w-[34%] p-12 flex flex-col justify-center bg-[#0b0b0b] border-t md:border-t-0 md:border-r border-zinc-800">
+                <div className="order-2 md:order-1 w-full md:w-[34%] p-12 flex flex-col justify-center bg-transparent">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                     {project.title}
                   </h3>
@@ -64,8 +73,10 @@ const Work = () => {
                   </span>
                 </div>
 
-                <div className="order-1 md:order-2 w-full md:w-[66%] h-[320px] md:h-[480px] overflow-hidden bg-zinc-900 flex items-center justify-center flex-shrink-0">
-                  {project.id === 'inventory' ? (
+                <div className="order-1 md:order-2 w-full md:w-[66%] h-[320px] md:h-[480px] overflow-hidden bg-transparent flex items-center justify-center flex-shrink-0">
+                  {project.id === 'pansgpt' ? (
+                    <PansGptHeroArt compact />
+                  ) : project.id === 'inventory' ? (
                     <Image
                       src="/images/Assedra/Cover-art.png"
                       alt="Assedra School Inventory Management"
@@ -81,7 +92,7 @@ const Work = () => {
                       height={620}
                       className="w-full h-full object-cover"
                     />
-                  ) : (
+                  ) : project.id === 'vaenine' ? (
                     <Image
                       src="/images/Vaenine/cover.jpg"
                       alt="Vaenine Event Platform"
@@ -89,7 +100,7 @@ const Work = () => {
                       height={620}
                       className="w-full h-full object-cover"
                     />
-                  )}
+                  ) : null}
                 </div>
               </motion.div>
             </Link>
