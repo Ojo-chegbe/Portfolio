@@ -60,6 +60,8 @@ const FunProjects = () => {
   const [isSnapping, setIsSnapping] = useState(false);
   const [cardStep, setCardStep] = useState(524);
 
+  const activeProjectIndex = ((currentIndex % funProjects.length) + funProjects.length) % funProjects.length;
+
   // Dynamically compute card step (width + 24px gap)
   useEffect(() => {
     const updateStep = () => {
@@ -129,7 +131,7 @@ const FunProjects = () => {
               A collection of experimental apps and tools I built to solve my own day-to-day problems using artificial intelligence.
             </p>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
               <div className="flex gap-2">
                 <button 
                   onClick={handlePrev} 
@@ -145,6 +147,17 @@ const FunProjects = () => {
                 >
                   <ChevronRight className="w-5 h-5 text-black" />
                 </button>
+              </div>
+
+              {/* Carousel Count Indicator */}
+              <div className="font-mono text-xs md:text-sm tracking-widest flex items-center select-none pl-1">
+                <span className="text-white font-semibold tabular-nums">
+                  {String(activeProjectIndex + 1).padStart(2, '0')}
+                </span>
+                <span className="text-zinc-600 mx-2 font-light">/</span>
+                <span className="text-zinc-500 tabular-nums">
+                  {String(funProjects.length).padStart(2, '0')}
+                </span>
               </div>
             </div>
           </motion.div>
