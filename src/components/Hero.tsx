@@ -66,12 +66,12 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 py-6">
-            <p className="max-w-[360px] text-[16px] leading-relaxed text-gray-400 font-light">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 py-6">
+            <p className="max-w-[360px] text-[16px] leading-relaxed text-gray-400 font-light text-left">
               Your product already has potential. I make sure people feel it instantly. Bringing clarity in a complex and noisy digital world.
             </p>
             
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 items-center justify-start">
               <a 
                 href="#contact" 
                 className="px-8 py-2.5 border border-white/20 text-[13px] font-medium hover:bg-white hover:text-black transition-all duration-500"

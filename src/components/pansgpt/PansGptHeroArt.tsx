@@ -42,7 +42,7 @@ export default function PansGptHeroArt({ className = '', compact = false }: Pans
 
   return (
     <div
-      className={`relative w-full h-full bg-[#070709] overflow-hidden flex flex-col justify-between select-none ${className}`}
+      className={`relative w-full h-full bg-[#141418] overflow-hidden flex flex-col justify-between select-none ${className}`}
     >
       {/* Top Branding Bar */}
       <div className={`flex items-center gap-2.5 z-20 w-fit ${compact ? 'p-6' : 'p-8 md:p-12'}`}>
