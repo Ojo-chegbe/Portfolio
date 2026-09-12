@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
 const ReflectionSection = () => (
   <section id="reflection" className="py-20">
@@ -55,19 +56,30 @@ const ReflectionSection = () => (
 
         {/* End Navigation */}
         <div className="mt-16 pt-8 border-t border-zinc-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <Link
               href="/#work"
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 transition-all duration-300 hover:text-zinc-100"
+              className="text-zinc-400 no-underline font-semibold py-3 transition-colors hover:text-zinc-100"
             >
               ← Back to Work
             </Link>
-            <Link
-              href="/#contact"
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 transition-all duration-300 fill-secondary shadow-sm hover:-translate-y-1 hover:shadow-md border border-zinc-800"
-            >
-              Get in Touch →
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://pansgpt.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white text-zinc-950 hover:bg-zinc-200 text-sm font-semibold transition-all shadow-lg hover:shadow-white/10"
+              >
+                <span>Visit pansgpt.site</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center px-6 py-3 rounded-none text-zinc-100 text-sm font-semibold transition-colors bg-[#161616] hover:bg-[#202020] border border-zinc-800"
+              >
+                Get in Touch →
+              </Link>
+            </div>
           </div>
         </div>
       </motion.div>

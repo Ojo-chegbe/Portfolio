@@ -724,14 +724,14 @@ const VaenineCaseStudy = () => {
               </div>
               
                   <button
-                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveGeneralStep((prev) => (prev - 1 + generalPages.length) % generalPages.length)}
                     aria-label="Previous page"
                   >
                     <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                   <button
-                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveGeneralStep((prev) => (prev + 1) % generalPages.length)}
                     aria-label="Next page"
                   >
@@ -814,14 +814,14 @@ const VaenineCaseStudy = () => {
               </div>
               
                   <button
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveFlowStep((prev) => (prev - 1 + userFlowItems.length) % userFlowItems.length)}
                     aria-label="Previous step"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveFlowStep((prev) => (prev + 1) % userFlowItems.length)}
                     aria-label="Next step"
                   >
@@ -905,14 +905,14 @@ const VaenineCaseStudy = () => {
               </div>
               
                   <button
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveAdminStep((prev) => (prev - 1 + adminPages.length) % adminPages.length)}
                     aria-label="Previous admin page"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveAdminStep((prev) => (prev + 1) % adminPages.length)}
                     aria-label="Next admin page"
                   >
@@ -995,14 +995,14 @@ const VaenineCaseStudy = () => {
                   </div>
 
                   <button
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveOrganizerStep((prev) => (prev - 1 + organizerPages.length) % organizerPages.length)}
                     aria-label="Previous organizer page"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-full flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 fill-secondary rounded-none flex items-center justify-center text-zinc-400 z-30 shadow-sm transition-all hover:scale-110"
                     onClick={() => setActiveOrganizerStep((prev) => (prev + 1) % organizerPages.length)}
                     aria-label="Next organizer page"
                   >
@@ -1083,13 +1083,13 @@ const VaenineCaseStudy = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <Link 
               href="/#work" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100"
+              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-none transition-all duration-300 hover:text-zinc-100"
             >
               ← Back to Work
             </Link>
             <Link 
               href="/#contact" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 fill-secondary shadow-sm hover:shadow-md"
+              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-none transition-all duration-300 fill-secondary shadow-sm hover:shadow-md"
             >
               Get in Touch →
             </Link>

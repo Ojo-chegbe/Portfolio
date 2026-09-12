@@ -91,7 +91,7 @@ const Hero = () => {
         {/* Massive Name Section - Full Width Lines */}
         <motion.div 
           className="w-full py-4 my-2 overflow-hidden border-y"
-          initial={{ borderColor: 'transparent' }}
+          initial={{ borderColor: 'rgba(255, 255, 255, 0)' }}
           animate={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
@@ -148,6 +148,7 @@ const Hero = () => {
               src="/images/Me.png"
               alt="Ojochegbe"
               fill
+              sizes="(max-width: 768px) 100vw, 1200px"
               className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
               priority
             />

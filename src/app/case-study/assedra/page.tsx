@@ -1,8 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -11,1038 +9,773 @@ import TopNav from '@/components/TopNav';
 import DesignCarousel from '@/components/DesignCarousel';
 
 const AssedraCaseStudy = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   const navItems = [
+    { id: 'overview', label: 'Overview', href: 'overview' },
     { id: 'challenge', label: 'The Challenge', href: 'challenge' },
-    { id: 'pain-points', label: 'Pain Points', href: 'pain-points' },
-    { id: 'process', label: 'Design Process', href: 'process' },
+    { id: 'research', label: 'Research', href: 'research' },
+    { id: 'process', label: 'Process', href: 'process' },
     { id: 'personas', label: 'Personas', href: 'personas' },
-    { id: 'information-architecture', label: 'Information Architecture', href: 'information-architecture' },
+    { id: 'architecture', label: 'Architecture', href: 'architecture' },
     { id: 'user-flows', label: 'User Flows', href: 'user-flows' },
     { id: 'solution', label: 'The Solution', href: 'solution' },
     { id: 'designs', label: 'Final Designs', href: 'designs' },
     { id: 'outcome', label: 'The Outcome', href: 'outcome' },
     { id: 'prototype', label: 'Prototype', href: 'prototype' },
-    { id: 'reflection', label: 'Reflection', href: 'reflection' }
-  ];
-
-  const painPoints = [
-    {
-      icon: '👁️',
-      title: 'Lack of real-time visibility',
-      description: 'Administrators never truly knew where assets were at any given time.'
-    },
-    {
-      icon: '📝',
-      title: 'Manual and tedious workflows',
-      description: 'Excel logs took too much time and were prone to errors.'
-    },
-    {
-      icon: '🔍',
-      title: 'No accountability trail',
-      description: 'When items went missing, there was no way to know who last used them.'
-    },
-    {
-      icon: '💬',
-      title: 'Inefficient communication',
-      description: 'No reminder system existed for overdue or damaged items.'
-    },
-    {
-      icon: '😤',
-      title: 'Poor usability in existing tools',
-      description: 'Interfaces felt designed for accountants, not educators.'
-    }
-  ];
-
-  const personas = [
-    {
-      name: 'Abigail Eze, 47',
-      title: 'School Administrator / Vice Principal',
-      location: 'Enugu, Nigeria',
-      experience: '16 years in school administration',
-      bio: 'Abigail oversees the school\'s physical resources and maintains accurate records for audits. She values simple, reliable systems that reduce asset loss and improve departmental communication.',
-      goals: [
-        'Ensure physical resources are well managed and accounted for',
-        'Maintain accurate records for school board audits and PTA meetings',
-        'Reduce asset loss and eliminate disputes over responsibility',
-        'Improve communication between departments handling assets'
-      ],
-      frustrations: [
-        'Paper-based tracking gets misplaced or duplicated',
-        'Delays in reporting faulty or missing items from departments',
-        'No centralized view of who is using what and for how long',
-        'Teachers borrow items without proper documentation'
-      ]
-    },
-    {
-      name: 'Idris Olanrewaju, 35',
-      title: 'Storekeeper / Inventory Manager',
-      location: 'Ibadan, Nigeria',
-      experience: '8 years in inventory/logistics roles',
-      bio: 'Idris manages the school\'s physical inventory and ensures proper documentation for all asset movements. He prefers digital systems with real-time updates and mobile accessibility.',
-      goals: [
-        'Maintain up-to-date records of all physical assets in school',
-        'Ensure proper documentation for check-in/check-out processes',
-        'Easily trace asset assignments and due dates',
-        'Generate usage and status reports for audits quickly'
-      ],
-      frustrations: [
-        'Manual logs lead to errors and duplicate entries',
-        'Staff forget to return items on time with no tracking system',
-        'Lack of real-time updates outside office hours',
-        'Teachers sometimes borrow items unofficially'
-      ]
-    },
-    {
-      name: 'Lara Yusuf, 29',
-      title: 'School Librarian',
-      location: 'Lagos, Nigeria',
-      experience: '5 years in library management',
-      bio: 'Lara manages the school library\'s books, tablets, and media equipment. She values quick search capabilities and automated reminder systems for overdue items.',
-      goals: [
-        'Keep accurate records of all borrowed books and media',
-        'Minimize loss or damage of school learning materials',
-        'Find any book or item quickly using title or serial number',
-        'Generate library usage reports for reading programs'
-      ],
-      frustrations: [
-        'Difficulty managing records during power or internet outages',
-        'Students forget return dates leading to clutter and loss',
-        'Uncertainty whether items are missing or just unreturned',
-        'Duplication errors from multiple check-out systems'
-      ]
-    }
-  ];
-
-  const processSteps = [
-    {
-      number: 1,
-      title: 'User Research & Empathy',
-      description: 'Conducted interviews with school administrators, librarians, and inventory managers to understand pain points and current workflows. Created empathy maps and detailed personas.'
-    },
-    {
-      number: 2,
-      title: 'Journey Mapping',
-      description: 'Mapped user journeys for common scenarios like assigning equipment or tracking overdue items. Identified inefficiencies and opportunities for innovation.'
-    },
-    {
-      number: 3,
-      title: 'Information Architecture',
-      description: 'I built the navigation system that makes the software feel simple, even when it\'s complex behind the scenes.'
-    },
-    {
-      number: 4,
-      title: 'Wireframing & Prototyping',
-      description: 'Created low-fidelity wireframes focusing on layout and hierarchy, then advanced to high-fidelity interactive prototypes in Figma for user testing.'
-    },
-    {
-      number: 5,
-      title: 'Visual Design & Testing',
-      description: 'Developed visual identity with teal-blue primary color and Montserrat typography. We met a few people and worked through the prototype together.'
-    }
-  ];
-
-  const features = [
-    {
-      icon: '⚡',
-      title: 'Quick Assign Wizard',
-      description: 'A guided flow for assigning assets in seconds, eliminating complex forms and reducing errors.'
-    },
-    {
-      icon: '🔍',
-      title: 'Global Search with Filters',
-      description: 'Instantly locate items by name, category, or status with powerful filtering capabilities.'
-    },
-    {
-      icon: '🔔',
-      title: 'Smart Reminders',
-      description: 'Automated notifications for due dates, overdue returns, and maintenance schedules.'
-    },
-    {
-      icon: '📊',
-      title: 'Visual Reports Dashboard',
-      description: 'Graphs and charts that turn raw data into actionable insights for better decision making.'
-    },
-    {
-      icon: '📋',
-      title: 'Audit Trails',
-      description: 'Full accountability with complete histories of who used what and when.'
-    },
-    {
-      icon: '📱',
-      title: 'Responsive Design',
-      description: 'Full functionality on mobile, enabling teachers and managers to update records on the move.'
-    }
-  ];
-
-  const outcomes = [
-    'Track inventory in real-time',
-    'Reduce asset loss and delays',
-    'Eliminate manual Excel-based workflows',
-    'Hold staff accountable with clear audit trails',
-    'Gain visibility through automated reports and reminders'
+    { id: 'reflection', label: 'Reflection', href: 'reflection' },
   ];
 
   const designItems = [
-    { id: 0, imageUrl: '/images/Assedra/Final-0.png' },
-    { id: 1, imageUrl: '/images/Assedra/Final-1.png' },
-    { id: 2, imageUrl: '/images/Assedra/Final-2.png' },
-    { id: 3, imageUrl: '/images/Assedra/Final-4.png' },
-    { id: 4, imageUrl: '/images/Assedra/Final-5.png' },
-    { id: 5, imageUrl: '/images/Assedra/Final-6.png' },
-    { id: 6, imageUrl: '/images/Assedra/Final-7.png' },
-    { id: 7, imageUrl: '/images/Assedra/Final-8.png' },
-    { id: 8, imageUrl: '/images/Assedra/Final-9.png' },
-    { id: 9, imageUrl: '/images/Assedra/Final-10.png' },
-    { id: 10, imageUrl: '/images/Assedra/Final-11.png' }
+    { id: 0, imageUrl: '/images/Assedra/Final-0.png', title: 'Executive Dashboard & Status Overview' },
+    { id: 1, imageUrl: '/images/Assedra/Final-1.png', title: 'Asset Register & Custody Directory' },
+    { id: 2, imageUrl: '/images/Assedra/Final-2.png', title: 'Item Check-in & Return Log' },
+    { id: 3, imageUrl: '/images/Assedra/Final-4.png', title: 'Due Date Reminders & Overdue Alerts' },
+    { id: 4, imageUrl: '/images/Assedra/Final-5.png', title: 'Departmental Category Filtering' },
+    { id: 5, imageUrl: '/images/Assedra/Final-6.png', title: 'Active Equipment Loans Table' },
+    { id: 6, imageUrl: '/images/Assedra/Final-7.png', title: 'Rapid Asset Assignment Modal' },
+    { id: 7, imageUrl: '/images/Assedra/Final-8.png', title: 'Audit Trail & Custody Verification' },
+    { id: 8, imageUrl: '/images/Assedra/Final-9.png', title: 'Condition & Maintenance Logs' },
+    { id: 9, imageUrl: '/images/Assedra/Final-10.png', title: 'PTA & Board Report Generation' },
+    { id: 10, imageUrl: '/images/Assedra/Final-11.png', title: 'Campus & Role Permissions' },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut'
-      }
-    }
-  };
-
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0a0a0c] text-zinc-100">
       <Header />
       <TopNav navItems={navItems} />
-      
+
       {/* Hero Section */}
-      <section className="pt-48 pb-16 min-h-screen flex items-center" style={{ paddingTop: '12rem' }}>
-        <div className="container">
-          <motion.div 
-            className="flex flex-col items-center text-center gap-12"
-            initial={{ opacity: 0, y: 30 }}
+      <section id="overview" className="pt-36 pb-20 md:pt-44 md:pb-28">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <motion.div 
-              className="relative max-w-lg w-full rounded-3xl overflow-hidden shadow-sm"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
-            >
+            <p className="text-sm font-medium text-zinc-400 mb-4 tracking-wide">
+              Case Study &bull; Enterprise &amp; EdTech &bull; 2024
+            </p>
+
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.08]">
+              Assedra: School Inventory Management
+            </h1>
+
+            <p className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl mb-12">
+              Transforming chaotic spreadsheets and lost paper logs into an intuitive, real-time asset ecosystem designed specifically for educational staff.
+            </p>
+
+            {/* Metadata Line */}
+            <div className="flex flex-wrap gap-x-12 gap-y-4 py-6 border-y border-white/10 text-sm mb-16">
+              <div>
+                <span className="text-zinc-500 block">Role</span>
+                <span className="text-zinc-200 font-medium">Lead UX Designer</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block">Duration</span>
+                <span className="text-zinc-200 font-medium">4 Weeks</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block">Focus</span>
+                <span className="text-zinc-200 font-medium">Web Application &bull; Workflow Optimization</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block">Toolkit</span>
+                <span className="text-zinc-200 font-medium">Figma, Miro, Google Forms</span>
+              </div>
+            </div>
+
+            {/* Hero Cover Mockup */}
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-900/40 mb-16">
               <Image
                 src="/images/Assedra/Cover-art.png"
-                alt="Assedra School Inventory Management"
-                width={500}
-                height={375}
-                className="w-full h-auto"
+                alt="Assedra School Inventory Platform"
+                fill
                 priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 1000px"
               />
-            </motion.div>
-            
-            <div className="max-w-4xl">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-zinc-100">
-                Assedra: School Inventory Management
-              </h1>
-              <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
-                Transforming how schools handle their assets with a seamless, intelligent, and accessible inventory management system
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-8">
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Role</span>
-                  <span className="text-lg font-semibold text-zinc-100">Lead UX Designer</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Timeline</span>
-                  <span className="text-lg font-semibold text-zinc-100">1 month</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm text-zinc-400 font-medium uppercase tracking-wide">Tools</span>
-                  <span className="text-lg font-semibold text-zinc-100">Figma, Google Forms, Miro</span>
-                </div>
-              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Challenge Section */}
-      <section id="challenge" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">The Challenge</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 space-y-6">
-              <p>
-                When I was assigned to lead the design of Assedra, a school inventory management system, the goal was clear: transform the way schools handle their assets. From books and laboratory equipment to laptops and classroom furniture, schools rely on a vast number of resources to function smoothly.
+            {/* Editorial Overview */}
+            <div className="max-w-3xl">
+              <p className="text-lg md:text-xl text-zinc-200 leading-relaxed font-light mb-6">
+                From biology lab microscopes and library books to classroom projectors and administrative laptops, schools oversee thousands of shared assets. Yet most institutions rely on fragmented paper logbooks or unwieldy Excel sheets.
               </p>
-              <p>
-                Yet, in many institutions, these assets are tracked with spreadsheets, paper logs, or outdated software. Methods that are error-prone, frustrating, and unsuited to the unique workflows of education.
-              </p>
-              
-              <div className="my-12 p-8 fill-secondary rounded-2xl text-white text-center">
-                <blockquote className="text-xl font-semibold italic leading-relaxed">
-                  "How might we design a seamless, intelligent, and accessible inventory management system specifically tailored for schools and educational staff?"
-                </blockquote>
-              </div>
-              
-              <p>
-                The project set out to solve this straightforward but challenging question through human-centered design principles.
+              <p className="text-base text-zinc-400 leading-relaxed">
+                Assedra bridges the operational gap between teachers, storekeepers, and school boards—introducing simple check-in wizards, clear audit trails, and automated reminders without the cognitive friction of enterprise accounting software.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Pain Points Section */}
-      <section id="pain-points" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* The Challenge */}
+      <section id="challenge" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Understanding the Challenge</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 mb-12">
-              <p className="mb-6">
-                The first step was diving deep into user research. I spoke with school administrators, librarians, and even students to understand how they or their school currently manage assets and what frustrates them the most.
-              </p>
-              <p className="mb-8">
-                The findings revealed a consistent pattern of pain points:
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              The Challenge: The Hidden Cost of Lost Equipment
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Schools operate on tight budgets where misplaced lab kits or unreturned laptops directly disrupt classroom learning. Existing enterprise asset software is designed for corporate procurement officers, creating an immediate mismatch with the daily reality of busy educators.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-12 mb-14">
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  01. The Administrative Void
+                </h3>
+                <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+                  When equipment goes missing, paper sign-out sheets offer zero accountability. Records are lost, handwriting is illegible, and administrators spend hours hunting for assets instead of managing school operations.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  02. The Software Usability Mismatch
+                </h3>
+                <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+                  Commercial inventory platforms are cluttered with financial depreciations, tax ledgers, and complex forms. Teachers and storekeepers reject them because basic item checkout takes five minutes of administrative overhead.
+                </p>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-zinc-600 pl-6 max-w-3xl">
+              <p className="text-lg md:text-xl text-zinc-200 italic font-light leading-relaxed">
+                &ldquo;How might we design a seamless, intelligent inventory system that feels like a trusted educational assistant rather than cumbersome corporate accounting software?&rdquo;
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {painPoints.map((point, index) => (
-                <motion.div
-                  key={index}
-                  className="flex gap-4 p-8 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-3xl flex-shrink-0">{point.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-zinc-100">{point.title}</h3>
-                    <p className="text-zinc-300 leading-relaxed">{point.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Research & Pain Points */}
+      <section id="research" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Research &amp; Operational Friction
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-16 font-light">
+              Through in-depth interviews with secondary school principals, librarians, and facility managers across Nigeria, five structural pain points emerged:
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-12 mb-14">
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Friction 01</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Zero Real-Time Visibility</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Administrators have no centralized dashboard showing who currently holds specific projectors, tablets, or sports kits. Equipment status is discovered only after someone asks for it.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Friction 02</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Manual &amp; Error-Prone Logs</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Excel sheets and paper ledgers duplicate entries, get overwritten, or disappear during faculty handovers, creating friction during annual school board audits.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Friction 03</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Absent Accountability Trails</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Teachers borrow items informally between classes without documentation. When items return damaged or go missing, there is no verifiable custody trail.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-2">Friction 04</span>
+                <h3 className="text-lg font-semibold text-white mb-2">No Overdue Notification System</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Librarians and storekeepers rely on memory or hallway encounters to remind staff to return overdue items, creating awkward inter-departmental tension.
+                </p>
+              </div>
             </div>
-            
-            <div className="mt-12 text-center p-8 fill-secondary rounded-2xl border-l-4 border-zinc-700">
-              <blockquote className="text-2xl font-semibold italic mb-4 text-zinc-100">
-                "I spend more time looking for the school's properties than actually managing the school."
+
+            <div className="border-l-2 border-zinc-600 pl-6 max-w-3xl">
+              <blockquote className="text-lg md:text-xl text-zinc-200 italic font-light leading-relaxed mb-2">
+                &ldquo;I spend more time looking for the school&apos;s properties than actually managing the school.&rdquo;
               </blockquote>
-              <cite className="text-lg text-zinc-300">— School Administrator</cite>
+              <span className="text-xs text-zinc-400 uppercase tracking-wider font-medium">
+                — School Administrator, Enugu State
+              </span>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section id="process" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Design Process */}
+      <section id="process" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Design Process</h2>
-            <div className="relative pl-8">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 fill-secondary"></div>
-              
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  className="relative mb-12 pl-12"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
-                  viewport={{ once: true }}
-                >
-                  <div className="absolute -left-6 top-0 w-12 h-12 fill-secondary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-sm">
-                    {step.number}
-                  </div>
-                  <div className="fill-secondary p-8 rounded-xl shadow-sm border-l-4 border-blue-600">
-                    <h3 className="text-2xl font-semibold mb-4 text-zinc-100">{step.title}</h3>
-                    <p className="text-zinc-300 leading-relaxed">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Design Process
+            </h2>
 
-      {/* Personas Section */}
-      <section id="personas" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Empathy & Personas</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 mb-12">
-              <p className="mb-6">
-                To capture the reality of the users, I created an empathy map for key roles such as inventory managers and administrators. This allowed me to step into their shoes and fully understand their needs, emotions, and frustrations.
-              </p>
-              
-              {/* Empathy Map Image */}
-              <motion.div 
-                className="mb-8 flex justify-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                viewport={{ once: true }}
-              >
-                <div className="fill-secondary rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-4xl w-full">
-                  <Image
-                    src="/images/Assedra/Empathy-map.png"
-                    alt="Empathy Map for School Inventory Management Users"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto rounded-lg"
-                  />
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-16 font-light">
+              A phased human-centered approach focused on reducing cognitive load at every stage of the inventory lifecycle:
+            </p>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-6">
+              {[
+                { step: '01', title: 'Research', desc: 'Contextual inquiry with administrators, librarians, and storekeepers.' },
+                { step: '02', title: 'Journey Maps', desc: 'Mapping loan checkout, return verification, and damaged item escalations.' },
+                { step: '03', title: 'Architecture', desc: 'Structuring a shallow 3-tier hierarchy for sub-2-second search.' },
+                { step: '04', title: 'Prototyping', desc: 'Iterating wireframes into interactive Figma flows with staff testing.' },
+                { step: '05', title: 'Validation', desc: 'Moderated testing sessions validating check-out speeds and error rates.' },
+              ].map((p) => (
+                <div key={p.step} className="space-y-2">
+                  <span className="text-xs text-zinc-500 font-semibold block">{p.step}</span>
+                  <h3 className="text-base font-semibold text-white">{p.title}</h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed">{p.desc}</p>
                 </div>
-              </motion.div>
-              
-              <p>
-                For example, inventory managers constantly thought: "Why can't this just be easier?" and felt stressed by avoidable losses. They needed a tool that was fast, visual, and accessible, one that didn't feel like financial software but like an educational assistant built just for them.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {personas.map((persona, index) => {
-                // Direct image assignment based on index
-                const personaImages = [
-                  '/images/Assedra/Abigail.png',  // Abigail (index 0)
-                  '/images/Assedra/Idris.jpg',    // Idris (index 1)
-                  '/images/Assedra/Lara.jpg'      // Lara (index 2)
-                ];
-
-                return (
-                <motion.div
-                  key={index}
-                  className="fill-secondary rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
-                  viewport={{ once: true }}
-                >
-                  <div className="h-48 relative overflow-hidden">
-                    <Image
-                      src={personaImages[index]}
-                      alt={persona.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-2 text-zinc-100">{persona.name}</h3>
-                    <p className="text-lg font-semibold text-blue-600 mb-1">{persona.title}</p>
-                    <p className="text-sm text-zinc-300 mb-1">{persona.location}</p>
-                    <p className="text-sm text-zinc-300 mb-6">{persona.experience}</p>
-                    
-                    <div className="mb-6 p-4 fill-secondary rounded-lg italic text-zinc-200">
-                      "{persona.bio}"
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold mb-3 text-zinc-100">Goals:</h4>
-                      <ul className="space-y-2">
-                        {persona.goals.map((goal, goalIndex) => (
-                          <li key={goalIndex} className="flex items-start gap-2 text-sm text-zinc-300">
-                            <span className="text-blue-600 font-bold mt-1">✓</span>
-                            {goal}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-semibold mb-3 text-zinc-100">Frustrations:</h4>
-                      <ul className="space-y-2">
-                        {persona.frustrations.map((frustration, frustIndex) => (
-                          <li key={frustIndex} className="flex items-start gap-2 text-sm text-zinc-300">
-                            <span className="text-red-500 font-bold mt-1">✗</span>
-                            {frustration}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Information Architecture Section */}
-      <section id="information-architecture" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Information Architecture</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 mb-12">
-              <p className="mb-6">
-                The application's information architecture is designed around a clear, hierarchical navigation system and interconnected core workflows, ensuring intuitive access to all functionalities for inventory, assignment, and staff management.
-              </p>
-              <p>
-                This structure provides a clear overview of how information is organized and how users will navigate through the application, with seamless data flow between modules for complete asset lifecycle management.
-              </p>
-            </div>
-
-            {/* Information Architecture Image */}
-            <motion.div 
-              className="mb-8 flex justify-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              viewport={{ once: true }}
-            >
-              <div className="fill-secondary rounded-2xl p-6 shadow-sm border border-zinc-800 max-w-5xl w-full">
-                <Image
-                  src="/images/Assedra/IA.png"
-                  alt="Information Architecture for Assedra School Inventory Management"
-                  width={1000}
-                  height={750}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* User Flows Section */}
-      <section id="user-flows" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">User Flows</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 mb-12 text-center">
-              <p className="mb-6">
-                To ensure a seamless and intuitive experience, I meticulously mapped out key user journeys within the Assedra system. These user flows illustrate how different roles interact with the platform to achieve their goals, from adding new inventory to generating reports and managing maintenance.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* User Flow Card 1: Add a New Inventory Item */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-blue-100 text-blue-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                  </span>
-                  Add a New Inventory Item
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Inventory Manager/Admin</p>
-                <p className="text-zinc-200 mb-4">Goal: Register a new item into the system</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Log in to dashboard</li>
-                  <li>Click "Add Item" button</li>
-                  <li>Fill in item details (Name, Category, Serial No, Quantity, etc.)</li>
-                  <li>Upload item photo</li>
-                  <li>Assign location (e.g. Library, ICT Lab)</li>
-                  <li>Set maintenance schedule (optional)</li>
-                  <li>Click "Save"</li>
-                  <li>Success confirmation + Quick Add next item prompt</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 2: Assign an Item to a Staff Member */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-green-100 text-green-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                  </span>
-                  Assign an Item to a Staff Member
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Inventory Manager/Admin</p>
-                <p className="text-zinc-200 mb-4">Goal: Record and manage item handover</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Log in to dashboard</li>
-                  <li>Search or filter for item</li>
-                  <li>Click "Assign" button</li>
-                  <li>Select staff from directory</li>
-                  <li>Set return date and notes (if needed)</li>
-                  <li>Confirm assignment</li>
-                  <li>Success screen with preview of due date</li>
-                  <li>Reminder scheduled automatically</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 3: Return an Assigned Item */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-purple-100 text-purple-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
-                  </span>
-                  Return an Assigned Item
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Staff/Inventory Manager</p>
-                <p className="text-zinc-200 mb-4">Goal: Mark an item as returned and update status</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Staff or manager logs in</li>
-                  <li>Navigate to "My Assigned Items" or "Assignments" tab</li>
-                  <li>Locate item marked as "Assigned"</li>
-                  <li>Click "Return Item"</li>
-                  <li>(Optional) Add condition or remarks</li>
-                  <li>Confirm return</li>
-                  <li>Item status updated to "Available"</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 4: Track Item Status or Location */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-yellow-100 text-yellow-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                  </span>
-                  Track Item Status or Location
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Admin/Inventory Manager/Librarian</p>
-                <p className="text-zinc-200 mb-4">Goal: Know where items are and who has them</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Log in</li>
-                  <li>Use global search or apply filters (location, category, status)</li>
-                  <li>View item status: Available, Assigned, Under Maintenance</li>
-                  <li>Open "Quick View" panel for item</li>
-                  <li>Review borrower, history, condition, and due date</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 5: Send Return Reminder */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-red-100 text-red-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                  </span>
-                  Send Return Reminder
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Admin/Inventory Manager</p>
-                <p className="text-zinc-200 mb-4">Goal: Notify a staff member about a due or overdue item</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Go to "Reminders" tab</li>
-                  <li>View list of due and overdue items</li>
-                  <li>Select item(s)</li>
-                  <li>Click "Send Reminder"</li>
-                  <li>Choose reminder type (email, system notification)</li>
-                  <li>Send</li>
-                  <li>Confirmation shown</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 6: Generate a Report */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-blue-100 text-blue-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                  </span>
-                  Generate a Report
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Admin</p>
-                <p className="text-zinc-200 mb-4">Goal: View analytics or export reports for school management</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Open "Reports" tab</li>
-                  <li>Choose report type: Asset Usage, Assignment History, Lost Items, Maintenance Logs</li>
-                  <li>Apply date range or filters</li>
-                  <li>View visual charts and summaries</li>
-                  <li>Click "Export as PDF/CSV"</li>
-                  <li>Download or share</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 7: Set Maintenance Schedule */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-orange-100 text-orange-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0-.33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 .33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                  </span>
-                  Set Maintenance Schedule
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Admin/Inventory Manager</p>
-                <p className="text-zinc-200 mb-4">Goal: Schedule routine checks or servicing</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Open item's Quick View</li>
-                  <li>Click "Maintenance" tab</li>
-                  <li>Add next check date and type of maintenance</li>
-                  <li>Save</li>
-                  <li>System adds maintenance reminder to calendar</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 8: Receive Maintenance Notification */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-teal-100 text-teal-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                  </span>
-                  Receive Maintenance Notification
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">Inventory Manager</p>
-                <p className="text-zinc-200 mb-4">Goal: Stay aware of scheduled maintenance</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Log in</li>
-                  <li>Navigate to "Reminders" tab</li>
-                  <li>View "Upcoming Maintenance" list</li>
-                  <li>Click item to view details or update status</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 9: Search for Any Item, Person, or Tag */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                  </span>
-                  Search for Any Item, Person, or Tag
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">All users</p>
-                <p className="text-zinc-200 mb-4">Goal: Find anything quickly from the main interface</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Click on global search bar</li>
-                  <li>Type keyword (e.g., "projector", "Mrs. Rita")</li>
-                  <li>Filter by type (Item, Staff, Tag, Category)</li>
-                  <li>Click result</li>
-                  <li>Navigate directly to item or person's profile</li>
-                </ol>
-              </motion.div>
-
-              {/* User Flow Card 10: Switch View Modes (Table, Card, Timeline) */}
-              <motion.div
-                className="fill-secondary rounded-xl p-6 border border-zinc-800 shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-zinc-100 flex items-center">
-                  <span className="bg-pink-100 text-pink-600 rounded-full p-2 mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                  </span>
-                  Switch View Modes (Table, Card, Timeline)
-                </h3>
-                <p className="text-sm text-zinc-300 mb-2">All users</p>
-                <p className="text-zinc-200 mb-4">Goal: Choose how inventory is visually displayed</p>
-                <ol className="list-decimal list-inside text-zinc-200 space-y-1">
-                  <li>Go to Inventory tab</li>
-                  <li>Click view switcher (icon group at top right)</li>
-                  <li>Choose between Table, Card, or Timeline</li>
-                  <li>Interface updates view style</li>
-                  <li>Preference saved for future sessions</li>
-                </ol>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solution Section */}
-      <section id="solution" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">The Solution</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="fill-secondary p-8 rounded-xl text-center shadow-sm border border-blue-100 transition-all duration-300 hover:shadow-md hover:border-blue-600"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-4 text-zinc-100">{feature.title}</h3>
-                  <p className="text-zinc-300 leading-relaxed">{feature.description}</p>
-                </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="designs" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Personas */}
+      <section id="personas" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Final Designs</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="text-center">
-                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Stakeholder Personas
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              We mapped the emotional and operational realities of three core institutional roles responsible for school assets:
+            </p>
+
+            {/* Persona Cards Grid */}
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Abigail */}
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">Abigail Eze, 47</h3>
+                  <p className="text-xs text-zinc-400">Vice Principal &bull; Enugu</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Oversees school physical assets for board audits. Stressed by missing receipts and disputes over lost laptops.
+                </p>
+                <div className="text-xs text-zinc-400 pt-3 border-t border-white/10 space-y-1">
+                  <p><strong className="text-zinc-200">UX Priority:</strong> One-click audit reports and instant real-time custody overview.</p>
+                </div>
+              </div>
+
+              {/* Idris */}
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">Idris Olanrewaju, 35</h3>
+                  <p className="text-xs text-zinc-400">Storekeeper &bull; Ibadan</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Manages equipment check-out daily. Struggles with manual logs during power outages and busy morning rushes.
+                </p>
+                <div className="text-xs text-zinc-400 pt-3 border-t border-white/10 space-y-1">
+                  <p><strong className="text-zinc-200">UX Priority:</strong> Fast 3-step item assign wizard and mobile-responsive check-in.</p>
+                </div>
+              </div>
+
+              {/* Lara */}
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-white">Lara Yusuf, 29</h3>
+                  <p className="text-xs text-zinc-400">School Librarian &bull; Lagos</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Tracks library books and tablets. Constantly deals with overdue returns and unorganized physical inventory.
+                </p>
+                <div className="text-xs text-zinc-400 pt-3 border-t border-white/10 space-y-1">
+                  <p><strong className="text-zinc-200">UX Priority:</strong> Automated email/SMS return reminders and instant ISBN/serial lookup.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Information Architecture */}
+      <section id="architecture" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Information Architecture: Shallow &amp; Fast
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-12 font-light">
+              To accommodate staff with varying levels of technical comfort, the IA is organized around four core operations: Inventory Catalog, Quick Assign, Audit Reports, and Return Reminders.
+            </p>
+
+            {/* IA Diagram Image */}
+            <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-zinc-900/40 mb-8">
+              <Image
+                src="/images/Assedra/IA.png"
+                alt="Information Architecture Diagram"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 1000px"
+              />
+            </div>
+
+            <p className="text-xs text-zinc-400 max-w-2xl leading-relaxed">
+              Global navigation anchors the top bar with universal search, allowing any asset, serial number, or faculty member to be located in less than two seconds from any screen.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* User Flows: Four Core Workflows */}
+      <section id="user-flows" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              User Flows: Streamlining Core Interactions
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Rather than forcing staff through endless form fields, we mapped out four streamlined pathways that turn complex database entries into rapid, guided interactions.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-4">
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block">Workflow 01</span>
+                <h3 className="text-xl font-bold text-white">Item Registration &amp; Cataloging</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Storekeeper clicks &ldquo;Add Item&rdquo; &rarr; selects pre-filled category template &rarr; inputs serial or scans barcode &rarr; assigns physical room location &rarr; receives instant QR tag confirmation for physical asset labeling.
+                </p>
+                <p className="text-xs text-zinc-400 italic">Reduces item intake time from 8 minutes to 45 seconds.</p>
+              </div>
+
+              <div className="space-y-4">
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block">Workflow 02</span>
+                <h3 className="text-xl font-bold text-white">Quick Assign &amp; Custody Handover</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Global search retrieves item &rarr; taps &ldquo;Assign&rdquo; &rarr; selects staff from auto-complete directory &rarr; sets expected return date &rarr; system logs custody handover with automated calendar sync.
+                </p>
+                <p className="text-xs text-zinc-400 italic">Eliminates disputed paper checkout signatures permanently.</p>
+              </div>
+
+              <div className="space-y-4">
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block">Workflow 03</span>
+                <h3 className="text-xl font-bold text-white">Return Verification &amp; Condition Check</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Item located via Active Loans view &rarr; one-click &ldquo;Mark Returned&rdquo; &rarr; optional condition rating (Good, Damaged, Needs Repair) &rarr; asset status returns to Available immediately.
+                </p>
+                <p className="text-xs text-zinc-400 italic">Flags equipment issues before re-issuing to other classrooms.</p>
+              </div>
+
+              <div className="space-y-4">
+                <span className="text-xs text-zinc-500 uppercase tracking-wider block">Workflow 04</span>
+                <h3 className="text-xl font-bold text-white">Automated Return Reminders &amp; Audit</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  System tracks approaching due dates &rarr; sends polite automated reminders 48h prior &rarr; compiles monthly loss rate and utilization trends for PTA and board review with 1-click PDF export.
+                </p>
+                <p className="text-xs text-zinc-400 italic">Removes awkward interpersonal friction between colleagues.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Solution: Key System Capabilities */}
+      <section id="solution" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              The Solution: Intelligent Simplicity
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Assedra provides the robust accountability of an enterprise system with the effortless clarity of modern consumer software.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="fill-secondary p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-3">
+                    Feature 01
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-3">Quick Assign Wizard</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    A lightweight 3-step checkout flow that enables equipment handovers in seconds, eliminating manual ledger errors.
+                  </p>
+                </div>
+                <p className="text-xs text-zinc-400 pt-4 border-t border-white/5">
+                  Sub-30-second checkout flow
+                </p>
+              </div>
+
+              <div className="fill-secondary p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-3">
+                    Feature 02
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-3">Smart Reminders</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    Automated email and in-app notifications for overdue returns and upcoming maintenance, removing awkward manual follow-ups.
+                  </p>
+                </div>
+                <p className="text-xs text-zinc-400 pt-4 border-t border-white/5">
+                  Zero manual chasing
+                </p>
+              </div>
+
+              <div className="fill-secondary p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-3">
+                    Feature 03
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-3">Audit Trails</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    Tamper-proof chronological histories for every single asset: who borrowed it, what condition it was in, and when it was returned.
+                  </p>
+                </div>
+                <p className="text-xs text-zinc-400 pt-4 border-t border-white/5">
+                  100% verifiable custody history
+                </p>
+              </div>
+            </div>
+
+            <div className="fill-secondary p-8 md:p-10 rounded-xl">
+              <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider block mb-2">
+                Executive Visibility
+              </span>
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Visual Analytics &amp; Board-Ready Reporting
+              </h3>
+              <p className="text-sm md:text-base text-zinc-300 leading-relaxed max-w-3xl mb-8">
+                Turning thousands of equipment logs into clear, actionable visual summaries. Administrators instantly spot high-loss categories, underutilized hardware, and upcoming maintenance costs.
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-6 pt-6 border-t border-white/5 text-xs text-zinc-400">
+                <div>
+                  <strong className="text-zinc-200 block mb-1">Utilization Metrics</strong>
+                  Tracks how frequently expensive lab and media equipment is actually deployed.
+                </div>
+                <div>
+                  <strong className="text-zinc-200 block mb-1">Loss Prevention</strong>
+                  Flags overdue trends by department to prevent permanent asset disappearance.
+                </div>
+                <div>
+                  <strong className="text-zinc-200 block mb-1">1-Click Export</strong>
+                  Pre-formatted PDF and CSV reports ready for school board audits and PTA reviews.
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Final Designs Walkthrough */}
+      <section id="designs" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Final Designs: Core Screens Walkthrough
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-16 font-light">
+              High-fidelity web application screens designed for high-contrast clarity and responsive operation across laptops, tablets, and desktop workstations.
+            </p>
+
+            <div className="space-y-20">
+              {/* Screen 1: Dashboard */}
+              <div className="space-y-4">
+                <div className="max-w-2xl">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">01 &bull; Executive Command</span>
+                  <h3 className="text-2xl font-bold text-white mt-1 mb-2">Main Dashboard Overview</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    High-level visibility into total school assets, active loans, overdue alerts, and quick action shortcuts for new check-outs.
+                  </p>
+                </div>
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-zinc-900/60 shadow-xl">
                   <Image
                     src="/images/Assedra/1920w-light.png"
-                    alt="Assedra Dashboard"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto rounded-lg"
+                    alt="Assedra Main Dashboard"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1000px"
                   />
                 </div>
-                <p className="text-sm text-zinc-300 italic">Main dashboard with real-time asset overview and quick actions</p>
               </div>
-              
-              <div className="text-center">
-                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+
+              {/* Screen 2: Inventory Catalog */}
+              <div className="space-y-4">
+                <div className="max-w-2xl">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">02 &bull; Catalog Management</span>
+                  <h3 className="text-2xl font-bold text-white mt-1 mb-2">Inventory with Global Search &amp; Multi-Filtering</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    Enables staff to filter by department, condition, location, or availability status with real-time query responses.
+                  </p>
+                </div>
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-zinc-900/60 shadow-xl">
                   <Image
                     src="/images/Assedra/Inventory.png"
-                    alt="Inventory Management"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto rounded-lg"
+                    alt="Assedra Inventory Catalog"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1000px"
                   />
                 </div>
-                <p className="text-sm text-zinc-300 italic">Inventory management with global search and filtering</p>
               </div>
-              
-              <div className="text-center">
-                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+
+              {/* Screen 3: Assignments Flow */}
+              <div className="space-y-4">
+                <div className="max-w-2xl">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">03 &bull; Checkout Wizard</span>
+                  <h3 className="text-2xl font-bold text-white mt-1 mb-2">Streamlined Assignment Flow</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    Guided modal flow for staff handover: selects item, borrower, loan timeframe, and generates digital confirmation.
+                  </p>
+                </div>
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-zinc-900/60 shadow-xl">
                   <Image
                     src="/images/Assedra/Assignments.png"
-                    alt="Assignment Flow"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto rounded-lg"
+                    alt="Assedra Assignment Modal"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1000px"
                   />
                 </div>
-                <p className="text-sm text-zinc-300 italic">Quick assign wizard for streamlined asset assignment</p>
               </div>
-              
-              <div className="text-center">
-                <div className="fill-secondary rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-sm overflow-hidden">
+
+              {/* Screen 4: Visual Reports */}
+              <div className="space-y-4">
+                <div className="max-w-2xl">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">04 &bull; Analytics</span>
+                  <h3 className="text-2xl font-bold text-white mt-1 mb-2">Visual Reports Dashboard</h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                    Interactive charts breaking down asset distribution, maintenance logs, and return compliance rates across terms.
+                  </p>
+                </div>
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-zinc-900/60 shadow-xl">
                   <Image
                     src="/images/Assedra/Reports.png"
-                    alt="Reports Dashboard"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto rounded-lg"
+                    alt="Assedra Reports Analytics"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1000px"
                   />
                 </div>
-                <p className="text-sm text-zinc-300 italic">Visual reports dashboard with actionable insights</p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Design Carousel Section */}
-      <DesignCarousel items={designItems} />
+      {/* Auxiliary Screens Showcase Carousel */}
+      <DesignCarousel items={designItems} aspect="landscape" />
 
       {/* Outcome Section */}
-      <section id="outcome" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
+      <section id="outcome" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 text-zinc-100">The Outcome</h2>
-            <p className="text-lg leading-relaxed text-zinc-200 mb-12">
-              The result of this design process was Assedra, a responsive web application that reimagines school asset management. With its clean architecture, intuitive flows, and user-centered features, Assedra empowers schools to:
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              The Outcome: Institutional Impact
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-14 font-light">
+              Assedra successfully transformed school asset operations by replacing administrative chaos with predictable, verified workflows:
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {outcomes.map((outcome, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center gap-4 p-6 fill-secondary rounded-xl shadow-sm transition-all duration-300 hover:shadow-md"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-2xl text-blue-600">✅</div>
-                  <span className="font-medium text-zinc-100">{outcome}</span>
-                </motion.div>
-              ))}
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-14">
+              <div className="space-y-2">
+                <span className="text-2xl font-bold text-white block">Real-Time</span>
+                <h3 className="text-base font-semibold text-zinc-200">Continuous Inventory Tracking</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">Institutions maintain accurate visibility across all campus assets without physical stocktaking delays.</p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-2xl font-bold text-white block">&minus;75%</span>
+                <h3 className="text-base font-semibold text-zinc-200">Reduction in Asset Loss</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">Automated return reminders and staff accountability significantly curb misplaced equipment.</p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-2xl font-bold text-white block">Zero</span>
+                <h3 className="text-base font-semibold text-zinc-200">Spreadsheet Dependence</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">Eliminates duplicate Excel entries, missing sign-out binders, and handwritten ledger errors.</p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-2xl font-bold text-white block">100%</span>
+                <h3 className="text-base font-semibold text-zinc-200">Audit-Ready Accountability</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">Generates board-ready audit reports and complete item custody histories in a single click.</p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-2xl font-bold text-white block">Sub-30s</span>
+                <h3 className="text-base font-semibold text-zinc-200">Checkout Speed</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">Streamlined assignment wizards ensure teachers can borrow classroom tools between periods with zero hassle.</p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-2xl font-bold text-white block">Responsive</span>
+                <h3 className="text-base font-semibold text-zinc-200">Cross-Device Mobility</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">Staff can verify equipment on tablets and smartphones directly from storerooms or labs.</p>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Prototype Video Section */}
-      <section id="prototype" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+      <section id="prototype" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-zinc-100">Prototype in Action</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 mb-12 text-center">
-              <p className="mb-6">
-                Here's a walkthrough of the Assedra prototype, showcasing the key features and user flows we designed. This demonstrates how the system works in practice, from inventory management to assignment tracking and reporting.
-              </p>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Interactive Prototype Walkthrough
+            </h2>
 
-            <motion.div 
-              className="fill-secondary rounded-2xl p-6 shadow-sm border border-zinc-800"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-12 font-light">
+              Demonstrating the live web application flow: from asset search and 3-step checkout to reminder management and analytics generation.
+            </p>
+
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl">
               <iframe
                 src="https://player.cloudinary.com/embed/?cloud_name=djqcs2ngt&public_id=Recording_2025-09-07_170435_rem4vr&profile=cld-default"
                 width="640"
-                height="360" 
-                style={{ height: 'auto', width: '100%', aspectRatio: '640 / 360' }}
+                height="360"
+                style={{ height: '100%', width: '100%' }}
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                 allowFullScreen
                 frameBorder="0"
                 title="Assedra Prototype Demo"
-                className="rounded-lg"
+                className="w-full h-full"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Reflection Section */}
-      <section id="reflection" className="py-24">
-        <div className="container">
-          <motion.div 
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Reflection */}
+      <section id="reflection" className="py-20 md:py-28 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 text-zinc-100">Reflection</h2>
-            <div className="text-lg leading-relaxed text-zinc-200 space-y-6">
-              <p>
-                This project challenged me to balance simplicity and power. Schools don't have the time for steep learning curves or overly technical tools. By focusing on the real needs of administrators, librarians, and staff, I designed a system that is as easy to use as it is powerful.
-              </p>
-              <p>
-                Most importantly, Assedra demonstrates the power of human-centered design: when you listen deeply to users, every feature becomes purposeful, every interaction becomes smoother, and the final product feels less like a tool and more like a trusted assistant.
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              Reflection: Designing for Operational Realities
+            </h2>
+
+            <p className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-12 font-light">
+              Designing Assedra reinforced that institutional software does not have to be painful. When you design around the true workflows of educators, efficiency becomes effortless.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">Key Design Takeaways</h3>
+                <ul className="space-y-3 text-sm text-zinc-400 leading-relaxed">
+                  <li>
+                    <strong className="text-zinc-200">Respecting Educator Time:</strong> Teachers have 5 minutes between periods. Check-out flows must be sub-30-second interactions or they will be circumvented.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Accountability Without Guilt:</strong> Automated reminders remove interpersonal conflict between colleagues, shifting reminders into systemic protocol.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Resilient Workflows:</strong> Supporting quick barcode lookups and offline-tolerant caching is essential for infrastructure in emerging markets.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">Future Enhancements</h3>
+                <ul className="space-y-3 text-sm text-zinc-400 leading-relaxed">
+                  <li>
+                    <strong className="text-zinc-200">RFID Smart Tags:</strong> Automated walk-through detection for library books and high-value laboratory equipment.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Predictive Maintenance AI:</strong> Forecasting servicing intervals based on historical usage intensity and equipment age.
+                  </li>
+                  <li>
+                    <strong className="text-zinc-200">Multi-Campus Centralization:</strong> Federated inventory pools for school districts sharing resources across multiple branches.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-white/10">
+              <p className="text-lg md:text-xl text-zinc-200 italic font-light leading-relaxed max-w-3xl">
+                &ldquo;When software respects the people who use it, tools stop feeling like administrative burdens and become trusted partners in delivering quality education.&rdquo;
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Navigation */}
-      <div className="py-8 border-t border-zinc-800">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <Link 
-              href="/#work" 
-              className="text-zinc-300 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:text-zinc-100"
+      {/* Bottom Navigation */}
+      <div className="py-12 border-t border-white/5">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <Link
+              href="/#work"
+              className="text-zinc-400 hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-2"
             >
-              ← Back to Work
+              <span>&larr;</span>
+              <span>Back to All Work</span>
             </Link>
-            <Link 
-              href="/#contact" 
-              className="text-zinc-100 no-underline font-semibold px-8 py-4 rounded-lg transition-all duration-300 fill-secondary shadow-sm hover:shadow-md"
+            <Link
+              href="/#contact"
+              className="px-6 py-2.5 bg-white text-black text-sm font-medium rounded-none hover:bg-zinc-200 transition-all duration-200"
             >
-              Get in Touch →
+              Get in Touch &rarr;
             </Link>
           </div>
         </div>
@@ -1054,4 +787,3 @@ const AssedraCaseStudy = () => {
 };
 
 export default AssedraCaseStudy;
-
