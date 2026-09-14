@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Download } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -44,6 +44,16 @@ const FocusCaseStudy = () => {
             <p className="text-xl sm:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl mb-8">
               A desktop focus tool built around one idea: sometimes you need more than a timer to stay focused.
             </p>
+
+            <div className="mb-12">
+              <a 
+                href="https://github.com/Ojo-chegbe/focus/releases/download/v0.1.0/Focus-Setup-0.1.0.exe"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-medium text-sm rounded-full hover:bg-zinc-200 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Download App (Windows)
+              </a>
+            </div>
 
             {/* Metadata */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 py-6 border-y border-zinc-800/80 text-sm">
