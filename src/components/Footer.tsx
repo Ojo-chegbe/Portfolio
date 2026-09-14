@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 const Footer = () => {
@@ -6,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-500">© Ogwu Ojochegbe</p>
-          <div className="flex gap-8">
+          <div className="flex gap-6 md:gap-8 items-center">
             <a 
               href="https://behance.net/ojochegbe" 
               className="text-zinc-400 no-underline transition-colors duration-300 hover:text-white"
@@ -27,9 +29,16 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-         
               WhatsApp
             </a>
+            
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-zinc-400 no-underline transition-colors duration-300 hover:text-white ml-2 md:ml-4 flex items-center gap-1 border-l border-zinc-800 pl-6 md:pl-8 text-sm md:text-base"
+              aria-label="Back to top"
+            >
+              Back to top ↑
+            </button>
           </div>
         </div>
       </div>
