@@ -48,7 +48,7 @@ const FocusCaseStudy = () => {
             <div className="mb-12">
               <a 
                 href="https://github.com/Ojo-chegbe/focus/releases/download/v0.1.0/Focus-Setup-0.1.0.exe"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-medium text-sm rounded-full hover:bg-zinc-200 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-medium text-sm rounded-none hover:bg-zinc-200 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download App (Windows)
