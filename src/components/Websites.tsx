@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -56,19 +56,9 @@ const websiteProjects: WebsiteProject[] = [
   },
 ];
 
-const categories = [
-  { label: 'All Projects', value: 'all' },
-  { label: 'Client Websites', value: 'client' },
-];
-
 const Websites = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filteredProjects = activeFilter === 'all'
-    ? websiteProjects
-    : websiteProjects.filter((p) => p.filterCategory === activeFilter);
 
   return (
     <section id="websites" className="py-16 md:py-28 bg-[#080808] border-t border-zinc-900">
@@ -85,27 +75,11 @@ const Websites = () => {
           </h2>
         </motion.div>
 
-        {/* Header Subtitle & Filter Pills */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+        {/* Header Subtitle */}
+        <div className="mb-12">
           <p className="text-zinc-400 text-sm md:text-base max-w-xl font-light leading-relaxed">
             A selection of live websites and digital platforms built by pairing UX design and product thinking with artificial intelligence—taking ideas from concept to production-ready web experiences.
           </p>
-
-          <div className="flex items-center gap-2 bg-[#121214] p-1.5 rounded-none border border-zinc-800 self-start md:self-auto">
-            {categories.map((cat) => (
-              <button
-                key={cat.value}
-                onClick={() => setActiveFilter(cat.value)}
-                className={`px-3.5 py-1.5 text-xs font-medium rounded-none transition-all duration-200 cursor-pointer ${
-                  activeFilter === cat.value
-                    ? 'bg-zinc-100 text-black font-semibold shadow-sm'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Websites Grid */}
@@ -115,7 +89,7 @@ const Websites = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-16 w-full"
         >
           <AnimatePresence>
-            {filteredProjects.map((project, index) => (
+            {websiteProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
